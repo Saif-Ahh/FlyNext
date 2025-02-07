@@ -1,4 +1,5 @@
 import prisma from '@/utils/prismaClient';
+import bcrypt from 'bcrypt';
 
 export async function createUser(userData: any) {
     return prisma.user.create({ data: userData });
@@ -6,5 +7,9 @@ export async function createUser(userData: any) {
 
 export async function findUserByEmail(email: string) {
     return prisma.user.findUnique({ where: { email } });
+}
+
+export async function validatePassword(plainPassword: string, hashedPassword: string) {
+    return bcrypt.compare(plainPassword, hashedPassword);
 }
 
