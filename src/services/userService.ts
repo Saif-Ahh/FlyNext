@@ -13,3 +13,7 @@ export async function validatePassword(plainPassword: string, hashedPassword: st
     return bcrypt.compare(plainPassword, hashedPassword);
 }
 
+export async function getUserById(userId: string) {
+    return await prisma.user.findUnique({ where: { id: userId } });
+}
+
