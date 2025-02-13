@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { createUser, findUserByEmail, validatePassword } from '@/services/userService';
+import { createUser, findUserByEmail, validatePassword, getUserById } from '@/services/userService';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
@@ -77,6 +77,20 @@ export async function logoutController(req: NextApiRequest, res: NextApiResponse
     } catch (error) {
         console.error('Error during logout:', error);
         return res.status(500).json({ error: 'Error during logout' });
+    }
+}
+
+export async function getProfileController(req: NextApiRequest, res: NextApiResponse) {
+    try {
+        const userId = (req as any).user.userId;
+        const user = await getUserById(userId);
+        if (!user) {
+            return res.status(404).json({ error: 'User not found' });
+        }
+        return res.status(200).json({ user });
+    } catch (error) {
+        console.error('Error fetching profile:', error);
+        return res.status(500).json({ error: 'Error fetching profile' });
     }
 }
 
