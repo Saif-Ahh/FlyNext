@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { createUser, findUserByEmail, validatePassword, getUserById } from '@/services/userService';
+import { createUser, findUserByEmail, validatePassword, getUserById, updateUser } from '@/services/userService';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
@@ -94,3 +94,26 @@ export async function getProfileController(req: NextApiRequest, res: NextApiResp
     }
 }
 
+export async function updateProfileController(req: NextApiRequest, res: NextApiResponse) {
+    try {
+        const userId = (req as any).user.userId;
+        const { firstName, lastName, email, profilePicture, phoneNumber, passportNumber } = req.body;
+
+        if (!firstName || !lastName || !email || !phoneNumber || !passportNumber) {
+            return res.status(400).json({ error: 'Missing required fields' });
+        }
+
+        const updatedUser = await updateUser(userId, { 
+            firstName, 
+            lastName, 
+            email, 
+            profilePicture: profilePicture || 'default-profile.jpg', 
+            phoneNumber, 
+            passportNumber 
+        });
+
+        return res.status(200).json({ message: 'Profile updated successfully', user: updatedUser });
+    } catch (error) {
+        return res.status(500).json({ error: 'Error updating profile' });
+    }
+}
