@@ -13,3 +13,10 @@ export async function getNotificationsForUser(userId: string) {
     });
 }
 
+export async function markNotificationAsRead(notificationId: string) {
+    return await prisma.notification.update({
+        where: { id: notificationId },
+        data: { isRead: true }
+    });
+}
+
