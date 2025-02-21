@@ -1,6 +1,6 @@
 import { NextApiResponse } from 'next';
 import { AuthenticatedRequest } from '@/middleware/authMiddleware';
-import { getNotificationsForUser } from '@/services/notificationService';
+import { getNotificationsForUser, markNotificationAsRead } from '@/services/notificationService';
 
 export async function getNotificationsController(req: AuthenticatedRequest, res: NextApiResponse) {
     try {
@@ -10,6 +10,17 @@ export async function getNotificationsController(req: AuthenticatedRequest, res:
     } catch (error) {
         console.error('Error fetching notifications:', error);
         res.status(500).json({ error: 'Error fetching notifications' });
+    }
+}
+
+export async function markNotificationAsReadController(req: AuthenticatedRequest, res: NextApiResponse) {
+    try {
+        const { notificationId } = req.body;
+        await markNotificationAsRead(notificationId);
+        res.status(200).json({ message: 'Notification marked as read' });
+    } catch (error) {
+        console.error('Error marking notification as read:', error);
+        res.status(500).json({ error: 'Error marking notification as read' });
     }
 }
 
