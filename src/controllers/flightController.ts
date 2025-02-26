@@ -1,9 +1,38 @@
 import dotenv from 'dotenv';
-import { listCities, listAirports } from '../services/flightService';
+import { listFlights, validateLocations, listCities, listAirports } from '../services/flightService';
 
 dotenv.config();
 
 const apiKey = process.env.AFS_API_KEY as string;
+
+export async function getOneWayFlights(
+    source: string,
+    destination: string,
+    departureDate: string,
+) {
+    const validated = await validateLocations(apiKey, source, destination);
+    if ("error" in validated) {
+        return validated;
+    }
+
+    const now = new Date();
+    const [year, month, day] = departureDate.split('-').map(Number);
+    const departure = new Date(year, month - 1, day);
+    if (departure < now) {
+        return { error: 'Departure date cannot be in the past.' };
+    }
+
+    if (source === destination) {
+        return { error: 'Source and destination cannot be the same.' };
+    }
+
+    source = validated.source!;
+    destination = validated.destination!;
+
+    const flights = await listFlights(apiKey, source, destination, departureDate);
+
+    return flights;
+}
 
 export function getFlightDetails(itinerary: FlightItinerary): FlightDetails {
     const { legs, flights } = itinerary;
