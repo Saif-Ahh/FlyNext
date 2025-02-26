@@ -1,4 +1,5 @@
 import dotenv from 'dotenv';
+import { listCities, listAirports } from '../services/flightService';
 
 dotenv.config();
 
@@ -86,5 +87,55 @@ interface FlightDetails {
     currency: string;
     legs: any[];
     flightIds: string[];
+}
+
+interface City {
+    city: string;
+    country: string;
+}
+
+interface Airport {
+    id: string;
+    code: string;
+    name: string;
+    city: string;
+    country: string;
+}
+
+export async function searchCitiesAndAirports(
+    keyword: string
+): Promise<{
+    cities: string[];
+    airportsByName: { code: string; name: string }[];
+    airportsByCode: { code: string; name: string }[];
+}> {
+    const citiesResponse = await listCities(apiKey);
+    const airportsResponse = await listAirports(apiKey);
+
+    const lowerKeyword = keyword.toLowerCase();
+
+    const matchingCities = (citiesResponse as City[])
+        .filter((city) => city.city.toLowerCase().includes(lowerKeyword))
+        .map((city) => city.city);
+
+    const matchingAirportsByName = (airportsResponse as Airport[])
+        .filter((airport) => airport.name.toLowerCase().includes(lowerKeyword))
+        .map((airport) => ({
+            code: airport.code,
+            name: airport.name,
+        }));
+
+    const matchingAirportsByCode = (airportsResponse as Airport[])
+        .filter((airport) => airport.code.toLowerCase().includes(lowerKeyword))
+        .map((airport) => ({
+            code: airport.code,
+            name: airport.name,
+        }));
+
+    return {
+        cities: matchingCities,
+        airportsByName: matchingAirportsByName,
+        airportsByCode: matchingAirportsByCode,
+    };
 }
 
