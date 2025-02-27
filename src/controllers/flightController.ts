@@ -151,6 +151,53 @@ interface FlightDetails {
     flightIds: string[];
 }
 
+export async function findTripByFlightNumbers(
+    date: string,
+    origin: string,
+    destination: string,
+    flightNumbers: string[],
+): Promise<FlightItinerary> {
+    const flightsResponse = await listFlights(apiKey, origin, destination, date);
+
+    if ('error' in flightsResponse) {
+        throw new Error(flightsResponse.error);
+    }
+
+    for (const itinerary of flightsResponse.results) {
+        const itineraryFlightNumbers = itinerary.flights.map((flight: any) => flight.flightNumber);
+
+        if (arraysMatch(flightNumbers, itineraryFlightNumbers)) {
+            return {
+                legs: itinerary.legs,
+                flights: itinerary.flights.map((flight: any) => ({
+                    id: flight.id,
+                    flightNumber: flight.flightNumber,
+                    departureTime: flight.departureTime,
+                    arrivalTime: flight.arrivalTime,
+                    origin: flight.origin,
+                    destination: flight.destination,
+                    duration: flight.duration,
+                    price: flight.price,
+                    currency: flight.currency,
+                    availableSeats: flight.availableSeats,
+                    status: flight.status,
+                    airline: flight.airline,
+                })),
+            };
+        }
+    }
+
+    throw new Error('No flights found matching the provided flight numbers.');
+}
+
+function arraysMatch(arr1: string[], arr2: string[]): boolean {
+    if (arr1.length !== arr2.length) return false;
+    for (let i = 0; i < arr1.length; i++) {
+        if (arr1[i] !== arr2[i]) return false;
+    }
+    return true;
+}
+
 interface City {
     city: string;
     country: string;
