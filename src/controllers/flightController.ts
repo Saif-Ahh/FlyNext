@@ -34,6 +34,39 @@ export async function getOneWayFlights(
     return flights;
 }
 
+export async function getRoundTripFlights(
+    source: string,
+    destination: string,
+    departureDate: string,
+    returnDate: string,
+) {
+    const validated = await validateLocations(apiKey, source, destination);
+    if ("error" in validated) {
+        return validated;
+    }
+
+    const now = new Date();
+    const [year, month, day] = departureDate.split('-').map(Number);
+    const departure = new Date(year, month - 1, day);
+    if (departure < now) {
+        return { error: 'Departure date cannot be in the past.' };
+    }
+
+    const [ryear, rmonth, rday] = returnDate.split('-').map(Number);
+    const returnD = new Date(ryear, rmonth - 1, rday);
+    if (returnD < departure) {
+        return { error: 'Return date must be after departure date.' };
+    }
+
+    source = validated.source!;
+    destination = validated.destination!;
+
+    const outbound = await listFlights(apiKey, source, destination, departureDate);
+    const inbound = await listFlights(apiKey, destination, source, returnDate);
+
+    return { outbound, inbound };
+}
+
 export function getFlightDetails(itinerary: FlightItinerary): FlightDetails {
     const { legs, flights } = itinerary;
 
