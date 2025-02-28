@@ -1,5 +1,6 @@
 import dotenv from 'dotenv';
 import { listFlights, validateLocations, listCities, listAirports } from '../services/flightService';
+import { createNotification } from '@/services/notificationService';
 
 dotenv.config();
 
@@ -248,3 +249,30 @@ export async function searchCitiesAndAirports(
     };
 }
 
+/**
+ * Fetch a specific flight by its ID from the AFS API.
+ * @param {string} flightId - The unique flight ID (e.g., "3742c9e4-1861-4ab8-8140-81870b19f100").
+ * @returns {Promise<any>} The flight object or { error: string } if something goes wrong.
+ */
+export async function getFlightById(flightId: string) {
+    try {
+      const url = `https://advanced-flights-system.replit.app/api/flights/${flightId}`;
+      const response = await fetch(url, {
+        method: 'GET',
+        headers: {
+          'x-api-key': apiKey
+        }
+      });
+  
+      if (!response.ok) {
+        return {
+          error: `Failed to fetch flight. Status: ${response.status} ${response.statusText}`
+        };
+      }
+  
+      const data = await response.json();
+      return data;
+    } catch (err: any) {
+      return { error: `Error fetching flight: ${err.message}` };
+    }
+  }
