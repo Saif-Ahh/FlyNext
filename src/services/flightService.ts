@@ -298,6 +298,50 @@ export async function retrieveBooking(apiKey: string, lastName: string, bookingR
 }
 
 /**
+ * 
+ * @param lastname 
+ * @param bookingref 
+ * 
+ * 
+ * @returns booking object with status "canceled":
+ */
+
+export async function cancelbooking(lastname: string, bookingref: string, apiKey: string) {
+  try {
+    console.log(lastname);
+    console.log(bookingref);
+
+    const response = await fetch('https://advanced-flights-system.replit.app/api/bookings/cancel', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': apiKey
+      },
+      body: JSON.stringify({
+        lastName: lastname,
+        bookingReference: bookingref
+      })
+    });
+  
+    if (!response.ok) {
+      return {
+        error: `Failed to cancel booking. Status321: ${response.status} ${response.statusText}`
+      };
+    }
+  
+    const data = await response.json();
+    console.log(data);
+    return data;
+  } catch (err: any) {
+    return { error: `Error canceling booking: ${err.message}` };
+  }
+}
+
+
+
+
+
+/**
 * Checks if a given city is listed by AFS.
 *
 * @function cityExists
