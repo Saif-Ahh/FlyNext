@@ -1,6 +1,8 @@
 // controllers/bookingController.ts
 import dotenv from 'dotenv';
-import { listAirports } from '../services/flightService';
+import { getUserById, updateUser } from '../services/userService'; 
+import { createBooking, listAirports } from '../services/flightService';
+import { createNotification } from '@/services/notificationService';
 
 dotenv.config();
 
@@ -40,6 +42,48 @@ interface BookingDetails {
   email: string;
   passportNumber: string;
   flights: FlightDetails[];
+}
+
+/**
+ * Creates a flight booking for a user.
+ */
+export async function bookFlights(userId: string, flightIds: string[]) {
+  try {
+    const user = await getUserById(userId);
+
+    if (!user) {
+      return { error: 'User not found.' };
+    }
+
+    const bookingRequest: BookingRequest = {
+      firstName: user.firstName,
+      lastName: user.lastName,
+      email: user.email,
+      passportNumber: user.passportNumber,
+      flightIds: flightIds,
+    };
+
+    console.log('Booking Request:', bookingRequest);
+
+    const bookingResult = await createBooking(apiKey, bookingRequest);
+
+    if ('error' in bookingResult) {
+      return bookingResult;
+    }
+
+    const bookingReference = bookingResult.bookingReference;
+    const updatedBookingReferences = Array.isArray(user.bookingReferences)
+      ? [...user.bookingReferences, bookingReference]
+      : [bookingReference];
+
+    await updateUser(userId, { bookingReferences: updatedBookingReferences });
+
+    await createNotification(userId, `Your flight booking (Ref: ${bookingReference}) was successful.`);
+
+    return bookingResult;
+  } catch (error: any) {
+    return { error: `Error booking flights: ${error.message}` };
+  }
 }
 
 /**
