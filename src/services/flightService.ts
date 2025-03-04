@@ -250,6 +250,54 @@ export async function createBooking(apiKey: string, booking: BookingRequest) {
 }
 
 /**
+* Retrieves a previously created booking from AFS based on last name and booking reference.
+* 
+* @function retrieveBooking
+* @param {string} apiKey - Your AFS API key (SHA-256 of your student ID).
+* @param {string} lastName - The last name used on the booking (case-insensitive).
+* @param {string} bookingReference - The reference code provided upon successful booking.
+* @returns {Promise<object|{error: string}>} A promise that resolves to one of:
+*   - A booking object with booking details (e.g., flights, passenger info).
+*   - An error object: { error: string }
+* 
+* @example
+* const result = await retrieveBooking("your-api-key", "Marez", "A3D90E");
+* if ('error' in result) {
+*   console.error("Error retrieving booking:", result.error);
+* } else {
+*   console.log("Booking details:", result);
+* // Output: Booking details: { bookingReference: 'A3D90E', ticketNumber: '1234567890', ... }
+* }
+* aided by chatgpt
+*/
+export async function retrieveBooking(apiKey: string, lastName: string, bookingReference: string) {
+  try {
+    const url = new URL('https://advanced-flights-system.replit.app/api/bookings/retrieve');
+    url.searchParams.set('lastName', lastName);
+    url.searchParams.set('bookingReference', bookingReference);
+
+    const response = await fetch(url.toString(), {
+      method: 'GET',
+      headers: {
+        'x-api-key': apiKey
+      }
+    });
+
+    if (!response.ok) {
+      return {
+        error: `Failed to retrieve booking. Status: ${response.status} ${response.statusText}`
+      };
+    }
+
+    const data = await response.json();
+  //   console.log(data);
+    return data;
+  } catch (err: any) {
+    return { error: `Error retrieving booking: ${err.message}` };
+  }
+}
+
+/**
 * Checks if a given city is listed by AFS.
 *
 * @function cityExists
