@@ -190,6 +190,66 @@ export async function listFlights(
 
 
 /**
+* Creates a new booking in the Advanced Flights System.
+* 
+* @function createBooking
+* @param {string} apiKey - Your AFS API key (SHA-256 of your student ID).
+* @param {BookingRequest} booking - Details required to create the booking.
+* @returns {Promise<object|{error: string}>} A promise that resolves to one of:
+*   - A booking confirmation object containing fields like `bookingReference`, `ticketNumber`, etc.
+*   - An error object: { error: string }
+* 
+* @example
+* const booking = {
+*   firstName: "Ali",
+*   lastName: "Marez",
+*   email: "test@test.com",
+*   passportNumber: "123239934",
+*   flightIds: ["actual-flight-id-from-listFlights"]
+* };
+* const result = await createBooking("your-api-key", booking);
+* if ('error' in result) {
+*   console.error("Error creating booking:", result.error);
+* } else {
+*   console.log("Booking created:", result);
+*  // Output: Booking created: { bookingReference: 'ABC123', ticketNumber: '1234567890', ... }
+* }
+* aided by chatgpt
+*/
+interface BookingRequest {
+  firstName: string;
+  lastName: string;
+  email: string;
+  passportNumber: string;
+  flightIds: string[];
+}
+
+export async function createBooking(apiKey: string, booking: BookingRequest) {
+  try {
+    const response = await fetch('https://advanced-flights-system.replit.app/api/bookings', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': apiKey
+      },
+      body: JSON.stringify(booking)
+    });
+
+    if (!response.ok) {
+      return {
+        error: `Failed to create booking. Status: ${response.status} ${response.statusText}`
+      };
+    }
+
+    const data = await response.json();
+  //   console.log(data);
+    return data;
+  } catch (err: any) {
+    return { error: `Error creating booking: ${err.message}` };
+  }
+}
+
+/**
 * Checks if a given city is listed by AFS.
 *
 * @function cityExists
