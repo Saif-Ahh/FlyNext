@@ -1,7 +1,7 @@
 // controllers/bookingController.ts
 import dotenv from 'dotenv';
 import { getUserById, updateUser } from '../services/userService'; 
-import { createBooking, listAirports } from '../services/flightService';
+import { createBooking, retrieveBooking, listAirports } from '../services/flightService';
 import { createNotification } from '@/services/notificationService';
 
 dotenv.config();
@@ -83,6 +83,39 @@ export async function bookFlights(userId: string, flightIds: string[]) {
     return bookingResult;
   } catch (error: any) {
     return { error: `Error booking flights: ${error.message}` };
+  }
+}
+
+/**
+ * Retrieves all booked flights for a user by their ID.
+ */
+export async function retrieveBookedFlights(userId: string): Promise<{ bookings: Array<BookingDetails | { error: string }> }> {
+  try {
+    const user = await getUserById(userId);
+
+    if (!user) {
+      throw new Error('User not found.');
+    }
+
+    const bookingReferences = Array.isArray(user.bookingReferences)
+    ? (user.bookingReferences as string[])
+    : [];
+
+    const bookings: Array<BookingDetails | { error: string }> = [];
+
+    for (const reference of bookingReferences) {
+      try {
+        const booking = await retrieveBooking(process.env.AFS_API_KEY as string, user.lastName, reference);
+        bookings.push(booking);
+      } catch (error: any) {
+        bookings.push({ error: `Failed to retrieve booking ${reference}: ${error.message}` });
+      }
+    }
+
+    return { bookings };
+  } catch (error: any) {
+    console.error('Error retrieving booked flights:', error.message);
+    return { bookings: [{ error: `Failed to retrieve booked flights: ${error.message}` }] };
   }
 }
 
