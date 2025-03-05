@@ -120,6 +120,34 @@ export async function retrieveBookedFlights(userId: string): Promise<{ bookings:
 }
 
 /**
+ * Retrieves a single booking by its reference for a specific user.
+ */
+export async function getBookingByReference(userId: string, bookingReference: string): Promise<BookingDetails | { error: string }> {
+  try {
+    const user = await getUserById(userId);
+
+    if (!user) {
+      throw new Error('User not found.');
+    }
+
+    if (!user.lastName) {
+      return { error: 'User last name is missing.' };
+    }
+
+    const booking = await retrieveBooking(process.env.AFS_API_KEY as string, user.lastName, bookingReference);
+
+    if ('error' in booking) {
+      return booking;
+    }
+
+    return booking;
+  } catch (error: any) {
+    console.error('Error retrieving booking:', error.message);
+    return { error: `Failed to retrieve booking: ${error.message}` };
+  }
+}
+
+/**
  * Wrapper function for listAirports that provides the required API key.
  * 
  * @returns {Promise<object|{error: string}>} A promise that resolves to one of:
