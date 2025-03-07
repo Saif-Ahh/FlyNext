@@ -35,6 +35,7 @@ model Hotel {
   images       Json
 
   rooms        Room[]
+  bookings     Booking[]
   notifications Notification[]
 
   user         User     @relation("UserHotels", fields: [userId], references: [id])
@@ -50,6 +51,25 @@ model Room {
   images        Json 
 
   hotel         Hotel    @relation(fields: [hotelId], references: [id])
+  bookings      Booking[]
+}
+
+model Booking {
+  id            Int      @id @default(autoincrement()) 
+  hotelId       String?
+  hotelName     String   
+  roomType      String   
+  roomNum       Int
+  price         Decimal
+  roomId        String        
+  userId        String   
+  checkInDate   DateTime 
+  checkOutDate  DateTime 
+  status        String   
+  createdAt     DateTime @default(now()) 
+
+  hotel         Hotel?    @relation(fields: [hotelId], references: [id])
+  room          Room     @relation(fields: [roomId], references: [id])
 }
 
 model Notification {
