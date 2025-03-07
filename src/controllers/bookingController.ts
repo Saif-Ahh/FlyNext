@@ -1,7 +1,7 @@
 // controllers/bookingController.ts
 import dotenv from 'dotenv';
 import { getUserById, updateUser } from '../services/userService'; 
-import { createBooking, retrieveBooking, listAirports } from '../services/flightService';
+import { createBooking, retrieveBooking, cancelbooking, listAirports } from '../services/flightService'; 
 import { createNotification } from '@/services/notificationService';
 
 dotenv.config();
@@ -144,6 +144,27 @@ export async function getBookingByReference(userId: string, bookingReference: st
   } catch (error: any) {
     console.error('Error retrieving booking:', error.message);
     return { error: `Failed to retrieve booking: ${error.message}` };
+  }
+}
+
+/**
+ * Cancels a flight booking for a user.
+ */
+export async function cancelflightcontroller(lastname: string, bookingref: string, userId: string) {
+  try {
+    const response = await cancelbooking(lastname, bookingref, apiKey);
+
+    if ('error' in response) {
+      return response;
+    }
+
+    // ✅ Notify user about cancellation
+    await createNotification(userId, `Your flight booking (Ref: ${bookingref}) has been cancelled.`);
+
+    return response;
+  } catch (error: any) {
+    console.error('Error cancelling booking:', error.message);
+    return { error: `Failed to cancel booking: ${error.message}` };
   }
 }
 
