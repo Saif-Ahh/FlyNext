@@ -1,7 +1,7 @@
 // @ts-nocheck
 // controllers/hotelController.ts
 import { NextApiRequest, NextApiResponse } from 'next';
-import { createHotel } from '@/services/hotelService';
+import { createHotel, createRoom, isHotelOwner, getRoomObject } from '@/services/hotelService';
 import { error } from 'console';
 
 
@@ -34,6 +34,42 @@ export async function addHotelController(req: NextApiRequest, res: NextApiRespon
     } catch (error) {
         console.error('Error adding hotel:', error);
         return res.status(500).json({ error: 'Error adding hotel' });
+    }
+}
+
+export async function addRoomTypeController(req: NextApiRequest, res: NextApiResponse) {
+    try {
+        const {hotelId, roomNum, name, amenities, pricePerNight, images } = req.body;
+        const { userId } = req.user as { userId: string };
+
+        if (!hotelId || !name || !amenities || !pricePerNight || !images || !roomNum) {
+            return res.status(400).json({ error: 'Missing required fields' });
+        }
+
+        const isOwner = await isHotelOwner(userId, hotelId);
+        if (!isOwner) {
+            return res.status(403).json({ error: 'You do not have permission to add rooms to this hotel' });
+        }
+
+        // Check if there is a room with the same name and number
+        const existingRoom = await getRoomObject(hotelId, roomNum);
+        if (existingRoom) {
+            return res.status(400).json({ error: 'Room number already exists' });
+        }
+
+        const newRoomType = await createRoom({
+            hotelId,
+            roomNum,
+            name,
+            amenities,
+            pricePerNight,  
+            images,
+        });
+    
+        return res.status(200).json({ message: 'Room type defined successfully', roomType: newRoomType });
+    } catch (error) {
+        console.error('Error defining room type:', error);
+        return res.status(500).json({ error: 'Error defining room type' });
     }
 }
 
