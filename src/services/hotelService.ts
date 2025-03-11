@@ -81,6 +81,47 @@ export async function getBookingById(bookingId: number) {
   
 
 
+export async function cancelBooking(reservationId: number) {
+    const existingReservation = await prisma.booking.findUnique({
+        where: { id: reservationId },
+    });
+
+    if (!existingReservation) {
+        throw new Error('Reservation not found');
+    }
+
+    const canceledReservation = await prisma.booking.update({
+        where: { id: reservationId },
+        data: { status: 'CANCELLED' },
+    });
+
+    // remove reservation from booking list
+    await prisma.hotel.update({
+        // @ts-ignore
+        where: { id: existingReservation.hotelId },
+        data: {
+            bookings: {
+                disconnect: { id: reservationId }, // Remove the booking from the hotel
+            },
+        },
+    });
+    return canceledReservation;
+}
+
+export async function cancelBookingById(bookingId: number) {
+    try {
+
+        const canceledBooking = await prisma.booking.update({
+            where: { id: bookingId },
+            data: { status: 'CANCELLED' },
+        });
+        return canceledBooking;
+    } catch (error) {
+        console.error('Error in cancelBookingById:', error);
+        throw new Error('Error cancelling booking');
+    }
+}
+
 export async function getRoomObject(hotelId: string, roomNum: number)
 {
     try {
