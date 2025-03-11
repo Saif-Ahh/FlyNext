@@ -1,7 +1,7 @@
 // @ts-nocheck
 // controllers/hotelController.ts
 import { NextApiRequest, NextApiResponse } from 'next';
-import { createHotel, createRoom, isHotelOwner, getRoomObject } from '@/services/hotelService';
+import { createHotel, createRoom, getBookings, isHotelOwner, getRoomObject } from '@/services/hotelService';
 import { error } from 'console';
 
 
@@ -70,6 +70,28 @@ export async function addRoomTypeController(req: NextApiRequest, res: NextApiRes
     } catch (error) {
         console.error('Error defining room type:', error);
         return res.status(500).json({ error: 'Error defining room type' });
+    }
+}
+
+export async function ownerViewBookings(req: NextApiRequest, res: NextApiResponse) {
+    const { hotelId, dateIn, dateOut, roomType } = req.query;
+    const { userId } = req.user as { userId: string };
+
+    if (!hotelId || (!roomType && (!dateIn && !dateOut))) {
+        return res.status(400).json({ error: 'Missing required fields' });
+    }
+
+    const isOwner = await isHotelOwner(userId, hotelId);
+    if (!isOwner) {
+        return res.status(403).json({ error: 'You do not have permission to view bookings for this hotel' });
+    }
+  
+    try {
+        const bookings = await getBookings(hotelId, dateIn, dateOut, roomType);
+        return res.status(200).json({ bookings });
+    } catch (error) {
+        console.error('Error retrieving bookings:', error);
+        return res.status(500).json({ error: 'Error retrieving bookings' });
     }
 }
 
