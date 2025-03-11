@@ -28,6 +28,59 @@ export async function createRoom(roomData: {
     }); 
 }
 
+export async function getBookings(hotelId: string, dateIn: string, dateOut: string, roomType: string) {
+    const filters: any = {
+        hotelId: hotelId,
+        status: "Valid",
+    };
+
+    if (roomType) filters.roomType = roomType;
+
+    if (dateIn && dateOut) {
+        const parsedDateIn = new Date(dateIn);
+        const parsedDateOut = new Date(dateOut);
+        parsedDateIn.setHours(0, 0, 0, 0); 
+        parsedDateOut.setHours(0, 0, 0, 0); 
+
+        // print out dates
+        console.log(parsedDateIn, parsedDateOut);
+        filters.AND = [
+            { checkInDate: { lte: parsedDateOut } }, 
+            { checkOutDate: { gte: parsedDateIn } }, 
+        ];
+    }
+
+    return await prisma.booking.findMany({ where: filters });
+}
+
+
+export async function getBookingById(bookingId: number) {
+    try {
+      const booking = await prisma.booking.findUnique({
+        where: { id: bookingId },
+        include: {
+          hotel: true,
+          room: true
+        }
+      });
+  
+      if (!booking) {
+        return false;
+      }
+  
+      return {
+        ...booking,
+        checkIn: booking.checkInDate,
+        checkOut: booking.checkOutDate,
+      };
+    } catch (error) {
+      console.error("Error fetching booking:", error);
+      return false;
+    }
+  }
+  
+
+
 export async function getRoomObject(hotelId: string, roomNum: number)
 {
     try {
