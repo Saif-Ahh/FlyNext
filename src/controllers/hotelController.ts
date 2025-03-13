@@ -1,7 +1,9 @@
 // @ts-nocheck
 // controllers/hotelController.ts
 import { NextApiRequest, NextApiResponse } from 'next';
-import { createHotel, createRoom, getBookings, isHotelOwner, getRoomObject } from '@/services/hotelService';
+import prisma from '@/utils/prismaClient';
+import { createHotel, createRoom, getBookings, isHotelOwner, cancelBookingById, getRoomObject } from '@/services/hotelService';
+import {createNotification} from '@/services/notificationService';
 import { error } from 'console';
 
 
@@ -94,4 +96,88 @@ export async function ownerViewBookings(req: NextApiRequest, res: NextApiRespons
         return res.status(500).json({ error: 'Error retrieving bookings' });
     }
 }
+
+export async function cancelBookingController(req: NextApiRequest, res: NextApiResponse) {
+  try {
+      const { hotelId, roomNum, bookingID } = req.query;
+      const bookingId = parseInt(req.query.bookingID, 10);
+      if (isNaN(bookingId)) {
+          return res.status(400).json({ error: 'Invalid booking ID' });
+      }
+      const { userId } = req.user as { userId: string };
+
+      if (!bookingId || !hotelId) {
+          return res.status(400).json({ error: 'Booking ID and hotel ID are required' });
+      }
+
+      const existingBooking = await getBookingById(bookingId);
+
+      if (!existingBooking) {
+          return res.status(404).json({ error: 'Booking not found' });
+      }
+
+      if (existingBooking.hotelId !== hotelId) {
+          return res.status(400).json({ error: 'Booking does not belong to the specified hotel' });
+      }
+
+      const isOwner = await isHotelOwner(userId, hotelId);
+      const isBookingOwner = existingBooking.userId === userId;
+
+      if (!isOwner && !isBookingOwner) {
+          return res.status(403).json({ error: 'You do not have permission to cancel this booking' });
+      }
+
+      if (roomNum) {
+          if (existingBooking.roomNum !== roomNum) {
+              return res.status(400).json({ error: 'Invalid room number for this booking' });
+          }
+
+          const cancelledRoom = await prisma.booking.update({
+              where: { id: bookingId },
+              data: { status: 'CANCELLED' },
+          });
+
+          await createNotification(existingBooking.userId, `Room ${roomNum} in your booking has been cancelled.`, hotelId);
+
+          // Notify hotel owner if user cancelled
+          if (isBookingOwner && !isOwner) {
+              const hotel = await prisma.hotel.findUnique({
+                  where: { id: hotelId },
+                  select: { userId: true }
+              });
+              if (hotel?.userId && hotel.userId !== userId) {
+                  await createNotification(hotel.userId, `A user cancelled their booking (Room ${roomNum}) at your hotel.`, hotelId);
+              }
+          }
+
+          return res.status(200).json({
+              message: `Room ${roomNum} in booking cancelled successfully.`,
+              booking: cancelledRoom,
+          });
+      }
+
+      const cancelledBooking = await cancelBookingById(bookingId);
+
+      await createNotification(existingBooking.userId, 'Your booking has been fully cancelled.', hotelId);
+
+      // Notify hotel owner if user cancelled
+      if (isBookingOwner && !isOwner) {
+          const hotel = await prisma.hotel.findUnique({
+              where: { id: hotelId },
+              select: { userId: true }
+          });
+          if (hotel?.userId && hotel.userId !== userId) {
+              await createNotification(hotel.userId, `A user cancelled their booking at your hotel.`, hotelId);
+          }
+      }
+
+      return res.status(200).json({
+          message: 'Booking fully cancelled successfully',
+          booking: cancelledBooking,
+      });
+  } catch (error) {
+      return res.status(500).json({ error: 'Error cancelling booking' });
+  }
+}
+
 
