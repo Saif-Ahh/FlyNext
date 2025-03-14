@@ -2,7 +2,7 @@
 // controllers/hotelController.ts
 import { NextApiRequest, NextApiResponse } from 'next';
 import prisma from '@/utils/prismaClient';
-import { createHotel, createRoom, getBookings, isHotelOwner, cancelBookingById, getRoomObject } from '@/services/hotelService';
+import { createHotel, createRoom, getBookings, getRoomAvailability, isHotelOwner, cancelBookingById, getRoomObject } from '@/services/hotelService';
 import {createNotification} from '@/services/notificationService';
 import { error } from 'console';
 
@@ -180,4 +180,33 @@ export async function cancelBookingController(req: NextApiRequest, res: NextApiR
   }
 }
 
+
+export async function roomAvailabilityController(req: NextApiRequest, res: NextApiResponse) {
+    try {
+        const { hotelId, roomType, startDate, endDate } = req.query as {
+            hotelId?: string;
+            roomType?: string;
+            startDate?: string;
+            endDate?: string;
+        };
+
+        const { userId } = req.user as { userId: string };
+
+        if (!hotelId || !roomType || !startDate || !endDate) {
+            return res.status(400).json({ error: 'hotelId, roomType, startDate, and endDate are required' });
+        }
+
+        const isOwner = await isHotelOwner(userId, hotelId);
+        if (!isOwner) {
+            return res.status(403).json({ error: 'You do not have permission to access this hotel\'s data' });
+        }
+
+        const availability = await getRoomAvailability(hotelId, roomType, startDate, endDate);
+
+        return res.status(200).json({ availability });
+    } catch (error) {
+        console.error('Error fetching room availability:', error);
+        return res.status(500).json({ error: 'Error fetching room availability' });
+    }
+}
 
