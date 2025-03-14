@@ -210,3 +210,133 @@ export async function roomAvailabilityController(req: NextApiRequest, res: NextA
     }
 }
 
+export async function updateRooms(req: NextApiRequest, res: NextApiResponse)
+{
+    try {
+        // get info from JSON request
+        const { hotelId, roomType, newAmount } = req.body;
+        if (!hotelId || !roomType || newAmount === undefined || newAmount === null) {
+            return res.status(400).json({ error: 'Missing required fields: hotelId, roomType, and newAmount are required' });
+        }
+
+        const { userId } = req.user as { userId: string };
+
+        // Check if user is the hotel owner
+        const isOwner = await isHotelOwner(userId, hotelId);
+        if (!isOwner) {
+            return res.status(403).json({ error: 'You do not have permission to update rooms for this hotel' });
+        }
+
+        // Get total rooms of this type
+        const rooms = await prisma.room.findMany({
+            where: {
+                hotelId: hotelId,
+                name: roomType,
+            }
+        });
+
+        const totalRoomsOfType = rooms.length;
+
+        // If trying to set more rooms than exist, return an error
+        if (newAmount > totalRoomsOfType) {
+            return res.status(400).json({ 
+                error: `Cannot set ${newAmount} rooms as there are only ${totalRoomsOfType} ${roomType} rooms defined.
+                       Please add more room entries of this type first.` 
+            });
+        }
+
+        // get valid bookings for this hotel and room type
+        const bookings = await prisma.booking.findMany({
+            where: { 
+                hotelId: hotelId,
+                roomType: roomType,
+                status: "Valid"
+            },
+            include: {
+                hotel: true,
+                room: true
+            }
+        });
+
+        // If there are fewer bookings than the new amount, no cancellations needed
+        if (bookings.length <= newAmount) {
+            return res.status(200).json({ 
+                message: 'No cancellations required. Room quantity updated successfully.',
+                currentBookings: bookings.length,
+                newCapacity: newAmount
+            });
+        }
+
+        // need to cancel some bookings
+        const bookingsToCancel = bookings.length - newAmount;
+        
+        // Sort bookings by creation date (newest first) so we cancel the most recent bookings
+        const sortedBookings = [...bookings].sort((a, b) => 
+            new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+        );
+        
+        // Select the newest bookings to cancel (up to the required number)
+        const bookingsToProcess = sortedBookings.slice(0, bookingsToCancel);
+        
+        // Cancel each booking
+        const canceledReservations = [];
+        for (const booking of bookingsToProcess) {
+            try {
+                // Update booking status to CANCELLED
+                const canceledBooking = await prisma.booking.update({
+                    where: { id: booking.id },
+                    data: { status: 'CANCELLED' }
+                });
+
+                // Create notification for the user who made the booking
+                await prisma.notification.create({
+                    data: {
+                        userId: booking.userId,
+                        hotelId: booking.hotelId,
+                        message: `Your booking at ${booking.hotelName} for ${booking.roomType} room has been cancelled due to inventory update.`,
+                        isRead: false
+                    }
+                });
+
+                // Add to canceled list with user information
+                const user = await prisma.user.findUnique({
+                    where: { id: booking.userId },
+                    select: {
+                        firstName: true,
+                        lastName: true,
+                        email: true
+                    }
+                });
+
+                canceledReservations.push({
+                    id: canceledBooking.id,
+                    hotelName: canceledBooking.hotelName,
+                    roomType: canceledBooking.roomType,
+                    roomNum: canceledBooking.roomNum,
+                    checkInDate: canceledBooking.checkInDate,
+                    checkOutDate: canceledBooking.checkOutDate,
+                    userId: canceledBooking.userId,
+                    firstName: user?.firstName || 'Unknown',
+                    lastName: user?.lastName || 'Guest',
+                    email: user?.email || 'No email'
+                });
+            } catch (error) {
+                console.error(`Error cancelling booking ${booking.id}:`, error);
+                // Continue with other bookings even if one fails
+            }
+        }
+
+        // Return the success message with canceled reservations
+        return res.status(200).json({
+            message: `Room quantity updated. ${canceledReservations.length} reservation(s) were canceled.`,
+            canceledReservations,
+            previousCapacity: totalRoomsOfType,
+            newCapacity: newAmount,
+            remainingBookings: bookings.length - canceledReservations.length
+        });
+    } catch (error) {
+        console.error('Error updating room availability:', error);
+        return res.status(500).json({ error: 'Error updating room availability' });
+    }
+}
+
