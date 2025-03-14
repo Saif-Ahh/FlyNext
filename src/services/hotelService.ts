@@ -138,6 +138,47 @@ export async function getRoomObject(hotelId: string, roomNum: number)
     }
 }
 
+export async function getRoomAvailability(
+    hotelId: string, 
+    roomType: string, 
+    startDate: string, 
+    endDate: string
+) {
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+
+    const rooms = await prisma.room.findMany({
+        where: {
+            hotelId: hotelId,
+            name: roomType,
+        },
+        select: { id: true, roomNum: true },
+    });
+
+    const bookings = await prisma.booking.findMany({
+        where: {
+            hotelId: hotelId,
+            roomType: roomType,
+            status: "Valid",
+            AND: [
+                { checkInDate: { lt: end } },
+                { checkOutDate: { gt: start } },
+            ],
+        },
+        select: { roomNum: true },
+    });
+
+    const bookedRoomNums = bookings.map((booking) => booking.roomNum);
+    const availableRooms = rooms.filter((room) => !bookedRoomNums.includes(room.roomNum));
+
+    return {
+        totalRooms: rooms.length,
+        bookedRooms: bookedRoomNums.length,
+        availableRooms: availableRooms.length,
+    };
+}
+
+
 export async function isHotelOwner(userId: string, hotelId: string) {
     try {
         const hotel = await prisma.hotel.findUnique({
