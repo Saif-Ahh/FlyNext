@@ -191,3 +191,25 @@ export async function isHotelOwner(userId: string, hotelId: string) {
     }
 }
 
+export async function getHotel(hotelId: string) {
+    try {
+        // Find the hotel and include related data
+        const hotel = await prisma.hotel.findUnique({
+            where: { id: hotelId },
+            include: {
+                rooms: true, // Include all rooms in the hotel
+                bookings: true, // Include all bookings
+                notifications: true, // Include all notifications
+            },
+        });
+
+        if (!hotel) {
+            return { error: "Hotel not found." };
+        }
+        return hotel;
+    } catch (error) {
+        console.error("Error fetching hotel:", error);
+        return { error: "Failed to retrieve hotel details." };
+    }
+}
+
