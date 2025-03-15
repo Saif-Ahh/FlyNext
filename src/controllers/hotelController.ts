@@ -2,7 +2,7 @@
 // controllers/hotelController.ts
 import { NextApiRequest, NextApiResponse } from 'next';
 import prisma from '@/utils/prismaClient';
-import { createHotel, createRoom, getBookings, getRoomAvailability, isHotelOwner, cancelBookingById, getRoomObject } from '@/services/hotelService';
+import { createHotel, createRoom, getBookings, getRoomAvailability, isHotelOwner, getHotel, cancelBookingById, getRoomObject } from '@/services/hotelService';
 import {createNotification} from '@/services/notificationService';
 import { error } from 'console';
 
@@ -337,6 +337,55 @@ export async function updateRooms(req: NextApiRequest, res: NextApiResponse)
     } catch (error) {
         console.error('Error updating room availability:', error);
         return res.status(500).json({ error: 'Error updating room availability' });
+    }
+}
+
+export async function viewDetailedHotel(req: NextApiRequest, res: NextApiResponse)
+{
+    const {hotelId} = req.query;
+    if (!hotelId) {
+        return res.status(400).json({ error: 'hotelId is required' });
+    }
+
+    try {
+        const hotel = await getHotel(hotelId);
+        if (!hotel) {
+            return res.status(404).json({ error: "Hotel not found" });
+        }
+
+        // create a dict with the key being the hotel type and value being lowest offered price
+        const roomTypeData: { [key: string]: { startingPrice: number, possibleAmenities: Set<string> } } = {};
+        hotel.rooms.forEach((room) => {
+            let roomAmenities: string[] = [];
+        
+            if (Array.isArray(room.amenities)) {
+                roomAmenities = room.amenities.map(String);
+            } else if (typeof room.amenities === "string") {
+                roomAmenities = room.amenities.split(",").map((a) => a.trim());
+            } else if (typeof room.amenities === "object") {
+                roomAmenities = Object.values(room.amenities).map(String);
+            }
+        
+            if (!roomTypeData[room.name]) {
+                roomTypeData[room.name] = { startingPrice: room.pricePerNight, possibleAmenities: new Set() };
+            }
+        
+            if (room.pricePerNight < roomTypeData[room.name].startingPrice) {
+                roomTypeData[room.name].startingPrice = room.pricePerNight;
+            }
+        
+            roomAmenities.forEach((amenity) => roomTypeData[room.name].possibleAmenities.add(amenity));
+        });
+        
+        // Convert possibleAmenities Set to an array for the final response
+        Object.keys(roomTypeData).forEach((roomType) => {
+            roomTypeData[roomType].possibleAmenities = Array.from(roomTypeData[roomType].possibleAmenities);
+        });
+        
+        return res.status(200).json({ message: "Hotel found!", roomTypeData });
+    } catch (error) {
+        console.error('Error fetching hotel details:', error);
+        return res.status(500).json({ error: 'Error fetching hotel details' });
     }
 }
 
