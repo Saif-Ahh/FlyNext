@@ -191,6 +191,34 @@ export async function isHotelOwner(userId: string, hotelId: string) {
     }
 }
 
+export async function returnHotelBookings(hotelId: string) {
+    try {
+        const bookings = await prisma.booking.findMany({
+            where: { hotelId: hotelId },
+        });
+        return bookings;
+    } catch (error) {
+        console.error("Error fetching hotel bookings:", error);
+        return { error: "Failed to retrieve hotel bookings." };
+    }
+}
+
+export async function returnValidHotelBookings(hotelId: string) {
+    try {
+        const bookings = await prisma.booking.findMany({
+            where: { 
+                hotelId: hotelId,
+                status: "Valid"
+            },
+        });
+        return bookings;
+    } catch (error) {
+        console.error("Error fetching hotel bookings:", error);
+        return { error: "Failed to retrieve hotel bookings." };
+    }
+}
+
+
 export async function getHotel(hotelId: string) {
     try {
         // Find the hotel and include related data
