@@ -241,3 +241,11 @@ export async function getHotel(hotelId: string) {
     }
 }
 
+export async function findHotelByCity(city: string)
+{
+    const hotels = await prisma.hotel.findMany({
+        where: { location: city },
+    });
+    return hotels;
+}
+
