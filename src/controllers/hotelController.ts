@@ -2,7 +2,7 @@
 // controllers/hotelController.ts
 import { NextApiRequest, NextApiResponse } from 'next';
 import prisma from '@/utils/prismaClient';
-import { createHotel, createRoom, getBookings, getRoomAvailability, isHotelOwner, returnHotelBookings, getHotel, cancelBookingById, getRoomObject } from '@/services/hotelService';
+import { createHotel, createRoom, getBookings, getRoomAvailability, isHotelOwner, returnHotelBookings, getHotel, cancelBookingById, findHotelByCity, getRoomObject } from '@/services/hotelService';
 import {createNotification} from '@/services/notificationService';
 import { error } from 'console';
 
@@ -462,4 +462,26 @@ export async function viewRoomInformation(req: NextApiRequest, res: NextApiRespo
         return res.status(500).json({ error: 'Error fetching hotel room details' });
     }
 }
+
+export async function getHotelSuggestions(req: NextApiRequest, res: NextApiResponse)
+{
+    const {location} = req.query;
+    if (!location) {
+        return res.status(400).json({ error: 'Location is required' });
+    }
+
+    try
+    {
+        const hotels = await findHotelByCity(location);
+        return res.status(200).json({
+            message: "Hotels found:",
+            hotels
+        });
+    } catch (error) {
+        console.error('Error fetching hotel suggestions:', error);
+        return res.status(500).json({ error: 'Error fetching hotel suggestions' });
+    }
+
+}
+
 
