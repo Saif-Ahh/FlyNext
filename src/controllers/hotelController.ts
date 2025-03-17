@@ -2,7 +2,7 @@
 // controllers/hotelController.ts
 import { NextApiRequest, NextApiResponse } from 'next';
 import prisma from '@/utils/prismaClient';
-import { createHotel, createRoom, getBookings, getRoomAvailability, isHotelOwner, getHotel, cancelBookingById, getRoomObject } from '@/services/hotelService';
+import { createHotel, createRoom, getBookings, getRoomAvailability, isHotelOwner, returnHotelBookings, getHotel, cancelBookingById, getRoomObject } from '@/services/hotelService';
 import {createNotification} from '@/services/notificationService';
 import { error } from 'console';
 
@@ -386,6 +386,80 @@ export async function viewDetailedHotel(req: NextApiRequest, res: NextApiRespons
     } catch (error) {
         console.error('Error fetching hotel details:', error);
         return res.status(500).json({ error: 'Error fetching hotel details' });
+    }
+}
+
+export async function viewRoomInformation(req: NextApiRequest, res: NextApiResponse)
+{
+    const {hotelId} = req.query;
+    if (!hotelId) {
+        return res.status(400).json({ error: 'hotelId is required' });
+    }
+
+    try {
+        const hotel = await getHotel(hotelId);
+        if (!hotel) {
+            return res.status(404).json({ error: "Hotel not found" });
+        }
+        
+        const bookings = await returnHotelBookings(hotelId);
+        const roomInformation: { [key: string]: { roomNumber: number, price: number, amenities: string[], isAvailable: boolean }[] } = {};
+
+        const today = new Date();
+        today.setHours(0, 0, 0, 0); // Normalize today's date
+
+        // Precompute room availability based on bookings
+        const roomAvailability: { [roomNum: number]: boolean } = {};
+
+        for (const booking of bookings) {
+            if (booking.status === "Valid") {
+                const checkIn = new Date(booking.checkInDate);
+                checkIn.setHours(0, 0, 0, 0);
+
+                const checkOut = new Date(booking.checkOutDate);
+                checkOut.setHours(0, 0, 0, 0);
+
+                // If a booking starts today or is ongoing, mark room as unavailable
+                if (checkIn.getTime() === today.getTime() || (checkIn.getTime() < today.getTime() && checkOut.getTime() > today.getTime())) {
+                    roomAvailability[booking.roomNum] = false;
+                }
+            }
+        }
+
+        for (const room of hotel.rooms) 
+        {
+            let roomAmenities: string[] = [];
+            if (Array.isArray(room.amenities)) {
+                roomAmenities = room.amenities.map(String);
+            } else if (typeof room.amenities === "string") {
+                roomAmenities = room.amenities.split(",").map((a) => a.trim());
+            } else if (typeof room.amenities === "object") {
+                roomAmenities = Object.values(room.amenities).map(String);
+            }
+
+            if (!roomInformation[room.name]) {
+                roomInformation[room.name] = [];
+            }
+            const isAvailable = roomAvailability[room.roomNum] !== false;
+
+            roomInformation[room.name].push({
+                roomNumber: room.roomNum,
+                price: room.pricePerNight,
+                amenities: roomAmenities,
+                isAvailable: isAvailable,
+            });
+        }
+
+
+
+        return res.status(200).json({
+            message: "Room information retrieved",
+            roomInformation
+        });
+
+    } catch (error) {
+        console.error('Error fetching hotel room details:', error);
+        return res.status(500).json({ error: 'Error fetching hotel room details' });
     }
 }
 
