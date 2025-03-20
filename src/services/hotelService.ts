@@ -249,3 +249,71 @@ export async function findHotelByCity(city: string)
     return hotels;
 }
 
+/**
+ * Checks if a hotel's available rooms (within the specified date range)
+ * have a cheapest price that is greater than minPrice and a most expensive price
+ * that is below maxPrice.
+ *
+ * @param hotelId - The ID of the hotel to check.
+ * @param minPrice - The minimum price threshold.
+ * @param maxPrice - The maximum price threshold.
+ * @param startDate - The start date of the availability window (YYYY-MM-DD).
+ * @param endDate - The end date of the availability window (YYYY-MM-DD).
+ * @returns A Promise that resolves to true if the hotel's available room price range meets the criteria; otherwise, false.
+ * aided by chatgpt
+ */
+export async function isHotelRoomPriceInRange(
+    hotelId: string,
+    minPrice: number,
+    maxPrice: number,
+    startDate: string,
+    endDate: string
+  ): Promise<boolean> {
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+  
+    const availableRooms = await prisma.room.findMany({
+      where: {
+        hotelId,
+        NOT: {
+          bookings: {
+            some: {
+              status: "Valid",
+              AND: [
+                { checkInDate: { lt: end } },
+                { checkOutDate: { gt: start } },
+              ],
+            },
+          },
+        },
+      },
+    });
+  
+
+    if (availableRooms.length === 0) {
+      return false;
+    }
+  
+    const prices = availableRooms.map(room => room.pricePerNight);
+    const minAvailable = Math.min(...prices);
+    const maxAvailable = Math.max(...prices);
+  
+
+    return minAvailable > minPrice && maxAvailable < maxPrice;
+  }
+
+
+  export async function isHotelAboveStarRating(hotelId: string, ratingThreshold: number): Promise<boolean> {
+    const hotel = await prisma.hotel.findUnique({
+      where: { id: hotelId },
+      select: { starRating: true },
+    });
+  
+    if (!hotel) {
+      throw new Error('Hotel not found');
+    }
+  
+    return hotel.starRating >= ratingThreshold;
+  }
+
+
