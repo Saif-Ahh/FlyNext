@@ -317,3 +317,19 @@ export async function isHotelRoomPriceInRange(
   }
 
 
+export async function doesHotelNameContainKeyword(
+    hotelId: string,
+    keyword: string
+  ): Promise<boolean> {
+    const hotel = await prisma.hotel.findUnique({
+      where: { id: hotelId },
+      select: { name: true },
+    });
+  
+    if (!hotel) {
+      throw new Error('Hotel not found');
+    }
+  
+    return hotel.name.toLowerCase().includes(keyword.toLowerCase());
+  }
+
