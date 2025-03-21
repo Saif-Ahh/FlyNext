@@ -249,6 +249,22 @@ export async function findHotelByCity(city: string)
     return hotels;
 }
 
+export async function getBookingByRoomAndDates(roomId: string, checkInDate: Date, checkOutDate: Date) {
+    // Check if there is a booking that ends after the current start date and starts before the current end date
+    const booking = await prisma.booking.findFirst({
+        where: {
+            roomId: roomId,
+            checkOutDate: { gte: checkInDate },
+            checkInDate: { lte: checkOutDate },
+            status: "Valid",
+        }
+    });
+    return booking;
+}
+
+
+
+
 /**
  * Checks if a hotel's available rooms (within the specified date range)
  * have a cheapest price that is greater than minPrice and a most expensive price
