@@ -1,5 +1,6 @@
 // @ts-nocheck
 import prisma from '@/utils/prismaClient';
+import { Prisma } from '@prisma/client';
 
 export async function createHotel(hotelData: {
     userId: string;
@@ -349,3 +350,170 @@ export async function doesHotelNameContainKeyword(
     return hotel.name.toLowerCase().includes(keyword.toLowerCase());
   }
 
+  /**
+ * Returns an array of hotel objects with:
+ * 1) All hotel info
+ * 2) Starting price (cheapest available room)
+ * 3) Only rooms that are available within start_date to end_date
+ *
+ * Hotels without any available rooms in the date range are excluded.
+ *
+ * @param hotelIds - An array of hotel IDs to look up.
+ * @param start_date - The start date of the availability window (YYYY-MM-DD).
+ * @param end_date - The end date of the availability window (YYYY-MM-DD).
+ * @returns A promise that resolves to an array of hotel objects with availability details.
+ */
+export async function getHotelsWithAvailability(
+    hotelIds: string[],
+    start_date: string,
+    end_date: string
+  ): Promise<Array<{
+    id: string;
+    name: string;
+    logo: string;
+    address: string;
+    location: string;
+    starRating: number;
+    images: any;          
+    startingPrice: number; 
+    // @ts-ignore 
+    availableRooms: Room[]; 
+  }>> {
+    const start = new Date(start_date);
+    const end = new Date(end_date);
+  
+    const hotels = await prisma.hotel.findMany({
+      where: {
+        id: { in: hotelIds },
+      },
+      include: {
+        rooms: {
+          include: {
+            bookings: {
+              where: {
+                status: 'Valid',
+                AND: [
+                  { checkInDate: { lt: end } },
+                  { checkOutDate: { gt: start } },
+                ],
+              },
+            },
+          },
+        },
+      },
+    });
+  
+    const results = hotels
+      .map((hotel) => {
+        const availableRooms = hotel.rooms.filter((room) => room.bookings.length === 0);
+  
+        if (availableRooms.length === 0) {
+          return null;
+        }
+  
+        const startingPrice = Math.min(...availableRooms.map((r) => r.pricePerNight));
+  
+        return {
+          id: hotel.id,
+          name: hotel.name,
+          logo: hotel.logo,
+          address: hotel.address,
+          location: hotel.location,
+          starRating: hotel.starRating,
+          images: hotel.images,
+          startingPrice,
+          availableRooms,
+        };
+      })
+      .filter((hotelObj) => hotelObj !== null) as Array<{
+        id: string;
+        name: string;
+        logo: string;
+        address: string;
+        location: string;
+        starRating: number;
+        images: any;
+        startingPrice: number;
+        // @ts-ignore
+        availableRooms: Room[];
+      }>;
+  
+    return results;
+  }
+
+  export async function addBookingToUser(userId: number, bookingId: number)
+  {
+        // Get the current user's bookings
+        const user = await prisma.user.findUnique({
+            // @ts-ignore
+            where: { id: userId },
+            select: { hotelBookings: true },
+        });
+        let existingBookings: number[] = [];
+// @ts-ignore
+        if (user.hotelBookings) {
+            try {
+                // @ts-ignore
+                existingBookings = JSON.parse(user.hotelBookings);
+                if (!Array.isArray(existingBookings)) {
+                    existingBookings = []; // Reset if it's not an array
+                }
+            } catch {
+                existingBookings = []; // Reset if JSON is invalid
+            }
+        }
+        existingBookings.push(bookingId);
+
+        // Save back to Prisma as JSON
+        await prisma.user.update({
+            // @ts-ignore
+            where: { id: userId },
+            data: { hotelBookings: JSON.stringify(existingBookings) },
+        });
+  }
+
+  export async function getLowestRoomPrice(hotelId: string)
+  {
+    const hotel = await prisma.hotel.findUnique({
+        where: { id: hotelId },
+        select: { rooms: true },
+    });
+    // @ts-ignore
+    const lowestPrice = Math.min(...hotel.rooms.map((room) => room.pricePerNight));
+    return lowestPrice;
+  }
+
+  export async function getHotelAmenities(hotelId: string) {
+    const hotel = await prisma.hotel.findUnique({
+      where: { id: hotelId },
+      select: { rooms: true },
+    });
+    
+    const allAmenities = new Set<string>();
+    
+    if (hotel && hotel.rooms) {
+      hotel.rooms.forEach(room => {
+        let roomAmenities: string[] = [];
+        
+        if (Array.isArray(room.amenities)) {
+          roomAmenities = room.amenities.map(item => String(item));
+        } else if (typeof room.amenities === "string") {
+          roomAmenities = room.amenities.split(",").map(a => a.trim());
+        } else if (typeof room.amenities === "object" && room.amenities) {
+          roomAmenities = Object.values(room.amenities).map(item => String(item));
+        }
+        
+        roomAmenities.forEach(amenity => allAmenities.add(amenity));
+      });
+    }
+    
+    return Array.from(allAmenities);
+  }
+
+  export async function getHotelsByUserId(userId: string)
+  {
+    const hotels = await prisma.hotel.findMany({
+        where: { userId: userId },
+    });
+    return hotels;
+  }
