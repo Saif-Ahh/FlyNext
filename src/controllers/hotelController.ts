@@ -2,7 +2,7 @@
 // controllers/hotelController.ts
 import { NextApiRequest, NextApiResponse } from 'next';
 import prisma from '@/utils/prismaClient';
-import { createHotel, createRoom, getBookings, getRoomAvailability, isHotelOwner, returnHotelBookings, getHotel, cancelBookingById, findHotelByCity, getRoomObject } from '@/services/hotelService';
+import { createHotel, createRoom, getBookings, getRoomAvailability, isHotelOwner, returnHotelBookings, getHotel, cancelBookingById, findHotelByCity, isHotelRoomPriceInRange, isHotelAboveStarRating, doesHotelNameContainKeyword, getHotelsWithAvailability, getRoomObject } from '@/services/hotelService';
 import {createNotification} from '@/services/notificationService';
 import { error } from 'console';
 
@@ -483,5 +483,81 @@ export async function getHotelSuggestions(req: NextApiRequest, res: NextApiRespo
     }
 
 }
+
+
+/**
+ * Filters hotels based on:
+ * 1) City
+ * 2) Minimum Star Rating
+ * 3) Room Price Range (for a given date range)
+ * 4) Keyword in Hotel Name (if provided)
+ *
+ * @param startDate - The start date of the availability window (YYYY-MM-DD).
+ * @param endDate - The end date of the availability window (YYYY-MM-DD).
+ * @param city - City name to filter hotels by.
+ * @param keyword - Keyword to search for in hotel names (ignored if empty).
+ * @param starRating - Minimum star rating required.
+ * @param minPrice - Minimum price threshold for available rooms.
+ * @param maxPrice - Maximum price threshold for available rooms.
+ * @returns A promise that resolves to a list of hotel IDs matching all criteria.
+ * aided by chatgpt
+ */
+export async function searchHotels(
+    startDate: string,
+    endDate: string,
+    city: string,
+    keyword: string,
+    starRating: number,
+    minPrice: number,
+    maxPrice: number
+  ): Promise<string[]> {
+    const hotelsInCity = await findHotelByCity(city);
+  
+    let hotelIds = hotelsInCity.map((hotel) => hotel.id);
+  
+    // 2) Filter by minimum star rating
+    const filteredByStar: string[] = [];
+    for (const id of hotelIds) {
+      const aboveStar = await isHotelAboveStarRating(id, starRating);
+      if (aboveStar) {
+        filteredByStar.push(id);
+      }
+    }
+    hotelIds = filteredByStar;
+
+    const filteredByPrice: string[] = [];
+    for (const id of hotelIds) {
+      const inRange = await isHotelRoomPriceInRange(id, minPrice, maxPrice, startDate, endDate);
+      if (inRange) {
+        filteredByPrice.push(id);
+      }
+    }
+    hotelIds = filteredByPrice;
+  
+    if (keyword.trim() !== '') {
+      const filteredByKeyword: string[] = [];
+      for (const id of hotelIds) {
+        const containsKeyword = await doesHotelNameContainKeyword(id, keyword);
+        if (containsKeyword) {
+          filteredByKeyword.push(id);
+        }
+      }
+      hotelIds = filteredByKeyword;
+    }
+  
+    return hotelIds;
+  }
+
+
+export async function getHotelAvailability(
+    hotelIds: string[],
+    start_date: string,
+    end_date: string
+  ):
+    Promise<{ [hotelId: string]: boolean }> {
+
+    return getHotelsWithAvailability(hotelIds, start_date, end_date);
+    
+  }
 
 
