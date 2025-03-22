@@ -2,7 +2,7 @@
 // controllers/hotelController.ts
 import { NextApiRequest, NextApiResponse } from 'next';
 import prisma from '@/utils/prismaClient';
-import { createHotel, createRoom, getBookings, getRoomAvailability, isHotelOwner, returnHotelBookings, getHotel, cancelBookingById, findHotelByCity, isHotelRoomPriceInRange, isHotelAboveStarRating, doesHotelNameContainKeyword, getHotelsWithAvailability, getRoomObject } from '@/services/hotelService';
+import { createHotel, createRoom, getBookings, addBooking, getRoomByHotelAndNumber, getRoomAvailability, isHotelOwner, returnHotelBookings, getHotel, cancelBookingById, findHotelByCity, isHotelRoomPriceInRange, isHotelAboveStarRating, doesHotelNameContainKeyword, getHotelsWithAvailability, addBookingToUser, getRoomObject, getBookingByRoomAndDates } from '@/services/hotelService';
 import {createNotification} from '@/services/notificationService';
 import { error } from 'console';
 
@@ -94,6 +94,79 @@ export async function ownerViewBookings(req: NextApiRequest, res: NextApiRespons
     } catch (error) {
         console.error('Error retrieving bookings:', error);
         return res.status(500).json({ error: 'Error retrieving bookings' });
+    }
+}
+
+export async function addHotelBooking(req: NextApiRequest, res: NextApiResponse) {
+    try {
+        const {hotelId, roomType, roomNum, checkIn, checkOut} = req.body;
+        if (!roomType || !hotelId || !roomNum || !checkIn || !checkOut) {
+            return res.status(400).json({ error: 'Missing required fields' });
+        }
+
+        const roomId = await getRoomByHotelAndNumber(hotelId, roomNum);
+        const room = await getRoomObject(hotelId, roomNum);
+
+        // Return 400 error if room does not exist
+        if (!room) {
+            return res.status(400).json({ error: 'Room does not exist' });
+        }
+        // Check if room type is the same as the one provided
+        if (room.name !== roomType) {
+            return res.status(400).json({ error: 'Room does not exist' });
+        }
+
+        const hotelObj = await getHotel(hotelId);
+        // Return 400 error if hotel does not exist
+        if (!hotelObj) {
+            return res.status(400).json({ error: 'Hotel does not exist' });
+        }
+
+        const price = room.pricePerNight;
+        const userId = (req.user as any).userId;
+        const status = "Valid";
+
+        const hotelName = hotelObj.name;
+        const timeIn = Date.parse(checkIn);
+        const timeOut = Date.parse(checkOut);
+        const checkInDate = new Date(timeIn);
+        const checkOutDate = new Date(timeOut);
+
+        // Check if there is a booking in the specified room for the given dates
+        const existingBooking = await getBookingByRoomAndDates(roomId, checkInDate, checkOutDate);
+        if (existingBooking) {
+            return res.status(400).json({ error: 'Room is already booked for the specified dates' });
+        }
+
+        const newBooking = await addBooking({
+            hotelId,
+            hotelName,
+            roomType,
+            roomNum,
+            price,
+            roomId,
+            userId,
+            checkInDate,
+            checkOutDate,
+            status
+        });
+        const ret = addBookingToUser(userId, newBooking.id);
+
+        const hotel = await prisma.hotel.findUnique({
+          where: { id: hotelId },
+          select: { userId: true }
+        });
+        
+        await createNotification(userId, 'Your booking has been successfully created.', hotelId);
+        
+        if (hotel?.userId) {
+          await createNotification(hotel.userId, 'A new booking has been made for your hotel.', hotelId);
+        }
+
+        return res.status(200).json({ message: 'Booking added successfully', newBooking });
+    } catch (error) {
+        console.error('Error adding booking:', error);
+        return res.status(500).json({ error: 'Error adding booking' });
     }
 }
 
