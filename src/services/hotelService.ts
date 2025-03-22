@@ -29,6 +29,23 @@ export async function createRoom(roomData: {
     }); 
 }
 
+export async function addBooking(bookingData: {
+    hotelId: string;
+    hotelName: string; 
+    roomType: string;
+    roomNum: number;   
+    price: number;
+    roomId: string;      
+    userId: string;
+    checkInDate: Date;
+    checkOutDate: Date;
+    status: string;
+}) {
+    return await prisma.booking.create({
+        data: bookingData,
+    });
+}
+
 export async function getBookings(hotelId: string, dateIn: string, dateOut: string, roomType: string) {
     const filters: any = {
         hotelId: hotelId,
@@ -120,6 +137,26 @@ export async function cancelBookingById(bookingId: number) {
     } catch (error) {
         console.error('Error in cancelBookingById:', error);
         throw new Error('Error cancelling booking');
+    }
+}
+
+export async function getRoomByHotelAndNumber(hotelId: string, roomNum: number): Promise<string | { error: string }> {
+    try {
+        const room = await prisma.room.findFirst({
+            where: {
+                hotelId: hotelId,
+                roomNum: roomNum,
+            },
+            select: { id: true },
+        });
+        if (!room) {
+            return { error: "Room not found" };
+        }
+
+        return room.id; 
+    } catch (error) {
+        console.error("Error fetching room:", error);
+        return { error: "Failed to fetch room" };
     }
 }
 
