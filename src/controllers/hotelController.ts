@@ -650,3 +650,59 @@ export async function getBookingById(bookingId: number) {
     }
 }
 
+/**
+ * Retrieves all hotel bookings for a specific user
+ * @param userId The ID of the user whose bookings to retrieve
+ * @returns Object containing the user's hotel bookings
+ */
+export async function getUserHotelBookings(userId: string) {
+  try {
+    const bookings = await prisma.booking.findMany({
+      where: {
+        userId: userId
+      },
+      include: {
+        hotel: true,
+        room: true
+      }
+    });
+    
+    // Format the data to match the BookingsResponse interface
+    const formattedBookings = bookings.map(booking => ({
+      id: booking.id,
+      hotelId: booking.hotelId,
+      hotelName: booking.hotel.name,
+      roomType: booking.room.name,
+      roomNum: booking.roomNum,
+      price: booking.room.pricePerNight,
+      checkInDate: booking.checkInDate.toISOString(),
+      checkOutDate: booking.checkOutDate.toISOString(),
+      status: booking.status,
+      createdAt: booking.createdAt.toISOString(),
+      hotelDetails: {
+        id: booking.hotel.id,
+        name: booking.hotel.name,
+        location: booking.hotel.location,
+        address: booking.hotel.address,
+        starRating: booking.hotel.starRating
+      },
+      roomDetails: {
+        id: booking.room.id,
+        name: booking.room.name,
+        roomNum: booking.roomNum,
+        amenities: Array.isArray(booking.room.amenities) 
+          ? booking.room.amenities 
+          : typeof booking.room.amenities === 'string'
+            ? booking.room.amenities.split(',').map(a => a.trim())
+            : [],
+        pricePerNight: booking.room.pricePerNight
+      }
+    }));
+
+    return { bookings: formattedBookings };
+  } catch (error) {
+    console.error('Error retrieving user hotel bookings:', error);
+    throw new Error('Failed to retrieve bookings');
+  }
+}
+
