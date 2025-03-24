@@ -634,3 +634,19 @@ export async function getHotelAvailability(
   }
 
 
+export async function getBookingById(bookingId: number) {
+    try {
+        const booking = await prisma.booking.findUnique({
+            where: { id: bookingId },
+        });
+
+        if (!booking) {
+            return null;
+        }
+        return booking;
+    } catch (error) {
+        console.error("Error fetching booking:", error);
+        return null;
+    }
+}
+
