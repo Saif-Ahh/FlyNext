@@ -706,3 +706,67 @@ export async function getUserHotelBookings(userId: string) {
   }
 }
 
+/**
+ * Cancels a hotel booking for a user
+ * @param userId The ID of the user who owns the booking
+ * @param bookingId The ID of the booking to cancel
+ * @returns A success message or error message
+ */
+export async function cancelHotelBooking(userId: string, bookingId: number) {
+  try {
+    // Check if booking exists
+    const booking = await prisma.booking.findUnique({
+      where: {
+        id: bookingId
+      },
+      include: {
+        hotel: true
+      }
+    });
+
+    if (!booking) {
+      return { error: 'Booking not found' };
+    }
+
+    // User can cancel if they're the booking owner OR the hotel owner
+    const isBookingOwner = booking.userId === userId;
+    
+    // Get the hotel to check if this user is the owner
+    const isHotelOwner = booking.hotel && booking.hotel.userId === userId;
+    
+    if (!isBookingOwner && !isHotelOwner) {
+      return { error: 'You do not have permission to cancel this booking' };
+    }
+
+    // Update booking status to 'CANCELLED'
+    const updatedBooking = await prisma.booking.update({
+      where: {
+        id: bookingId
+      },
+      data: {
+        status: 'CANCELLED'
+      }
+    });
+
+    // Create notification for the user who made the booking
+    try {
+      await prisma.notification.create({
+        data: {
+          userId: booking.userId,
+          hotelId: booking.hotelId,
+          message: `Your booking at ${updatedBooking.hotelName} has been cancelled.`,
+          isRead: false
+        }
+      });
+    } catch (notifError) {
+      console.error('Error creating notification:', notifError);
+      // Continue execution even if notification creation fails
+    }
+
+    return { message: 'Booking cancelled successfully', booking: updatedBooking };
+  } catch (error) {
+    console.error('Error cancelling booking:', error);
+    return { error: 'Failed to cancel booking' };
+  }
+}
+
