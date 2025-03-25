@@ -2,8 +2,9 @@
 // controllers/hotelController.ts
 import { NextApiRequest, NextApiResponse } from 'next';
 import prisma from '@/utils/prismaClient';
-import { createHotel, createRoom, getBookings, addBooking, getRoomByHotelAndNumber, getRoomAvailability, isHotelOwner, returnHotelBookings, getHotel, cancelBookingById, findHotelByCity, isHotelRoomPriceInRange, isHotelAboveStarRating, doesHotelNameContainKeyword, getHotelsWithAvailability, addBookingToUser, getRoomObject, getBookingByRoomAndDates } from '@/services/hotelService';
+import { createHotel, createRoom, getBookings, addBooking, getRoomByHotelAndNumber, getRoomAvailability, isHotelOwner, returnHotelBookings, getHotel, cancelBookingById, findHotelByCity, isHotelRoomPriceInRange, isHotelAboveStarRating, doesHotelNameContainKeyword, getHotelsWithAvailability, addBookingToUser, getRoomObject, getBookingByRoomAndDates, getHotelsByUserId, getLowestRoomPrice, getHotelAmenities } from '@/services/hotelService';
 import {createNotification} from '@/services/notificationService';
+import { PDFDocument, StandardFonts, rgb } from 'pdf-lib';
 import { error } from 'console';
 
 
@@ -769,4 +770,282 @@ export async function cancelHotelBooking(userId: string, bookingId: number) {
     return { error: 'Failed to cancel booking' };
   }
 }
+
+export async function generateHotelInvoice(bookingId: number): Promise<Buffer> {
+    try {
+      // Get the booking directly from the database using Prisma
+      const booking = await prisma.booking.findUnique({
+        where: { id: bookingId }
+      });
+  
+      if (!booking) {
+        throw new Error('Hotel booking not found');
+      }
+  
+      const pdfDoc = await PDFDocument.create();
+      const page = pdfDoc.addPage([600, 400]);
+  
+      const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
+      const boldFont = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
+  
+      const {
+        hotelName,
+        roomType,
+        roomNum,
+        price,
+        checkInDate,
+        checkOutDate,
+        status,
+        createdAt,
+      } = booking;
+      
+      // Ensure dates are properly parsed with no time component for accurate day calculation
+      const startDate = new Date(checkInDate);
+      startDate.setHours(0, 0, 0, 0);
+      
+      const endDate = new Date(checkOutDate);
+      endDate.setHours(0, 0, 0, 0);
+      
+      // Calculate the exact number of days between dates
+      const timeDiffMs = endDate.getTime() - startDate.getTime();
+      const nights = Math.max(1, Math.round(timeDiffMs / (1000 * 60 * 60 * 24)));
+      
+      // Parse the price to ensure it's a number
+      const pricePerNight = parseFloat(String(price));
+      
+      // Calculate the total price
+      const totalAmount = pricePerNight * nights;
+      
+      // Format with exactly 2 decimal places
+      const formattedPricePerNight = pricePerNight.toFixed(2);
+      const formattedTotalPrice = totalAmount.toFixed(2);
+  
+      // Draw the invoice title
+      page.drawText('Hotel Booking Invoice', {
+        x: 50,
+        y: 350,
+        size: 24,
+        font,
+        color: rgb(0, 0, 0),
+      });
+  
+      // Draw booking details
+      page.drawText(`Hotel Name: ${hotelName}`, {
+        x: 50,
+        y: 320,
+        size: 12,
+        font,
+        color: rgb(0, 0, 0),
+      });
+  
+      page.drawText(`Room Type: ${roomType}`, {
+        x: 50,
+        y: 300,
+        size: 12,
+        font,
+        color: rgb(0, 0, 0),
+      });
+  
+      page.drawText(`Room Number: ${roomNum}`, {
+        x: 50,
+        y: 280,
+        size: 12,
+        font,
+        color: rgb(0, 0, 0),
+      });
+  
+      page.drawText(`Check-In Date: ${new Date(checkInDate).toLocaleString()}`, {
+        x: 50,
+        y: 260,
+        size: 12,
+        font,
+        color: rgb(0, 0, 0),
+      });
+  
+      page.drawText(`Check-Out Date: ${new Date(checkOutDate).toLocaleString()}`, {
+        x: 50,
+        y: 240,
+        size: 12,
+        font,
+        color: rgb(0, 0, 0),
+      });
+  
+      page.drawText(`Status: ${status}`, {
+        x: 50,
+        y: 220,
+        size: 12,
+        font,
+        color: rgb(0, 0, 0),
+      });
+  
+      page.drawText(`Booking Date: ${new Date(createdAt).toLocaleString()}`, {
+        x: 50,
+        y: 200,
+        size: 12,
+        font,
+        color: rgb(0, 0, 0),
+      });
+      
+      // Add price per night
+      page.drawText(`Price per night: ${formattedPricePerNight} USD`, {
+        x: 50,
+        y: 170,
+        size: 12,
+        font,
+        color: rgb(0, 0, 0),
+      });
+      
+      // Add number of nights
+      page.drawText(`Number of nights: ${nights}`, {
+        x: 50,
+        y: 150,
+        size: 12,
+        font,
+        color: rgb(0, 0, 0),
+      });
+  
+      // Show the total price with updated calculation
+      page.drawText(`Total Price: ${formattedTotalPrice} USD`, {
+        x: 50,
+        y: 120, 
+        size: 14, 
+        font: boldFont, 
+        color: rgb(0, 0, 0),
+      });
+  
+      // Save the PDF and return it as a Buffer
+      const pdfBytes = await pdfDoc.save();
+      return Buffer.from(pdfBytes);
+    } catch (error: any) {
+      console.error('Error generating hotel invoice:', error.message);
+      throw new Error(`Failed to generate hotel invoice: ${error.message}`);
+    }
+  }
+  
+  // get all hotels for a user
+  export async function getUserHotels(req: NextApiRequest, res: NextApiResponse) {
+    const { userId } = req.user as { userId: string };
+    const hotels = await getHotelsByUserId(userId);
+
+    if (!hotels) {
+        return res.status(404).json({ error: 'No hotels found' });
+    }
+    return res.status(200).json({ hotels });
+  }
+
+  export async function getLowestPriceAllAmenities(req: NextApiRequest, res: NextApiResponse) {
+    const { hotelId } = req.query;
+    if (!hotelId) {
+        return res.status(400).json({ error: 'hotelId is required' });
+    }
+    // Get lowest price and all amenities for a hotel
+    const lowestPrice = await getLowestRoomPrice(hotelId);
+    const allAmenities = await getHotelAmenities(hotelId);
+    return res.status(200).json({ lowestPrice, allAmenities });
+  }
+
+  export async function getAllAmenitiesByLocation(req: NextApiRequest, res: NextApiResponse) {
+    const { location } = req.query;
+    if (!location) {
+        return res.status(400).json({ error: 'Location is required' });
+    }
+    const hotels = await findHotelByCity(location);
+    const allAmenities = [];
+    for (const hotel of hotels) {
+        const amenities = await getHotelAmenities(hotel.id);
+        allAmenities.push(...amenities);
+    }
+    // Remove duplicates
+    const uniqueAmenities = [...new Set(allAmenities)];
+    return res.status(200).json({ allAmenities: uniqueAmenities });
+  }
+
+  /**
+   * Retrieves all bookings for hotels owned by a specific user
+   * @param userId The ID of the hotel owner
+   * @returns Object containing bookings for all hotels owned by the user
+   */
+  export async function getOwnerHotelBookings(userId: string) {
+    try {
+      // First, get all hotels owned by the user
+      const userHotels = await prisma.hotel.findMany({
+        where: {
+          userId: userId
+        }
+      });
+
+      if (!userHotels || userHotels.length === 0) {
+        return { bookings: [] };
+      }
+
+      // Get the hotel IDs
+      const hotelIds = userHotels.map(hotel => hotel.id);
+
+      // Get all bookings for these hotels
+      const bookings = await prisma.booking.findMany({
+        where: {
+          hotelId: {
+            in: hotelIds
+          }
+        },
+        include: {
+          hotel: true,
+          room: true
+        }
+      });
+      
+      // Fetch user data separately for each booking
+      const formattedBookings = await Promise.all(bookings.map(async booking => {
+        // Get user information for each booking
+        const user = await prisma.user.findUnique({
+          where: { id: booking.userId },
+          select: {
+            firstName: true,
+            lastName: true,
+            email: true
+          }
+        });
+        
+        return {
+          id: booking.id,
+          hotelId: booking.hotelId,
+          hotelName: booking.hotel.name,
+          roomType: booking.room.name,
+          roomNum: booking.roomNum,
+          price: booking.room.pricePerNight,
+          checkInDate: booking.checkInDate.toISOString(),
+          checkOutDate: booking.checkOutDate.toISOString(),
+          status: booking.status,
+          createdAt: booking.createdAt.toISOString(),
+          userId: booking.userId,
+          firstName: user?.firstName,
+          lastName: user?.lastName,
+          email: user?.email,
+          hotelDetails: {
+            id: booking.hotel.id,
+            name: booking.hotel.name,
+            location: booking.hotel.location,
+            address: booking.hotel.address,
+            starRating: booking.hotel.starRating
+          },
+          roomDetails: {
+            id: booking.room.id,
+            name: booking.room.name,
+            roomNum: booking.roomNum,
+            amenities: Array.isArray(booking.room.amenities) 
+              ? booking.room.amenities 
+              : typeof booking.room.amenities === 'string'
+                ? booking.room.amenities.split(',').map(a => a.trim())
+                : [],
+            pricePerNight: booking.room.pricePerNight
+          }
+        };
+      }));
+
+      return { bookings: formattedBookings };
+    } catch (error) {
+      console.error('Error retrieving hotel owner bookings:', error);
+      throw new Error('Failed to retrieve bookings for hotel owner');
+    }
+  }
 
