@@ -2,7 +2,24 @@
 // controllers/hotelController.ts
 import { NextApiRequest, NextApiResponse } from 'next';
 import prisma from '@/utils/prismaClient';
-import { createHotel, createRoom, getBookings, addBooking, getRoomByHotelAndNumber, getRoomAvailability, isHotelOwner, returnHotelBookings, getHotel, cancelBookingById, findHotelByCity, isHotelRoomPriceInRange, isHotelAboveStarRating, doesHotelNameContainKeyword, getHotelsWithAvailability, addBookingToUser, getRoomObject, getBookingByRoomAndDates, getHotelsByUserId, getLowestRoomPrice, getHotelAmenities } from '@/services/hotelService';
+import { createHotel, createRoom, getBookings, addBooking, getRoomByHotelAndNumber,
+         cancelBooking, 
+         getRoomAvailability,
+         isHotelOwner,
+         returnHotelBookings,
+         getHotel,
+         cancelBookingById,
+         findHotelByCity,
+         isHotelRoomPriceInRange, 
+         isHotelAboveStarRating, doesHotelNameContainKeyword, 
+         getHotelsWithAvailability,
+         addBookingToUser,
+         getRoomObject,
+         getBookingByRoomAndDates,
+         returnValidHotelBookings, 
+         getHotelsByUserId,
+         getLowestRoomPrice,
+         getHotelAmenities} from '@/services/hotelService';
 import {createNotification} from '@/services/notificationService';
 import { PDFDocument, StandardFonts, rgb } from 'pdf-lib';
 import { error } from 'console';
@@ -1048,4 +1065,34 @@ export async function generateHotelInvoice(bookingId: number): Promise<Buffer> {
       throw new Error('Failed to retrieve bookings for hotel owner');
     }
   }
+
+/**
+ * Retrieve a specific room by hotel ID and room number
+ */
+export async function getRoomObject(hotelId: string, roomNum: string) {
+  try {
+    const room = await prisma.room.findFirst({
+      where: {
+        hotelId: hotelId,
+        roomNum: roomNum
+      }
+    });
+    return room;
+  } catch (error) {
+    console.error('Error fetching room:', error);
+    return null;
+  }
+}
+
+export async function getRoomAmt(hotelId: string, roomType: string) {
+  // Get amount of valid bookings for roomType in hotel
+  const roomAmount = await prisma.booking.count({
+    where: {
+      hotelId: hotelId,
+      roomType: roomType,
+      status: 'Valid'
+    }
+  });
+  return roomAmount;
+}
 
