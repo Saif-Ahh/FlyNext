@@ -22,6 +22,16 @@ model User {
   hotelBookings      Json     @default("[]")
   notifications     Notification[]
   hotels            Hotel[]  @relation("UserHotels")
+  itineraries       Itinerary[]   @relation("UserItineraries")
+}
+
+model Itinerary {
+  id               String @id @default(uuid())
+  hotelBookingRef  String?
+  flightBookingRef String?
+  userId           String
+
+  user             User @relation("UserItineraries", fields: [userId], references: [id])
 }
 
 model Hotel {
