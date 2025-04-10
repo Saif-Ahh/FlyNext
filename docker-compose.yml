@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: flynext_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: flynext
+      POSTGRES_PASSWORD: flynextpass
+      POSTGRES_DB: flynextdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  web:
+    build: .
+    container_name: pp2_web
+    expose:
+      - "3000"  # use expose instead of ports to hide from external
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+    restart: always
+
+  nginx:
+    image: nginx:alpine
+    container_name: flynext_nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - web
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+
+volumes:
+  postgres_data:
