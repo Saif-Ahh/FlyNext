@@ -1,0 +1,5651 @@
+[
+  {
+    "userId": "seed-user-id",
+    "name": "Will, Labadie and Kreiger Hotel",
+    "logo": "https://avatars.githubusercontent.com/u/567214",
+    "address": "831 Grove Street",
+    "location": "Lake Gabrielburgh",
+    "starRating": 3,
+    "images": [
+      "https://picsum.photos/seed/qMpfnY/2185/2499?grayscale&blur=9"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Standard",
+        "pricePerNight": 267.92,
+        "amenities": [
+          "Gym",
+          "Pool",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/145/231/hotel?lock=5045284900438674"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Deluxe",
+        "pricePerNight": 235.83,
+        "amenities": [
+          "Room Service",
+          "Gym",
+          "Pool",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/1472/380/hotel?lock=6000754150922239"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Deluxe",
+        "pricePerNight": 326.82,
+        "amenities": [
+          "WiFi",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/2916/1210/hotel?lock=4531531378881168"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Standard",
+        "pricePerNight": 380.29,
+        "amenities": [
+          "Room Service",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/1627/3363/hotel?lock=3540382189597015"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Suite",
+        "pricePerNight": 331.71,
+        "amenities": [
+          "Breakfast",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/1279/3853/hotel?lock=4705678555887303"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Suite",
+        "pricePerNight": 388.28,
+        "amenities": [
+          "TV",
+          "Air Conditioning",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/3917/3553/hotel?lock=8001404025008227"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Wilderman, Yundt and Bernhard Hotel",
+    "logo": "https://avatars.githubusercontent.com/u/44606212",
+    "address": "452 W North Street",
+    "location": "North Raoul",
+    "starRating": 4,
+    "images": [
+      "https://picsum.photos/seed/S4dCQntWq/277/3718?grayscale&blur=8"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Standard",
+        "pricePerNight": 313.62,
+        "amenities": [
+          "Air Conditioning",
+          "TV",
+          "WiFi",
+          "Pool",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/1071/3594/hotel?lock=5070331306683493"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Suite",
+        "pricePerNight": 126.72,
+        "amenities": [
+          "Breakfast",
+          "Room Service",
+          "WiFi",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/3404/1313/hotel?lock=7914913636079002"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Suite",
+        "pricePerNight": 103.08,
+        "amenities": [
+          "Gym",
+          "TV",
+          "Pool",
+          "Breakfast",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/3168/2954/hotel?lock=2919221203823781"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Deluxe",
+        "pricePerNight": 370.5,
+        "amenities": [
+          "Room Service",
+          "Pool",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/2065/2470/hotel?lock=38285375446839"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Standard",
+        "pricePerNight": 271.62,
+        "amenities": [
+          "Gym",
+          "Room Service",
+          "TV",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/1408/3399/hotel?lock=6510915987365713"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Suite",
+        "pricePerNight": 92.15,
+        "amenities": [
+          "Pool",
+          "WiFi",
+          "TV",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/710/1841/hotel?lock=3542151761869123"
+        ]
+      },
+      {
+        "roomNum": 7,
+        "name": "Deluxe",
+        "pricePerNight": 262.83,
+        "amenities": [
+          "TV",
+          "Gym",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/269/3148/hotel?lock=6526173425637863"
+        ]
+      },
+      {
+        "roomNum": 8,
+        "name": "Suite",
+        "pricePerNight": 354.35,
+        "amenities": [
+          "Air Conditioning",
+          "Room Service",
+          "WiFi",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/2726/2875/hotel?lock=7685697118103768"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Gleichner, Schowalter and Stehr Hotel",
+    "logo": "https://avatars.githubusercontent.com/u/10896634",
+    "address": "318 Nolan Place",
+    "location": "Jedport",
+    "starRating": 3,
+    "images": [
+      "https://picsum.photos/seed/dp9EDpl/3991/3662"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Deluxe",
+        "pricePerNight": 371.3,
+        "amenities": [
+          "Breakfast",
+          "TV",
+          "WiFi",
+          "Pool",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/1537/3400/hotel?lock=8572142687561895"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Deluxe",
+        "pricePerNight": 253.25,
+        "amenities": [
+          "Breakfast",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/3195/2997/hotel?lock=2026636618995453"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Suite",
+        "pricePerNight": 347.36,
+        "amenities": [
+          "Breakfast",
+          "WiFi",
+          "Room Service",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/2780/2023/hotel?lock=5391816430107760"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Suite",
+        "pricePerNight": 233.76,
+        "amenities": [
+          "TV",
+          "Room Service",
+          "Air Conditioning",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/2427/2901/hotel?lock=7159988240684144"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Deluxe",
+        "pricePerNight": 343.33,
+        "amenities": [
+          "Gym",
+          "WiFi",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/2932/3851/hotel?lock=4915520770312639"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Standard",
+        "pricePerNight": 111.72,
+        "amenities": [
+          "Gym",
+          "TV",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/2102/1560/hotel?lock=1894348688209466"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Sauer - Farrell Hotel",
+    "logo": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/26.jpg",
+    "address": "4280 Larkin Cape",
+    "location": "East Julieville",
+    "starRating": 4,
+    "images": [
+      "https://picsum.photos/seed/pBoPqNzi62/2696/712?grayscale&blur=9"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Deluxe",
+        "pricePerNight": 159.61,
+        "amenities": [
+          "Breakfast",
+          "TV",
+          "Room Service",
+          "Pool",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/2815/3556/hotel?lock=7019701099005443"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Suite",
+        "pricePerNight": 128.05,
+        "amenities": [
+          "Air Conditioning",
+          "WiFi",
+          "Pool",
+          "TV",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/243/2575/hotel?lock=2293768443471972"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Deluxe",
+        "pricePerNight": 82.9,
+        "amenities": [
+          "TV",
+          "Breakfast",
+          "Pool",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/1664/137/hotel?lock=4173303253158516"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Suite",
+        "pricePerNight": 185.33,
+        "amenities": [
+          "WiFi",
+          "Air Conditioning",
+          "Breakfast",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/1700/1696/hotel?lock=3074521647928399"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Deluxe",
+        "pricePerNight": 345.28,
+        "amenities": [
+          "Room Service",
+          "Air Conditioning",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/3003/13/hotel?lock=3886591858962081"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Standard",
+        "pricePerNight": 152.33,
+        "amenities": [
+          "Room Service",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/2146/3808/hotel?lock=5550245657212555"
+        ]
+      },
+      {
+        "roomNum": 7,
+        "name": "Deluxe",
+        "pricePerNight": 351.92,
+        "amenities": [
+          "Gym",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/1368/2560/hotel?lock=7817103642576818"
+        ]
+      },
+      {
+        "roomNum": 8,
+        "name": "Deluxe",
+        "pricePerNight": 294.86,
+        "amenities": [
+          "Pool",
+          "Gym",
+          "Breakfast",
+          "WiFi",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/241/90/hotel?lock=8145067029215418"
+        ]
+      },
+      {
+        "roomNum": 9,
+        "name": "Deluxe",
+        "pricePerNight": 379.68,
+        "amenities": [
+          "TV",
+          "Room Service",
+          "Pool",
+          "Air Conditioning",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/1792/742/hotel?lock=736725884016517"
+        ]
+      },
+      {
+        "roomNum": 10,
+        "name": "Suite",
+        "pricePerNight": 194.55,
+        "amenities": [
+          "Pool",
+          "WiFi",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/87/3862/hotel?lock=4285697908808713"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Baumbach LLC Hotel",
+    "logo": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/96.jpg",
+    "address": "14681 Terry Keys",
+    "location": "Hardyton",
+    "starRating": 5,
+    "images": [
+      "https://picsum.photos/seed/gauvVJa/2061/3115?blur=2"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Suite",
+        "pricePerNight": 83.73,
+        "amenities": [
+          "Air Conditioning",
+          "Pool",
+          "Room Service",
+          "TV",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/3683/3951/hotel?lock=3790908395117109"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Suite",
+        "pricePerNight": 317.46,
+        "amenities": [
+          "Breakfast",
+          "Gym",
+          "Room Service",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/3345/581/hotel?lock=1188072249049603"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Deluxe",
+        "pricePerNight": 138.65,
+        "amenities": [
+          "Air Conditioning",
+          "Breakfast",
+          "WiFi",
+          "Pool",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/2426/1050/hotel?lock=1340358645688372"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Suite",
+        "pricePerNight": 251.22,
+        "amenities": [
+          "Breakfast",
+          "Air Conditioning",
+          "WiFi",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/597/3413/hotel?lock=942173802887590"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Deluxe",
+        "pricePerNight": 367.8,
+        "amenities": [
+          "Room Service",
+          "WiFi",
+          "Gym",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/3581/3301/hotel?lock=7482915656696593"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Suite",
+        "pricePerNight": 350.37,
+        "amenities": [
+          "Air Conditioning",
+          "Room Service",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/571/3697/hotel?lock=1613717079215510"
+        ]
+      },
+      {
+        "roomNum": 7,
+        "name": "Deluxe",
+        "pricePerNight": 182.65,
+        "amenities": [
+          "Pool",
+          "Air Conditioning",
+          "Gym",
+          "WiFi",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/1470/3578/hotel?lock=5505748644793109"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Sipes and Sons Hotel",
+    "logo": "https://avatars.githubusercontent.com/u/1495411",
+    "address": "48901 Allison Canyon",
+    "location": "Terre Haute",
+    "starRating": 4,
+    "images": [
+      "https://picsum.photos/seed/hl7F3DNcv/1321/996?grayscale&blur=5"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Deluxe",
+        "pricePerNight": 303.9,
+        "amenities": [
+          "Room Service",
+          "WiFi",
+          "Pool",
+          "Gym",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/1918/3183/hotel?lock=3660178090986900"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Suite",
+        "pricePerNight": 195.31,
+        "amenities": [
+          "Room Service",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/414/2969/hotel?lock=5476409935462924"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Standard",
+        "pricePerNight": 177.75,
+        "amenities": [
+          "WiFi",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/2913/3887/hotel?lock=500341426494592"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Suite",
+        "pricePerNight": 180.79,
+        "amenities": [
+          "Gym",
+          "WiFi",
+          "Room Service",
+          "Air Conditioning",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/535/334/hotel?lock=638242756570725"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Standard",
+        "pricePerNight": 383.64,
+        "amenities": [
+          "WiFi",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/1886/1724/hotel?lock=1072905326075087"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Suite",
+        "pricePerNight": 109.05,
+        "amenities": [
+          "Breakfast",
+          "Air Conditioning",
+          "Pool",
+          "WiFi",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/3093/1570/hotel?lock=1562869052206574"
+        ]
+      },
+      {
+        "roomNum": 7,
+        "name": "Suite",
+        "pricePerNight": 227.79,
+        "amenities": [
+          "TV",
+          "Air Conditioning",
+          "Breakfast",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/1162/1110/hotel?lock=4168258714581021"
+        ]
+      },
+      {
+        "roomNum": 8,
+        "name": "Standard",
+        "pricePerNight": 261.22,
+        "amenities": [
+          "Gym",
+          "Pool",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/575/3189/hotel?lock=1597122472474191"
+        ]
+      },
+      {
+        "roomNum": 9,
+        "name": "Deluxe",
+        "pricePerNight": 154.99,
+        "amenities": [
+          "Pool",
+          "WiFi",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/3224/2117/hotel?lock=7170256331084933"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Bruen Group Hotel",
+    "logo": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/34.jpg",
+    "address": "65435 Victor Tunnel",
+    "location": "North Erika",
+    "starRating": 4,
+    "images": [
+      "https://picsum.photos/seed/iskh1vYC/3239/2848?blur=4"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Suite",
+        "pricePerNight": 312.7,
+        "amenities": [
+          "Air Conditioning",
+          "TV",
+          "Pool",
+          "WiFi",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/1566/2575/hotel?lock=4331260789635064"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Standard",
+        "pricePerNight": 250.51,
+        "amenities": [
+          "Breakfast",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/167/300/hotel?lock=324857100015082"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Suite",
+        "pricePerNight": 355.76,
+        "amenities": [
+          "Air Conditioning",
+          "Gym",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/131/2210/hotel?lock=3073370359903875"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Deluxe",
+        "pricePerNight": 297.13,
+        "amenities": [
+          "Pool",
+          "WiFi",
+          "Room Service",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/742/448/hotel?lock=338903331837850"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Suite",
+        "pricePerNight": 198.83,
+        "amenities": [
+          "Pool",
+          "WiFi",
+          "Breakfast",
+          "Air Conditioning",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/803/3585/hotel?lock=2017782695008089"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Suite",
+        "pricePerNight": 152.14,
+        "amenities": [
+          "TV",
+          "WiFi",
+          "Room Service",
+          "Air Conditioning",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/1386/2567/hotel?lock=2736104403692712"
+        ]
+      },
+      {
+        "roomNum": 7,
+        "name": "Standard",
+        "pricePerNight": 106.33,
+        "amenities": [
+          "TV",
+          "Pool",
+          "WiFi",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/1662/69/hotel?lock=944589770813094"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Olson and Sons Hotel",
+    "logo": "https://avatars.githubusercontent.com/u/21689354",
+    "address": "77394 N Franklin Street",
+    "location": "Harrishaven",
+    "starRating": 3,
+    "images": [
+      "https://picsum.photos/seed/zCbv9Js/1017/1474?blur=4"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Deluxe",
+        "pricePerNight": 85.54,
+        "amenities": [
+          "Air Conditioning",
+          "Room Service",
+          "TV",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/1433/2792/hotel?lock=8905457843984083"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Deluxe",
+        "pricePerNight": 307.04,
+        "amenities": [
+          "Room Service",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/18/1506/hotel?lock=4658855800956664"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Suite",
+        "pricePerNight": 266.37,
+        "amenities": [
+          "Breakfast",
+          "Gym",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/1777/3604/hotel?lock=835841072556461"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Suite",
+        "pricePerNight": 164.6,
+        "amenities": [
+          "Gym",
+          "Room Service",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/1693/343/hotel?lock=4843828676526098"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Suite",
+        "pricePerNight": 374.8,
+        "amenities": [
+          "WiFi",
+          "Breakfast",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/1363/1413/hotel?lock=6258177137260107"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Standard",
+        "pricePerNight": 238.62,
+        "amenities": [
+          "Gym",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/2337/1286/hotel?lock=1685016075200285"
+        ]
+      },
+      {
+        "roomNum": 7,
+        "name": "Standard",
+        "pricePerNight": 103.3,
+        "amenities": [
+          "Breakfast",
+          "Air Conditioning",
+          "WiFi",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/3083/3131/hotel?lock=5894954208760191"
+        ]
+      },
+      {
+        "roomNum": 8,
+        "name": "Suite",
+        "pricePerNight": 306.53,
+        "amenities": [
+          "TV",
+          "Gym",
+          "Breakfast",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/1752/2651/hotel?lock=1106672972675639"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Homenick, O'Kon and Bosco Hotel",
+    "logo": "https://avatars.githubusercontent.com/u/37467955",
+    "address": "330 Boehm Causeway",
+    "location": "Emmerichberg",
+    "starRating": 3,
+    "images": [
+      "https://picsum.photos/seed/ELMCcXYrIZ/1672/2292?grayscale&blur=8"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Standard",
+        "pricePerNight": 382.41,
+        "amenities": [
+          "Breakfast",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/3586/986/hotel?lock=3085667902715994"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Standard",
+        "pricePerNight": 119.31,
+        "amenities": [
+          "WiFi",
+          "Air Conditioning",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/284/2066/hotel?lock=3972755590011295"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Standard",
+        "pricePerNight": 148.52,
+        "amenities": [
+          "Pool",
+          "Gym",
+          "Breakfast",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/322/670/hotel?lock=540583781167415"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Suite",
+        "pricePerNight": 189.5,
+        "amenities": [
+          "Gym",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/1520/2414/hotel?lock=576145201915694"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Suite",
+        "pricePerNight": 216.6,
+        "amenities": [
+          "Gym",
+          "Breakfast",
+          "WiFi",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/2187/2682/hotel?lock=7848288754045101"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Standard",
+        "pricePerNight": 200.42,
+        "amenities": [
+          "TV",
+          "Room Service",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/796/739/hotel?lock=3315609273123847"
+        ]
+      },
+      {
+        "roomNum": 7,
+        "name": "Standard",
+        "pricePerNight": 210.73,
+        "amenities": [
+          "Pool",
+          "Air Conditioning",
+          "Room Service",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/2910/3344/hotel?lock=7244265351718486"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "O'Reilly, Gulgowski and Schroeder Hotel",
+    "logo": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/40.jpg",
+    "address": "48927 Skylar Locks",
+    "location": "North Calistaville",
+    "starRating": 4,
+    "images": [
+      "https://picsum.photos/seed/gvG89YVU/1863/3046?blur=5"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Standard",
+        "pricePerNight": 261.37,
+        "amenities": [
+          "Air Conditioning",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/2305/930/hotel?lock=5146721432990532"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Suite",
+        "pricePerNight": 301.04,
+        "amenities": [
+          "Room Service",
+          "Pool",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/3991/3334/hotel?lock=8129282364918011"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Standard",
+        "pricePerNight": 126.62,
+        "amenities": [
+          "Room Service",
+          "Air Conditioning",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/3671/2319/hotel?lock=2826431386810720"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Suite",
+        "pricePerNight": 142.54,
+        "amenities": [
+          "Breakfast",
+          "Gym",
+          "Air Conditioning",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/2038/2679/hotel?lock=3834054065181015"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Suite",
+        "pricePerNight": 369.75,
+        "amenities": [
+          "Air Conditioning",
+          "Room Service",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/1799/2058/hotel?lock=7870711878171143"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Standard",
+        "pricePerNight": 384.57,
+        "amenities": [
+          "Air Conditioning",
+          "Breakfast",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/2066/1082/hotel?lock=1135220774186498"
+        ]
+      },
+      {
+        "roomNum": 7,
+        "name": "Standard",
+        "pricePerNight": 384.7,
+        "amenities": [
+          "Room Service",
+          "Pool",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/2599/2994/hotel?lock=5532916218514584"
+        ]
+      },
+      {
+        "roomNum": 8,
+        "name": "Suite",
+        "pricePerNight": 270.87,
+        "amenities": [
+          "Air Conditioning",
+          "Pool",
+          "WiFi",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/1514/457/hotel?lock=6801127281017960"
+        ]
+      },
+      {
+        "roomNum": 9,
+        "name": "Deluxe",
+        "pricePerNight": 123.59,
+        "amenities": [
+          "TV",
+          "Room Service",
+          "Pool",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/197/2094/hotel?lock=2396774546827727"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Mueller, Hartmann and Mueller Hotel",
+    "logo": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/62.jpg",
+    "address": "56063 Caleigh Corner",
+    "location": "Eden Prairie",
+    "starRating": 4,
+    "images": [
+      "https://picsum.photos/seed/AXYPETU/1505/1911?grayscale&blur=3"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Deluxe",
+        "pricePerNight": 196.23,
+        "amenities": [
+          "Room Service",
+          "Gym",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/131/993/hotel?lock=8750734343992068"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Deluxe",
+        "pricePerNight": 84.77,
+        "amenities": [
+          "WiFi",
+          "Air Conditioning",
+          "Gym",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/3539/2559/hotel?lock=5608947075435374"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Standard",
+        "pricePerNight": 352.44,
+        "amenities": [
+          "Breakfast",
+          "Gym",
+          "Room Service",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/672/1939/hotel?lock=2024475080029123"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Standard",
+        "pricePerNight": 163.49,
+        "amenities": [
+          "Gym",
+          "WiFi",
+          "Pool",
+          "Breakfast",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/2227/1222/hotel?lock=578403730116598"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Standard",
+        "pricePerNight": 183.93,
+        "amenities": [
+          "Breakfast",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/214/823/hotel?lock=8030002422263007"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Standard",
+        "pricePerNight": 81.82,
+        "amenities": [
+          "TV",
+          "Room Service",
+          "Pool",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/3792/3822/hotel?lock=7489069173824738"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Stokes, Champlin and Carter Hotel",
+    "logo": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/43.jpg",
+    "address": "263 S Union Street",
+    "location": "South Andyville",
+    "starRating": 4,
+    "images": [
+      "https://picsum.photos/seed/tC1pS/3108/2817?blur=1"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Suite",
+        "pricePerNight": 376.77,
+        "amenities": [
+          "Breakfast",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/3225/2234/hotel?lock=7347128239406625"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Deluxe",
+        "pricePerNight": 332.13,
+        "amenities": [
+          "Air Conditioning",
+          "Gym",
+          "TV",
+          "Breakfast",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/1800/1174/hotel?lock=1189803561351600"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Suite",
+        "pricePerNight": 288.26,
+        "amenities": [
+          "Air Conditioning",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/3590/739/hotel?lock=5403888522888416"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Standard",
+        "pricePerNight": 154.14,
+        "amenities": [
+          "Gym",
+          "Room Service",
+          "TV",
+          "Breakfast",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/239/451/hotel?lock=486442117845636"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Deluxe",
+        "pricePerNight": 174.41,
+        "amenities": [
+          "Room Service",
+          "Gym",
+          "Pool",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/2191/393/hotel?lock=7176196427814976"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Standard",
+        "pricePerNight": 191.4,
+        "amenities": [
+          "TV",
+          "Gym",
+          "Pool",
+          "WiFi",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/2232/2409/hotel?lock=6987033698511327"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Cremin - Tromp Hotel",
+    "logo": "https://avatars.githubusercontent.com/u/9113933",
+    "address": "8441 Nash Ferry",
+    "location": "Goldnertown",
+    "starRating": 5,
+    "images": [
+      "https://picsum.photos/seed/augenQ6WT5/2879/726?blur=7"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Suite",
+        "pricePerNight": 182.51,
+        "amenities": [
+          "Room Service",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/1205/3902/hotel?lock=1467136782929748"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Suite",
+        "pricePerNight": 138.33,
+        "amenities": [
+          "Air Conditioning",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/3516/2825/hotel?lock=6880472805503560"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Deluxe",
+        "pricePerNight": 301.94,
+        "amenities": [
+          "Gym",
+          "WiFi",
+          "TV",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/2843/786/hotel?lock=8631894529129276"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Standard",
+        "pricePerNight": 215.38,
+        "amenities": [
+          "Room Service",
+          "TV",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/940/2424/hotel?lock=4930259214834919"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Suite",
+        "pricePerNight": 281.15,
+        "amenities": [
+          "WiFi",
+          "TV",
+          "Pool",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/1618/2907/hotel?lock=3827406929438575"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Standard",
+        "pricePerNight": 317.7,
+        "amenities": [
+          "Pool",
+          "TV",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/1143/2992/hotel?lock=6553814924545430"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Lakin - Ruecker Hotel",
+    "logo": "https://avatars.githubusercontent.com/u/10562768",
+    "address": "3663 Grady Field",
+    "location": "West Mariamshire",
+    "starRating": 4,
+    "images": [
+      "https://picsum.photos/seed/LzBHyZx/2353/3803?grayscale&blur=2"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Standard",
+        "pricePerNight": 260.08,
+        "amenities": [
+          "TV",
+          "Gym",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/72/1560/hotel?lock=3654585823203271"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Standard",
+        "pricePerNight": 208.44,
+        "amenities": [
+          "TV",
+          "Pool",
+          "Room Service",
+          "Breakfast",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/3552/817/hotel?lock=872142792865534"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Suite",
+        "pricePerNight": 103.83,
+        "amenities": [
+          "TV",
+          "Room Service",
+          "Air Conditioning",
+          "Gym",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/2834/2209/hotel?lock=285333520777341"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Deluxe",
+        "pricePerNight": 121.72,
+        "amenities": [
+          "WiFi",
+          "Gym",
+          "Room Service",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/277/1408/hotel?lock=6077679957719445"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Suite",
+        "pricePerNight": 255.86,
+        "amenities": [
+          "TV",
+          "Room Service",
+          "Pool",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/2066/1588/hotel?lock=6647009755204573"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Deluxe",
+        "pricePerNight": 382.24,
+        "amenities": [
+          "Gym",
+          "TV",
+          "WiFi",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/1682/113/hotel?lock=2391524406568550"
+        ]
+      },
+      {
+        "roomNum": 7,
+        "name": "Suite",
+        "pricePerNight": 377.88,
+        "amenities": [
+          "Breakfast",
+          "Room Service",
+          "Pool",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/3862/2804/hotel?lock=4704564717229663"
+        ]
+      },
+      {
+        "roomNum": 8,
+        "name": "Deluxe",
+        "pricePerNight": 120.5,
+        "amenities": [
+          "TV",
+          "Air Conditioning",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/3920/612/hotel?lock=3648621841166371"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Koepp LLC Hotel",
+    "logo": "https://avatars.githubusercontent.com/u/61162025",
+    "address": "71750 Ryan Junctions",
+    "location": "Melbourne",
+    "starRating": 3,
+    "images": [
+      "https://picsum.photos/seed/hjLU81aAHb/3608/1213?blur=1"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Standard",
+        "pricePerNight": 161.73,
+        "amenities": [
+          "TV",
+          "Gym",
+          "Breakfast",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/1355/1123/hotel?lock=6193299993658402"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Standard",
+        "pricePerNight": 144.86,
+        "amenities": [
+          "Pool",
+          "Room Service",
+          "Gym",
+          "WiFi",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/2481/2535/hotel?lock=6162712180339969"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Standard",
+        "pricePerNight": 215.06,
+        "amenities": [
+          "TV",
+          "Pool",
+          "Gym",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/222/2584/hotel?lock=291662229993707"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Standard",
+        "pricePerNight": 185.8,
+        "amenities": [
+          "Gym",
+          "Room Service",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/2707/463/hotel?lock=3009250528442856"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Standard",
+        "pricePerNight": 375.82,
+        "amenities": [
+          "Pool",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/1205/2576/hotel?lock=3041127481213143"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Deluxe",
+        "pricePerNight": 146.56,
+        "amenities": [
+          "Pool",
+          "TV",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/1729/2184/hotel?lock=4649839645715422"
+        ]
+      },
+      {
+        "roomNum": 7,
+        "name": "Suite",
+        "pricePerNight": 220.67,
+        "amenities": [
+          "TV",
+          "WiFi",
+          "Pool",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/1906/1258/hotel?lock=2839218671010293"
+        ]
+      },
+      {
+        "roomNum": 8,
+        "name": "Suite",
+        "pricePerNight": 171.21,
+        "amenities": [
+          "Room Service",
+          "Gym",
+          "WiFi",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/2788/512/hotel?lock=5070517364844192"
+        ]
+      },
+      {
+        "roomNum": 9,
+        "name": "Standard",
+        "pricePerNight": 94.63,
+        "amenities": [
+          "Gym",
+          "Room Service",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/3852/2029/hotel?lock=7583490622764669"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Abshire Group Hotel",
+    "logo": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/16.jpg",
+    "address": "82874 Ashley Place",
+    "location": "Feilview",
+    "starRating": 5,
+    "images": [
+      "https://picsum.photos/seed/fsa9qWnD/142/3745?grayscale&blur=10"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Standard",
+        "pricePerNight": 170.31,
+        "amenities": [
+          "WiFi",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/187/1904/hotel?lock=1079067094349130"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Deluxe",
+        "pricePerNight": 348.55,
+        "amenities": [
+          "Pool",
+          "WiFi",
+          "Room Service",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/3598/2319/hotel?lock=3348075193539929"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Standard",
+        "pricePerNight": 306.05,
+        "amenities": [
+          "Breakfast",
+          "Gym",
+          "Air Conditioning",
+          "Pool",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/775/1254/hotel?lock=4953361949285213"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Deluxe",
+        "pricePerNight": 235.2,
+        "amenities": [
+          "Breakfast",
+          "TV",
+          "Air Conditioning",
+          "Room Service",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/2449/206/hotel?lock=1644393353554589"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Standard",
+        "pricePerNight": 290.03,
+        "amenities": [
+          "Pool",
+          "TV",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/1805/1224/hotel?lock=8547638034259450"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Deluxe",
+        "pricePerNight": 270.11,
+        "amenities": [
+          "TV",
+          "Pool",
+          "WiFi",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/2371/2369/hotel?lock=5094996267812841"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Hettinger Group Hotel",
+    "logo": "https://avatars.githubusercontent.com/u/43608872",
+    "address": "67668 Senger Path",
+    "location": "East Wilberttown",
+    "starRating": 4,
+    "images": [
+      "https://picsum.photos/seed/jes0NkK/689/3191?grayscale&blur=4"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Suite",
+        "pricePerNight": 372.51,
+        "amenities": [
+          "TV",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/1468/3953/hotel?lock=922549761347138"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Standard",
+        "pricePerNight": 137.37,
+        "amenities": [
+          "Breakfast",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/304/1295/hotel?lock=1651370625539690"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Standard",
+        "pricePerNight": 309.74,
+        "amenities": [
+          "Room Service",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/2312/3350/hotel?lock=7812730412753672"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Standard",
+        "pricePerNight": 191.95,
+        "amenities": [
+          "WiFi",
+          "Breakfast",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/1145/2610/hotel?lock=839153739946493"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Suite",
+        "pricePerNight": 310.49,
+        "amenities": [
+          "Room Service",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/237/2416/hotel?lock=3004717872997139"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Deluxe",
+        "pricePerNight": 201.95,
+        "amenities": [
+          "WiFi",
+          "Air Conditioning",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/2648/1665/hotel?lock=6077720529669476"
+        ]
+      },
+      {
+        "roomNum": 7,
+        "name": "Deluxe",
+        "pricePerNight": 160.35,
+        "amenities": [
+          "Pool",
+          "Air Conditioning",
+          "Breakfast",
+          "Gym",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/3239/3019/hotel?lock=4219617390888684"
+        ]
+      },
+      {
+        "roomNum": 8,
+        "name": "Deluxe",
+        "pricePerNight": 391.7,
+        "amenities": [
+          "Room Service",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/2055/2901/hotel?lock=5010228597342265"
+        ]
+      },
+      {
+        "roomNum": 9,
+        "name": "Standard",
+        "pricePerNight": 340.78,
+        "amenities": [
+          "TV",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/178/1384/hotel?lock=3167934436593762"
+        ]
+      },
+      {
+        "roomNum": 10,
+        "name": "Standard",
+        "pricePerNight": 215.02,
+        "amenities": [
+          "WiFi",
+          "Gym",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/2373/874/hotel?lock=8795278566037507"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Keeling - Bogan Hotel",
+    "logo": "https://avatars.githubusercontent.com/u/4323974",
+    "address": "54081 Maiya Manor",
+    "location": "West Alden",
+    "starRating": 4,
+    "images": [
+      "https://picsum.photos/seed/Amy2rQ/2467/683?blur=5"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Standard",
+        "pricePerNight": 251.67,
+        "amenities": [
+          "Room Service",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/3469/2085/hotel?lock=4509966540244706"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Standard",
+        "pricePerNight": 303.82,
+        "amenities": [
+          "Gym",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/2774/3607/hotel?lock=789024266517451"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Standard",
+        "pricePerNight": 246.25,
+        "amenities": [
+          "WiFi",
+          "Breakfast",
+          "Room Service",
+          "Gym",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/2423/31/hotel?lock=5239889774821804"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Suite",
+        "pricePerNight": 268.11,
+        "amenities": [
+          "Air Conditioning",
+          "Gym",
+          "Room Service",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/469/1083/hotel?lock=321489866885873"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Suite",
+        "pricePerNight": 257.7,
+        "amenities": [
+          "Gym",
+          "WiFi",
+          "TV",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/138/3455/hotel?lock=3714421360348116"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Deluxe",
+        "pricePerNight": 318.68,
+        "amenities": [
+          "TV",
+          "Pool",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/849/589/hotel?lock=8548971935215258"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Ward, Powlowski and Paucek Hotel",
+    "logo": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/87.jpg",
+    "address": "8161 Lincoln Street",
+    "location": "East Taryn",
+    "starRating": 5,
+    "images": [
+      "https://picsum.photos/seed/nE0snQeGbe/3100/298?grayscale&blur=9"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Suite",
+        "pricePerNight": 326.34,
+        "amenities": [
+          "Room Service",
+          "Breakfast",
+          "Gym",
+          "Pool",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/1516/2705/hotel?lock=4547552640868093"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Standard",
+        "pricePerNight": 203.37,
+        "amenities": [
+          "Pool",
+          "Room Service",
+          "Air Conditioning",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/256/127/hotel?lock=5455999320746672"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Suite",
+        "pricePerNight": 271.51,
+        "amenities": [
+          "WiFi",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/506/162/hotel?lock=7120490694054765"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Deluxe",
+        "pricePerNight": 294.01,
+        "amenities": [
+          "Air Conditioning",
+          "TV",
+          "WiFi",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/3996/1547/hotel?lock=8638130953633821"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Suite",
+        "pricePerNight": 308.27,
+        "amenities": [
+          "Gym",
+          "Breakfast",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/2922/1012/hotel?lock=6974081976841501"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Standard",
+        "pricePerNight": 179,
+        "amenities": [
+          "Room Service",
+          "Air Conditioning",
+          "TV",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/3159/3858/hotel?lock=5326365118375345"
+        ]
+      },
+      {
+        "roomNum": 7,
+        "name": "Suite",
+        "pricePerNight": 215.43,
+        "amenities": [
+          "Room Service",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/901/506/hotel?lock=1198551399363188"
+        ]
+      },
+      {
+        "roomNum": 8,
+        "name": "Standard",
+        "pricePerNight": 354.46,
+        "amenities": [
+          "WiFi",
+          "Pool",
+          "Air Conditioning",
+          "TV",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/2945/1917/hotel?lock=2655299842933947"
+        ]
+      },
+      {
+        "roomNum": 9,
+        "name": "Standard",
+        "pricePerNight": 220.53,
+        "amenities": [
+          "Gym",
+          "TV",
+          "Air Conditioning",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/1897/547/hotel?lock=291464614023909"
+        ]
+      },
+      {
+        "roomNum": 10,
+        "name": "Deluxe",
+        "pricePerNight": 86.09,
+        "amenities": [
+          "Gym",
+          "Room Service",
+          "Air Conditioning",
+          "TV",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/222/500/hotel?lock=3731705441807111"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Parker, Kohler and Goodwin Hotel",
+    "logo": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/14.jpg",
+    "address": "20050 James Street",
+    "location": "Hilpertport",
+    "starRating": 3,
+    "images": [
+      "https://picsum.photos/seed/otnPMFXk/3237/2407"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Suite",
+        "pricePerNight": 237.68,
+        "amenities": [
+          "WiFi",
+          "Breakfast",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/1559/136/hotel?lock=731117663237212"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Standard",
+        "pricePerNight": 383.25,
+        "amenities": [
+          "Pool",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/3399/3405/hotel?lock=4670339233586805"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Suite",
+        "pricePerNight": 253.48,
+        "amenities": [
+          "Breakfast",
+          "Air Conditioning",
+          "Room Service",
+          "TV",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/535/1758/hotel?lock=5936568139521710"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Suite",
+        "pricePerNight": 241.16,
+        "amenities": [
+          "Pool",
+          "Room Service",
+          "Air Conditioning",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/2927/2335/hotel?lock=1065547343146934"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Deluxe",
+        "pricePerNight": 243.12,
+        "amenities": [
+          "TV",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/1931/2098/hotel?lock=1526305240294516"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Standard",
+        "pricePerNight": 171.42,
+        "amenities": [
+          "Breakfast",
+          "TV",
+          "Gym",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/3870/1127/hotel?lock=5022120857170921"
+        ]
+      },
+      {
+        "roomNum": 7,
+        "name": "Deluxe",
+        "pricePerNight": 201.27,
+        "amenities": [
+          "Room Service",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/3810/1271/hotel?lock=4402936505243439"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Schaden - Hilll Hotel",
+    "logo": "https://avatars.githubusercontent.com/u/3656638",
+    "address": "332 Daniel Spring",
+    "location": "Dickiburgh",
+    "starRating": 3,
+    "images": [
+      "https://picsum.photos/seed/DZo1g4C/486/561?grayscale&blur=1"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Suite",
+        "pricePerNight": 196.67,
+        "amenities": [
+          "Gym",
+          "WiFi",
+          "TV",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/2887/3874/hotel?lock=1883229664609500"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Deluxe",
+        "pricePerNight": 327.4,
+        "amenities": [
+          "Breakfast",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/1164/3006/hotel?lock=7648655353300643"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Deluxe",
+        "pricePerNight": 343.42,
+        "amenities": [
+          "Breakfast",
+          "Pool",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/3487/3229/hotel?lock=1373868742655754"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Deluxe",
+        "pricePerNight": 330,
+        "amenities": [
+          "TV",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/854/2935/hotel?lock=443635286129544"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Standard",
+        "pricePerNight": 322.78,
+        "amenities": [
+          "TV",
+          "Breakfast",
+          "Pool",
+          "Room Service",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/3947/3748/hotel?lock=661914623848726"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Nitzsche, Raynor and Beier Hotel",
+    "logo": "https://avatars.githubusercontent.com/u/22363077",
+    "address": "8867 Victoria Place",
+    "location": "Great Falls",
+    "starRating": 3,
+    "images": [
+      "https://picsum.photos/seed/b3vgd/2351/2680?blur=9"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Suite",
+        "pricePerNight": 152.88,
+        "amenities": [
+          "Breakfast",
+          "Gym",
+          "Pool",
+          "WiFi",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/700/3737/hotel?lock=8128738346992300"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Suite",
+        "pricePerNight": 146.57,
+        "amenities": [
+          "Breakfast",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/1750/3435/hotel?lock=1015225109830676"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Suite",
+        "pricePerNight": 109.86,
+        "amenities": [
+          "Room Service",
+          "TV",
+          "Pool",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/2413/2336/hotel?lock=3405422905602968"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Suite",
+        "pricePerNight": 236.68,
+        "amenities": [
+          "TV",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/2842/762/hotel?lock=6876822480032707"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Suite",
+        "pricePerNight": 142.46,
+        "amenities": [
+          "Pool",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/1487/915/hotel?lock=8673089156517783"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Standard",
+        "pricePerNight": 346.63,
+        "amenities": [
+          "Air Conditioning",
+          "Breakfast",
+          "Pool",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/544/1022/hotel?lock=2609009306078760"
+        ]
+      },
+      {
+        "roomNum": 7,
+        "name": "Standard",
+        "pricePerNight": 138.29,
+        "amenities": [
+          "Breakfast",
+          "Gym",
+          "WiFi",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/445/2033/hotel?lock=5891704144424169"
+        ]
+      },
+      {
+        "roomNum": 8,
+        "name": "Suite",
+        "pricePerNight": 177.75,
+        "amenities": [
+          "Air Conditioning",
+          "TV",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/416/817/hotel?lock=5156825775211493"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Marquardt Inc Hotel",
+    "logo": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/55.jpg",
+    "address": "888 Gracie Branch",
+    "location": "West Dashawnview",
+    "starRating": 4,
+    "images": [
+      "https://picsum.photos/seed/BUe8BK5OA/3559/3414?blur=4"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Standard",
+        "pricePerNight": 86.15,
+        "amenities": [
+          "Air Conditioning",
+          "TV",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/968/1477/hotel?lock=111161365064628"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Standard",
+        "pricePerNight": 304.39,
+        "amenities": [
+          "Breakfast",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/3058/3102/hotel?lock=152439597201159"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Standard",
+        "pricePerNight": 297.45,
+        "amenities": [
+          "Room Service",
+          "Gym",
+          "TV",
+          "Air Conditioning",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/3821/3999/hotel?lock=155985375569211"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Standard",
+        "pricePerNight": 238.3,
+        "amenities": [
+          "Room Service",
+          "WiFi",
+          "Air Conditioning",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/1740/2016/hotel?lock=8531684978838808"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Suite",
+        "pricePerNight": 343.79,
+        "amenities": [
+          "WiFi",
+          "Breakfast",
+          "Room Service",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/3960/2813/hotel?lock=5246066283489328"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Suite",
+        "pricePerNight": 380.38,
+        "amenities": [
+          "WiFi",
+          "TV",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/3816/1787/hotel?lock=1573003114980178"
+        ]
+      },
+      {
+        "roomNum": 7,
+        "name": "Standard",
+        "pricePerNight": 106.1,
+        "amenities": [
+          "Pool",
+          "Room Service",
+          "Gym",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/2849/2326/hotel?lock=3439154997968338"
+        ]
+      },
+      {
+        "roomNum": 8,
+        "name": "Suite",
+        "pricePerNight": 176.12,
+        "amenities": [
+          "Gym",
+          "Breakfast",
+          "Room Service",
+          "WiFi",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/2471/2097/hotel?lock=6627622673890863"
+        ]
+      },
+      {
+        "roomNum": 9,
+        "name": "Suite",
+        "pricePerNight": 381.91,
+        "amenities": [
+          "Pool",
+          "Room Service",
+          "WiFi",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/1960/1176/hotel?lock=1683637826048665"
+        ]
+      },
+      {
+        "roomNum": 10,
+        "name": "Suite",
+        "pricePerNight": 275.75,
+        "amenities": [
+          "Breakfast",
+          "Gym",
+          "TV",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/129/1862/hotel?lock=76857943753006"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "MacGyver - White Hotel",
+    "logo": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/4.jpg",
+    "address": "73038 Oak Road",
+    "location": "Lake Khalil",
+    "starRating": 3,
+    "images": [
+      "https://picsum.photos/seed/7kdq7oS/2945/2469"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Deluxe",
+        "pricePerNight": 279.61,
+        "amenities": [
+          "Gym",
+          "TV",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/2170/2069/hotel?lock=2628485674142970"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Standard",
+        "pricePerNight": 362.38,
+        "amenities": [
+          "WiFi",
+          "Breakfast",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/1271/1780/hotel?lock=1331292360873276"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Suite",
+        "pricePerNight": 225.93,
+        "amenities": [
+          "WiFi",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/2887/906/hotel?lock=3044830164477650"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Suite",
+        "pricePerNight": 253.66,
+        "amenities": [
+          "Air Conditioning",
+          "Gym",
+          "TV",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/3138/2462/hotel?lock=6848631211712654"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Deluxe",
+        "pricePerNight": 274.4,
+        "amenities": [
+          "Pool",
+          "WiFi",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/753/2532/hotel?lock=4463925293873155"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Wehner LLC Hotel",
+    "logo": "https://avatars.githubusercontent.com/u/73682127",
+    "address": "282 Cormier Unions",
+    "location": "Derrickview",
+    "starRating": 4,
+    "images": [
+      "https://picsum.photos/seed/aItwnqn/167/1438?blur=6"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Suite",
+        "pricePerNight": 226.67,
+        "amenities": [
+          "Room Service",
+          "Gym",
+          "Breakfast",
+          "TV",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/903/3422/hotel?lock=8924429564203566"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Standard",
+        "pricePerNight": 312.72,
+        "amenities": [
+          "WiFi",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/2934/1274/hotel?lock=222249691237546"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Suite",
+        "pricePerNight": 346.83,
+        "amenities": [
+          "Gym",
+          "TV",
+          "Breakfast",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/1162/2175/hotel?lock=7347710736835455"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Deluxe",
+        "pricePerNight": 175.61,
+        "amenities": [
+          "Pool",
+          "Gym",
+          "Air Conditioning",
+          "Breakfast",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/2995/3506/hotel?lock=935109452934251"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Standard",
+        "pricePerNight": 288.71,
+        "amenities": [
+          "Air Conditioning",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/3805/1466/hotel?lock=5744985362943112"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Suite",
+        "pricePerNight": 365.38,
+        "amenities": [
+          "Air Conditioning",
+          "TV",
+          "Gym",
+          "WiFi",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/1462/2536/hotel?lock=8243767008133491"
+        ]
+      },
+      {
+        "roomNum": 7,
+        "name": "Suite",
+        "pricePerNight": 183.15,
+        "amenities": [
+          "Gym",
+          "Room Service",
+          "Pool",
+          "WiFi",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/1785/1262/hotel?lock=5621419643758062"
+        ]
+      },
+      {
+        "roomNum": 8,
+        "name": "Suite",
+        "pricePerNight": 91.6,
+        "amenities": [
+          "TV",
+          "Pool",
+          "Gym",
+          "Breakfast",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/3153/2814/hotel?lock=4462352498224849"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Krajcik, Satterfield and Johns Hotel",
+    "logo": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/98.jpg",
+    "address": "192 Gus Flat",
+    "location": "South Fletcher",
+    "starRating": 5,
+    "images": [
+      "https://picsum.photos/seed/11rhWQ/3615/2830?blur=7"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Suite",
+        "pricePerNight": 327.48,
+        "amenities": [
+          "Room Service",
+          "TV",
+          "Breakfast",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/2728/1520/hotel?lock=4052921458358078"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Standard",
+        "pricePerNight": 367.31,
+        "amenities": [
+          "Pool",
+          "WiFi",
+          "TV",
+          "Breakfast",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/1218/3630/hotel?lock=1734485624882247"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Suite",
+        "pricePerNight": 329.97,
+        "amenities": [
+          "Gym",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/1777/1809/hotel?lock=5699973875505915"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Standard",
+        "pricePerNight": 316.45,
+        "amenities": [
+          "Gym",
+          "Air Conditioning",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/1716/2829/hotel?lock=4799129395969514"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Standard",
+        "pricePerNight": 349.74,
+        "amenities": [
+          "Air Conditioning",
+          "Pool",
+          "Room Service",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/3098/2569/hotel?lock=802311670737548"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Deluxe",
+        "pricePerNight": 277.93,
+        "amenities": [
+          "Pool",
+          "Room Service",
+          "Breakfast",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/1460/1726/hotel?lock=1026665011435420"
+        ]
+      },
+      {
+        "roomNum": 7,
+        "name": "Deluxe",
+        "pricePerNight": 145.54,
+        "amenities": [
+          "Room Service",
+          "Air Conditioning",
+          "WiFi",
+          "Breakfast",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/398/1224/hotel?lock=615208935736576"
+        ]
+      },
+      {
+        "roomNum": 8,
+        "name": "Suite",
+        "pricePerNight": 84.14,
+        "amenities": [
+          "Pool",
+          "TV",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/1105/2661/hotel?lock=8092198694761032"
+        ]
+      },
+      {
+        "roomNum": 9,
+        "name": "Deluxe",
+        "pricePerNight": 290.35,
+        "amenities": [
+          "Gym",
+          "Breakfast",
+          "Air Conditioning",
+          "TV",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/1221/2362/hotel?lock=7894271172523443"
+        ]
+      },
+      {
+        "roomNum": 10,
+        "name": "Deluxe",
+        "pricePerNight": 92.23,
+        "amenities": [
+          "Breakfast",
+          "Pool",
+          "WiFi",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/430/171/hotel?lock=2961141420838189"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Prosacco - Bailey Hotel",
+    "logo": "https://avatars.githubusercontent.com/u/43492319",
+    "address": "3435 Adell Mountains",
+    "location": "Jessikaside",
+    "starRating": 4,
+    "images": [
+      "https://picsum.photos/seed/xGxNQ/902/3753?blur=4"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Standard",
+        "pricePerNight": 244.13,
+        "amenities": [
+          "Pool",
+          "TV",
+          "Air Conditioning",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/3223/2679/hotel?lock=5651572513185980"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Deluxe",
+        "pricePerNight": 321.86,
+        "amenities": [
+          "Gym",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/2243/1043/hotel?lock=8768977959380794"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Deluxe",
+        "pricePerNight": 277.24,
+        "amenities": [
+          "Breakfast",
+          "Pool",
+          "Air Conditioning",
+          "WiFi",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/852/1212/hotel?lock=7747087471323317"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Deluxe",
+        "pricePerNight": 129.04,
+        "amenities": [
+          "Room Service",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/2586/3115/hotel?lock=5778239859805008"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Suite",
+        "pricePerNight": 215.12,
+        "amenities": [
+          "WiFi",
+          "Gym",
+          "Room Service",
+          "Pool",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/1300/3449/hotel?lock=3288841884847215"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Deluxe",
+        "pricePerNight": 110.85,
+        "amenities": [
+          "Air Conditioning",
+          "Room Service",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/2740/1260/hotel?lock=8156517025832290"
+        ]
+      },
+      {
+        "roomNum": 7,
+        "name": "Suite",
+        "pricePerNight": 218.25,
+        "amenities": [
+          "Gym",
+          "Room Service",
+          "TV",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/1019/2267/hotel?lock=876009197176906"
+        ]
+      },
+      {
+        "roomNum": 8,
+        "name": "Suite",
+        "pricePerNight": 193.06,
+        "amenities": [
+          "Gym",
+          "TV",
+          "Room Service",
+          "Pool",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/2351/3251/hotel?lock=2034286298815670"
+        ]
+      },
+      {
+        "roomNum": 9,
+        "name": "Standard",
+        "pricePerNight": 127.17,
+        "amenities": [
+          "Pool",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/3873/2365/hotel?lock=4515324478837118"
+        ]
+      },
+      {
+        "roomNum": 10,
+        "name": "Deluxe",
+        "pricePerNight": 386.4,
+        "amenities": [
+          "Room Service",
+          "TV",
+          "Gym",
+          "Air Conditioning",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/208/3708/hotel?lock=6574143824582316"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Labadie, Fay and Donnelly Hotel",
+    "logo": "https://avatars.githubusercontent.com/u/87966159",
+    "address": "96033 S West Street",
+    "location": "Murazikstad",
+    "starRating": 4,
+    "images": [
+      "https://picsum.photos/seed/6wLwyDla/3141/32?grayscale&blur=9"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Suite",
+        "pricePerNight": 289.74,
+        "amenities": [
+          "Air Conditioning",
+          "TV",
+          "Gym",
+          "Pool",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/737/3703/hotel?lock=3307917183864675"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Deluxe",
+        "pricePerNight": 312.12,
+        "amenities": [
+          "TV",
+          "Gym",
+          "Pool",
+          "Air Conditioning",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/2494/3068/hotel?lock=6599375019148347"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Suite",
+        "pricePerNight": 287.13,
+        "amenities": [
+          "Air Conditioning",
+          "Room Service",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/3829/2505/hotel?lock=8013461085281250"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Suite",
+        "pricePerNight": 341.61,
+        "amenities": [
+          "Gym",
+          "Breakfast",
+          "Room Service",
+          "Air Conditioning",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/1151/3939/hotel?lock=3451825077569108"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Standard",
+        "pricePerNight": 124.88,
+        "amenities": [
+          "WiFi",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/275/1109/hotel?lock=131330101536131"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Suite",
+        "pricePerNight": 262.46,
+        "amenities": [
+          "Air Conditioning",
+          "Room Service",
+          "WiFi",
+          "Gym",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/1546/2837/hotel?lock=4915691511025124"
+        ]
+      },
+      {
+        "roomNum": 7,
+        "name": "Standard",
+        "pricePerNight": 100.71,
+        "amenities": [
+          "Air Conditioning",
+          "TV",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/2789/3296/hotel?lock=5743713200143620"
+        ]
+      },
+      {
+        "roomNum": 8,
+        "name": "Standard",
+        "pricePerNight": 96.53,
+        "amenities": [
+          "Room Service",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/2078/1506/hotel?lock=8119548375588782"
+        ]
+      },
+      {
+        "roomNum": 9,
+        "name": "Suite",
+        "pricePerNight": 249.94,
+        "amenities": [
+          "TV",
+          "Breakfast",
+          "WiFi",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/664/2896/hotel?lock=8052211523298678"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Lebsack - Dietrich Hotel",
+    "logo": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/96.jpg",
+    "address": "1280 Michele Harbor",
+    "location": "Giovannahaven",
+    "starRating": 3,
+    "images": [
+      "https://picsum.photos/seed/xNSzPDLrBe/1940/3854?grayscale&blur=2"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Standard",
+        "pricePerNight": 117.24,
+        "amenities": [
+          "Air Conditioning",
+          "Breakfast",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/2115/700/hotel?lock=7021079535354227"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Standard",
+        "pricePerNight": 247.82,
+        "amenities": [
+          "Room Service",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/152/3348/hotel?lock=6707195636580577"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Standard",
+        "pricePerNight": 143.31,
+        "amenities": [
+          "Breakfast",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/2568/397/hotel?lock=8185190584541468"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Suite",
+        "pricePerNight": 94.8,
+        "amenities": [
+          "Air Conditioning",
+          "TV",
+          "Breakfast",
+          "Gym",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/2713/3316/hotel?lock=4611205419459678"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Deluxe",
+        "pricePerNight": 314.04,
+        "amenities": [
+          "WiFi",
+          "Air Conditioning",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/2815/2544/hotel?lock=8707257615721523"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Deluxe",
+        "pricePerNight": 299.04,
+        "amenities": [
+          "TV",
+          "Room Service",
+          "WiFi",
+          "Gym",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/234/2310/hotel?lock=6358009912100892"
+        ]
+      },
+      {
+        "roomNum": 7,
+        "name": "Suite",
+        "pricePerNight": 378.83,
+        "amenities": [
+          "TV",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/257/3581/hotel?lock=4225689069162338"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Gleason, Ullrich and Reynolds Hotel",
+    "logo": "https://avatars.githubusercontent.com/u/30576093",
+    "address": "163 Shawna Drive",
+    "location": "Lelandberg",
+    "starRating": 5,
+    "images": [
+      "https://picsum.photos/seed/q3oCW8N/312/1035?blur=3"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Deluxe",
+        "pricePerNight": 242.66,
+        "amenities": [
+          "Breakfast",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/3995/881/hotel?lock=1285650518618249"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Suite",
+        "pricePerNight": 388.99,
+        "amenities": [
+          "Gym",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/2108/1762/hotel?lock=7328807240531000"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Deluxe",
+        "pricePerNight": 234.64,
+        "amenities": [
+          "Pool",
+          "Gym",
+          "WiFi",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/1219/825/hotel?lock=8665173657329718"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Suite",
+        "pricePerNight": 378.26,
+        "amenities": [
+          "Gym",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/451/3797/hotel?lock=8776865160724814"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Standard",
+        "pricePerNight": 200.64,
+        "amenities": [
+          "TV",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/288/3362/hotel?lock=1154780407572421"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Standard",
+        "pricePerNight": 210.25,
+        "amenities": [
+          "Gym",
+          "Air Conditioning",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/277/2395/hotel?lock=4251595747859889"
+        ]
+      },
+      {
+        "roomNum": 7,
+        "name": "Suite",
+        "pricePerNight": 184.45,
+        "amenities": [
+          "Pool",
+          "TV",
+          "Gym",
+          "Air Conditioning",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/730/3424/hotel?lock=1214381203151425"
+        ]
+      },
+      {
+        "roomNum": 8,
+        "name": "Suite",
+        "pricePerNight": 240.67,
+        "amenities": [
+          "Room Service",
+          "Pool",
+          "WiFi",
+          "Air Conditioning",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/2445/3806/hotel?lock=7273036047187649"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Dietrich - Marquardt Hotel",
+    "logo": "https://avatars.githubusercontent.com/u/95524922",
+    "address": "936 Derby Road",
+    "location": "Oro Valley",
+    "starRating": 4,
+    "images": [
+      "https://picsum.photos/seed/WJkzhpIDV/1739/2310?blur=3"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Standard",
+        "pricePerNight": 102.48,
+        "amenities": [
+          "Room Service",
+          "TV",
+          "WiFi",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/2940/1481/hotel?lock=2331837134968652"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Standard",
+        "pricePerNight": 272.58,
+        "amenities": [
+          "Room Service",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/2/1754/hotel?lock=3408427683554541"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Suite",
+        "pricePerNight": 96.36,
+        "amenities": [
+          "Breakfast",
+          "Gym",
+          "TV",
+          "Room Service",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/3386/954/hotel?lock=686432644790326"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Deluxe",
+        "pricePerNight": 311.88,
+        "amenities": [
+          "Room Service",
+          "TV",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/2073/2878/hotel?lock=8827701436377430"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Suite",
+        "pricePerNight": 83.38,
+        "amenities": [
+          "Breakfast",
+          "TV",
+          "Air Conditioning",
+          "Room Service",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/1506/2213/hotel?lock=7799803805188156"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Suite",
+        "pricePerNight": 143.19,
+        "amenities": [
+          "Room Service",
+          "TV",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/854/362/hotel?lock=5249095293665985"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Hoppe, MacGyver and Schimmel Hotel",
+    "logo": "https://avatars.githubusercontent.com/u/16957878",
+    "address": "63672 W Walnut Street",
+    "location": "Daughertyberg",
+    "starRating": 3,
+    "images": [
+      "https://picsum.photos/seed/gWfncQc/101/2229?grayscale&blur=9"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Suite",
+        "pricePerNight": 142.62,
+        "amenities": [
+          "Room Service",
+          "Pool",
+          "Breakfast",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/3566/950/hotel?lock=7706568392454633"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Standard",
+        "pricePerNight": 315.52,
+        "amenities": [
+          "Pool",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/3575/900/hotel?lock=4073870955983727"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Standard",
+        "pricePerNight": 355.32,
+        "amenities": [
+          "Breakfast",
+          "Pool",
+          "WiFi",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/3078/20/hotel?lock=1520271152704306"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Standard",
+        "pricePerNight": 151.07,
+        "amenities": [
+          "WiFi",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/1257/762/hotel?lock=5589955378586299"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Standard",
+        "pricePerNight": 211.07,
+        "amenities": [
+          "Pool",
+          "Air Conditioning",
+          "Breakfast",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/875/3185/hotel?lock=6190813051273647"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Haag, Wuckert and Emard Hotel",
+    "logo": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/48.jpg",
+    "address": "5158 Waylon Track",
+    "location": "Gibsoncester",
+    "starRating": 3,
+    "images": [
+      "https://picsum.photos/seed/ENibjRwYCS/113/1368?blur=4"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Suite",
+        "pricePerNight": 385.19,
+        "amenities": [
+          "Room Service",
+          "Gym",
+          "WiFi",
+          "Air Conditioning",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/2977/2653/hotel?lock=2353152012849249"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Deluxe",
+        "pricePerNight": 89.41,
+        "amenities": [
+          "Breakfast",
+          "TV",
+          "Pool",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/49/2704/hotel?lock=7247246816812862"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Suite",
+        "pricePerNight": 147.36,
+        "amenities": [
+          "Pool",
+          "Gym",
+          "TV",
+          "WiFi",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/3479/2829/hotel?lock=1606842713740337"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Standard",
+        "pricePerNight": 205.36,
+        "amenities": [
+          "Pool",
+          "Gym",
+          "Room Service",
+          "TV",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/215/2252/hotel?lock=2023459025293641"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Suite",
+        "pricePerNight": 313.99,
+        "amenities": [
+          "Room Service",
+          "Pool",
+          "Breakfast",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/2377/2351/hotel?lock=8758278887155681"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Suite",
+        "pricePerNight": 278.32,
+        "amenities": [
+          "Air Conditioning",
+          "TV",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/2254/3661/hotel?lock=4816528122551734"
+        ]
+      },
+      {
+        "roomNum": 7,
+        "name": "Deluxe",
+        "pricePerNight": 389.82,
+        "amenities": [
+          "Room Service",
+          "Breakfast",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/1755/1839/hotel?lock=1478502089309593"
+        ]
+      },
+      {
+        "roomNum": 8,
+        "name": "Deluxe",
+        "pricePerNight": 162.58,
+        "amenities": [
+          "Gym",
+          "Air Conditioning",
+          "WiFi",
+          "Pool",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/3010/2429/hotel?lock=3068612225988684"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Smith, Senger and Wintheiser Hotel",
+    "logo": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/98.jpg",
+    "address": "576 Fisher Terrace",
+    "location": "South Gretchenburgh",
+    "starRating": 5,
+    "images": [
+      "https://picsum.photos/seed/wftzsLhKq/99/1339?blur=1"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Suite",
+        "pricePerNight": 399.47,
+        "amenities": [
+          "Breakfast",
+          "Air Conditioning",
+          "TV",
+          "WiFi",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/2917/1187/hotel?lock=3114410694265"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Standard",
+        "pricePerNight": 222.1,
+        "amenities": [
+          "Breakfast",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/3517/1751/hotel?lock=8219484788767425"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Suite",
+        "pricePerNight": 82.44,
+        "amenities": [
+          "Gym",
+          "TV",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/1580/271/hotel?lock=7228322503733466"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Standard",
+        "pricePerNight": 342.45,
+        "amenities": [
+          "Air Conditioning",
+          "Pool",
+          "Gym",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/666/1166/hotel?lock=4933930483150995"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Suite",
+        "pricePerNight": 137,
+        "amenities": [
+          "Gym",
+          "Pool",
+          "WiFi",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/494/1882/hotel?lock=1872259553884226"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Suite",
+        "pricePerNight": 318.13,
+        "amenities": [
+          "Air Conditioning",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/2985/1360/hotel?lock=3084129987189196"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Schneider, Champlin and Nader Hotel",
+    "logo": "https://avatars.githubusercontent.com/u/33001994",
+    "address": "869 Katelynn Alley",
+    "location": "Pleasanton",
+    "starRating": 5,
+    "images": [
+      "https://picsum.photos/seed/Xvisqh/3697/1089?grayscale&blur=5"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Deluxe",
+        "pricePerNight": 328.97,
+        "amenities": [
+          "WiFi",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/650/3658/hotel?lock=432656873782413"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Standard",
+        "pricePerNight": 268.83,
+        "amenities": [
+          "Breakfast",
+          "Room Service",
+          "Pool",
+          "Air Conditioning",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/2036/769/hotel?lock=7717010279639698"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Suite",
+        "pricePerNight": 338.48,
+        "amenities": [
+          "Pool",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/197/2023/hotel?lock=3161505611608741"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Deluxe",
+        "pricePerNight": 381.97,
+        "amenities": [
+          "Breakfast",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/2909/1254/hotel?lock=4590487028684323"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Suite",
+        "pricePerNight": 279.08,
+        "amenities": [
+          "Breakfast",
+          "Room Service",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/1339/2448/hotel?lock=4338658119197278"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Bode and Sons Hotel",
+    "logo": "https://avatars.githubusercontent.com/u/36018980",
+    "address": "20182 Davis Crossing",
+    "location": "Fort Generalbury",
+    "starRating": 3,
+    "images": [
+      "https://picsum.photos/seed/VkOx7/2796/3981?grayscale&blur=1"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Deluxe",
+        "pricePerNight": 85.58,
+        "amenities": [
+          "Air Conditioning",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/2003/2589/hotel?lock=2098409723686925"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Standard",
+        "pricePerNight": 327.12,
+        "amenities": [
+          "TV",
+          "Breakfast",
+          "Pool",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/2600/3916/hotel?lock=4086144300146869"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Standard",
+        "pricePerNight": 82.7,
+        "amenities": [
+          "TV",
+          "Air Conditioning",
+          "Gym",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/3580/1799/hotel?lock=4506383767716702"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Suite",
+        "pricePerNight": 348.53,
+        "amenities": [
+          "TV",
+          "Pool",
+          "WiFi",
+          "Air Conditioning",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/2872/3173/hotel?lock=2132874748373961"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Deluxe",
+        "pricePerNight": 245.07,
+        "amenities": [
+          "Pool",
+          "WiFi",
+          "Breakfast",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/532/3904/hotel?lock=1193421902174710"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Deluxe",
+        "pricePerNight": 255.94,
+        "amenities": [
+          "Pool",
+          "WiFi",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/1429/2362/hotel?lock=4595615701544061"
+        ]
+      },
+      {
+        "roomNum": 7,
+        "name": "Standard",
+        "pricePerNight": 108.38,
+        "amenities": [
+          "WiFi",
+          "Breakfast",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/833/854/hotel?lock=4295508830034489"
+        ]
+      },
+      {
+        "roomNum": 8,
+        "name": "Suite",
+        "pricePerNight": 136.21,
+        "amenities": [
+          "Gym",
+          "Room Service",
+          "TV",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/1233/1960/hotel?lock=5167083462897379"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Harvey LLC Hotel",
+    "logo": "https://avatars.githubusercontent.com/u/58547340",
+    "address": "793 O'Reilly Lake",
+    "location": "Steuberport",
+    "starRating": 4,
+    "images": [
+      "https://picsum.photos/seed/7qu5vJoC/1416/3817?blur=1"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Standard",
+        "pricePerNight": 276.22,
+        "amenities": [
+          "Pool",
+          "Breakfast",
+          "WiFi",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/1405/883/hotel?lock=5242797871343035"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Standard",
+        "pricePerNight": 138.71,
+        "amenities": [
+          "Room Service",
+          "Pool",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/98/3416/hotel?lock=7951009805376219"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Standard",
+        "pricePerNight": 205.67,
+        "amenities": [
+          "Gym",
+          "Pool",
+          "Room Service",
+          "Breakfast",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/3555/27/hotel?lock=4573432882116678"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Suite",
+        "pricePerNight": 197.6,
+        "amenities": [
+          "Room Service",
+          "WiFi",
+          "Gym",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/2546/2074/hotel?lock=1631818285132055"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Deluxe",
+        "pricePerNight": 304.98,
+        "amenities": [
+          "Pool",
+          "TV",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/2149/1053/hotel?lock=614149779854067"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Douglas, Nolan and Bradtke Hotel",
+    "logo": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/19.jpg",
+    "address": "3877 Oak Street",
+    "location": "Charleston",
+    "starRating": 5,
+    "images": [
+      "https://picsum.photos/seed/Abtre0jfaw/3560/247?blur=7"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Suite",
+        "pricePerNight": 271.33,
+        "amenities": [
+          "WiFi",
+          "Breakfast",
+          "Gym",
+          "Room Service",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/3045/1391/hotel?lock=818504923716379"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Standard",
+        "pricePerNight": 269.34,
+        "amenities": [
+          "WiFi",
+          "Gym",
+          "Room Service",
+          "TV",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/3850/568/hotel?lock=5362473102963726"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Suite",
+        "pricePerNight": 124.66,
+        "amenities": [
+          "Breakfast",
+          "TV",
+          "WiFi",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/1397/1063/hotel?lock=4174532480966357"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Standard",
+        "pricePerNight": 327.59,
+        "amenities": [
+          "TV",
+          "Gym",
+          "Air Conditioning",
+          "Pool",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/2300/189/hotel?lock=2170088306425447"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Suite",
+        "pricePerNight": 150.14,
+        "amenities": [
+          "Breakfast",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/3107/2154/hotel?lock=5244202073784033"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "West, Schulist and Jacobson Hotel",
+    "logo": "https://avatars.githubusercontent.com/u/77632451",
+    "address": "7759 Dooley Walks",
+    "location": "Lindville",
+    "starRating": 4,
+    "images": [
+      "https://picsum.photos/seed/ps2Ad/1033/3511?grayscale&blur=4"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Deluxe",
+        "pricePerNight": 380.52,
+        "amenities": [
+          "Breakfast",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/183/419/hotel?lock=283868921961859"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Suite",
+        "pricePerNight": 233.19,
+        "amenities": [
+          "WiFi",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/70/635/hotel?lock=1558120916704255"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Standard",
+        "pricePerNight": 245.08,
+        "amenities": [
+          "Breakfast",
+          "TV",
+          "WiFi",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/2582/318/hotel?lock=1455790560988007"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Suite",
+        "pricePerNight": 132.45,
+        "amenities": [
+          "Breakfast",
+          "Air Conditioning",
+          "Pool",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/3722/2874/hotel?lock=6525981428479395"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Standard",
+        "pricePerNight": 277.39,
+        "amenities": [
+          "Gym",
+          "WiFi",
+          "Pool",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/2437/1255/hotel?lock=124400224584427"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Bernier - Kohler Hotel",
+    "logo": "https://avatars.githubusercontent.com/u/10533956",
+    "address": "44798 Talon Harbors",
+    "location": "Batzberg",
+    "starRating": 3,
+    "images": [
+      "https://picsum.photos/seed/RF0u5iD/3057/2393?blur=7"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Deluxe",
+        "pricePerNight": 123.94,
+        "amenities": [
+          "WiFi",
+          "Gym",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/883/2382/hotel?lock=4678711980900223"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Deluxe",
+        "pricePerNight": 220.48,
+        "amenities": [
+          "Gym",
+          "WiFi",
+          "Air Conditioning",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/135/565/hotel?lock=47841088117732"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Suite",
+        "pricePerNight": 124.85,
+        "amenities": [
+          "Room Service",
+          "TV",
+          "Gym",
+          "Air Conditioning",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/241/3251/hotel?lock=8563290242169143"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Deluxe",
+        "pricePerNight": 262.16,
+        "amenities": [
+          "TV",
+          "Pool",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/3831/3280/hotel?lock=7312636135698468"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Standard",
+        "pricePerNight": 91.09,
+        "amenities": [
+          "Gym",
+          "Air Conditioning",
+          "TV",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/1771/2113/hotel?lock=8641801700963750"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Deluxe",
+        "pricePerNight": 210.65,
+        "amenities": [
+          "TV",
+          "Air Conditioning",
+          "Gym",
+          "Pool",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/551/939/hotel?lock=8076343450966226"
+        ]
+      },
+      {
+        "roomNum": 7,
+        "name": "Standard",
+        "pricePerNight": 302.7,
+        "amenities": [
+          "Gym",
+          "Room Service",
+          "Air Conditioning",
+          "WiFi",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/1364/1812/hotel?lock=607480910401421"
+        ]
+      },
+      {
+        "roomNum": 8,
+        "name": "Suite",
+        "pricePerNight": 98.47,
+        "amenities": [
+          "Room Service",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/3712/976/hotel?lock=4446842683931849"
+        ]
+      },
+      {
+        "roomNum": 9,
+        "name": "Suite",
+        "pricePerNight": 139.74,
+        "amenities": [
+          "TV",
+          "Air Conditioning",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/2052/2311/hotel?lock=4771730500402569"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Labadie, Grimes and Ledner Hotel",
+    "logo": "https://avatars.githubusercontent.com/u/75147925",
+    "address": "1929 Lebsack Forest",
+    "location": "Evangelineworth",
+    "starRating": 5,
+    "images": [
+      "https://picsum.photos/seed/sQtuh3oueB/3022/1929?grayscale&blur=8"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Standard",
+        "pricePerNight": 220.16,
+        "amenities": [
+          "Pool",
+          "TV",
+          "WiFi",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/2435/643/hotel?lock=33167526510445"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Standard",
+        "pricePerNight": 205.54,
+        "amenities": [
+          "TV",
+          "WiFi",
+          "Gym",
+          "Breakfast",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/3290/3699/hotel?lock=7010035230077899"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Standard",
+        "pricePerNight": 111.08,
+        "amenities": [
+          "Gym",
+          "Pool",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/666/1950/hotel?lock=3829071884523950"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Standard",
+        "pricePerNight": 318.64,
+        "amenities": [
+          "Gym",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/2210/2157/hotel?lock=1746959575578851"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Deluxe",
+        "pricePerNight": 256.71,
+        "amenities": [
+          "WiFi",
+          "Room Service",
+          "Breakfast",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/2895/1898/hotel?lock=7536266072907634"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Suite",
+        "pricePerNight": 374,
+        "amenities": [
+          "Room Service",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/1588/2762/hotel?lock=3689194396617549"
+        ]
+      },
+      {
+        "roomNum": 7,
+        "name": "Suite",
+        "pricePerNight": 214.62,
+        "amenities": [
+          "Air Conditioning",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/1676/1766/hotel?lock=8455381958381260"
+        ]
+      },
+      {
+        "roomNum": 8,
+        "name": "Suite",
+        "pricePerNight": 178.79,
+        "amenities": [
+          "Gym",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/2705/2265/hotel?lock=3752784957166674"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Steuber Group Hotel",
+    "logo": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/38.jpg",
+    "address": "92972 Erwin Mount",
+    "location": "Chayastead",
+    "starRating": 5,
+    "images": [
+      "https://picsum.photos/seed/blIen/1072/1376?grayscale&blur=6"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Standard",
+        "pricePerNight": 390.64,
+        "amenities": [
+          "Room Service",
+          "Gym",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/3071/1509/hotel?lock=2748071015970392"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Standard",
+        "pricePerNight": 348.9,
+        "amenities": [
+          "Air Conditioning",
+          "Room Service",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/1464/2158/hotel?lock=2990449526199268"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Standard",
+        "pricePerNight": 135.43,
+        "amenities": [
+          "Pool",
+          "Room Service",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/1654/2513/hotel?lock=2732015337161887"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Standard",
+        "pricePerNight": 345.55,
+        "amenities": [
+          "Air Conditioning",
+          "WiFi",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/1147/375/hotel?lock=1949001372249994"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Deluxe",
+        "pricePerNight": 339.72,
+        "amenities": [
+          "Air Conditioning",
+          "TV",
+          "WiFi",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/786/1897/hotel?lock=2924573660176118"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Standard",
+        "pricePerNight": 214.91,
+        "amenities": [
+          "Room Service",
+          "WiFi",
+          "Pool",
+          "Breakfast",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/2701/493/hotel?lock=5656672132867781"
+        ]
+      },
+      {
+        "roomNum": 7,
+        "name": "Suite",
+        "pricePerNight": 189.58,
+        "amenities": [
+          "WiFi",
+          "Gym",
+          "TV",
+          "Pool",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/3413/1062/hotel?lock=8846977136611655"
+        ]
+      },
+      {
+        "roomNum": 8,
+        "name": "Suite",
+        "pricePerNight": 254.11,
+        "amenities": [
+          "Breakfast",
+          "TV",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/975/2828/hotel?lock=3017020779891711"
+        ]
+      },
+      {
+        "roomNum": 9,
+        "name": "Standard",
+        "pricePerNight": 347.79,
+        "amenities": [
+          "Air Conditioning",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/2305/2832/hotel?lock=582711314297586"
+        ]
+      },
+      {
+        "roomNum": 10,
+        "name": "Standard",
+        "pricePerNight": 107.42,
+        "amenities": [
+          "Air Conditioning",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/3559/3640/hotel?lock=880614010535087"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Abshire, Pfeffer and Leuschke Hotel",
+    "logo": "https://avatars.githubusercontent.com/u/25169701",
+    "address": "7271 Predovic Mill",
+    "location": "Lake Diannafield",
+    "starRating": 4,
+    "images": [
+      "https://picsum.photos/seed/taRZhC/1447/1403?blur=8"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Suite",
+        "pricePerNight": 115.19,
+        "amenities": [
+          "Room Service",
+          "Breakfast",
+          "Gym",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/3233/3227/hotel?lock=3315564024138523"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Suite",
+        "pricePerNight": 183.06,
+        "amenities": [
+          "Pool",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/3543/2009/hotel?lock=8856771042995351"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Suite",
+        "pricePerNight": 344.46,
+        "amenities": [
+          "Pool",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/2572/2327/hotel?lock=639394875480041"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Standard",
+        "pricePerNight": 264.71,
+        "amenities": [
+          "Room Service",
+          "Pool",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/625/1785/hotel?lock=5391744357185768"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Standard",
+        "pricePerNight": 87.52,
+        "amenities": [
+          "Pool",
+          "Gym",
+          "WiFi",
+          "Breakfast",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/1252/394/hotel?lock=3408904740879366"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Standard",
+        "pricePerNight": 121.26,
+        "amenities": [
+          "Gym",
+          "Pool",
+          "Breakfast",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/1772/2794/hotel?lock=4347245074514368"
+        ]
+      },
+      {
+        "roomNum": 7,
+        "name": "Standard",
+        "pricePerNight": 280.53,
+        "amenities": [
+          "Air Conditioning",
+          "Room Service",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/1919/3941/hotel?lock=8168750575211424"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Pagac, Gutmann and Mohr Hotel",
+    "logo": "https://avatars.githubusercontent.com/u/76268729",
+    "address": "745 Fleta Courts",
+    "location": "Gislasontown",
+    "starRating": 5,
+    "images": [
+      "https://picsum.photos/seed/pPGwT/2097/1606?blur=8"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Suite",
+        "pricePerNight": 373.56,
+        "amenities": [
+          "Pool",
+          "Gym",
+          "Breakfast",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/130/557/hotel?lock=4019909763863706"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Deluxe",
+        "pricePerNight": 140.31,
+        "amenities": [
+          "Pool",
+          "Air Conditioning",
+          "TV",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/1361/1695/hotel?lock=8497067838928179"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Suite",
+        "pricePerNight": 336.02,
+        "amenities": [
+          "Pool",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/1406/1180/hotel?lock=4654372932901856"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Standard",
+        "pricePerNight": 352.96,
+        "amenities": [
+          "Room Service",
+          "Breakfast",
+          "Gym",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/3713/2425/hotel?lock=3852358792662917"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Suite",
+        "pricePerNight": 327.93,
+        "amenities": [
+          "Pool",
+          "WiFi",
+          "TV",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/1357/1695/hotel?lock=7770652767927131"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Standard",
+        "pricePerNight": 309.15,
+        "amenities": [
+          "Air Conditioning",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/3480/699/hotel?lock=1091446223632856"
+        ]
+      },
+      {
+        "roomNum": 7,
+        "name": "Standard",
+        "pricePerNight": 273.74,
+        "amenities": [
+          "Air Conditioning",
+          "WiFi",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/1726/971/hotel?lock=1003508802232946"
+        ]
+      },
+      {
+        "roomNum": 8,
+        "name": "Suite",
+        "pricePerNight": 316.49,
+        "amenities": [
+          "Breakfast",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/477/612/hotel?lock=6062441707443073"
+        ]
+      },
+      {
+        "roomNum": 9,
+        "name": "Deluxe",
+        "pricePerNight": 395.2,
+        "amenities": [
+          "Room Service",
+          "WiFi",
+          "Air Conditioning",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/387/824/hotel?lock=1440048612166925"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Mertz, Gislason and Tillman Hotel",
+    "logo": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/52.jpg",
+    "address": "583 Turner Circle",
+    "location": "North Theronfurt",
+    "starRating": 5,
+    "images": [
+      "https://picsum.photos/seed/oOw3AL76QM/1491/3327?grayscale&blur=7"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Deluxe",
+        "pricePerNight": 235.71,
+        "amenities": [
+          "WiFi",
+          "Gym",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/529/3748/hotel?lock=4992661505737673"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Deluxe",
+        "pricePerNight": 318.87,
+        "amenities": [
+          "WiFi",
+          "TV",
+          "Pool",
+          "Air Conditioning",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/1116/1177/hotel?lock=3741550363310315"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Suite",
+        "pricePerNight": 332.49,
+        "amenities": [
+          "Breakfast",
+          "Gym",
+          "Air Conditioning",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/3464/3516/hotel?lock=5669948998601678"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Deluxe",
+        "pricePerNight": 313.55,
+        "amenities": [
+          "WiFi",
+          "TV",
+          "Pool",
+          "Air Conditioning",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/344/1725/hotel?lock=1784605013114919"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Standard",
+        "pricePerNight": 358.35,
+        "amenities": [
+          "Pool",
+          "WiFi",
+          "Gym",
+          "TV",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/859/2117/hotel?lock=8191831260684017"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Suite",
+        "pricePerNight": 339.54,
+        "amenities": [
+          "WiFi",
+          "Air Conditioning",
+          "Gym",
+          "Pool",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/1253/3827/hotel?lock=3212497525019322"
+        ]
+      },
+      {
+        "roomNum": 7,
+        "name": "Deluxe",
+        "pricePerNight": 189.23,
+        "amenities": [
+          "Gym",
+          "WiFi",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/1820/1484/hotel?lock=4164629257663059"
+        ]
+      },
+      {
+        "roomNum": 8,
+        "name": "Standard",
+        "pricePerNight": 343.62,
+        "amenities": [
+          "Gym",
+          "Room Service",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/2220/1626/hotel?lock=5216399075925175"
+        ]
+      },
+      {
+        "roomNum": 9,
+        "name": "Standard",
+        "pricePerNight": 211.69,
+        "amenities": [
+          "Room Service",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/1324/1572/hotel?lock=7859425823330752"
+        ]
+      },
+      {
+        "roomNum": 10,
+        "name": "Suite",
+        "pricePerNight": 280.57,
+        "amenities": [
+          "WiFi",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/3099/3480/hotel?lock=116728163384868"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Fritsch, Padberg and Jaskolski Hotel",
+    "logo": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/99.jpg",
+    "address": "3288 D'Amore Lakes",
+    "location": "Lindfield",
+    "starRating": 3,
+    "images": [
+      "https://picsum.photos/seed/WUsrMZ/3259/3778?grayscale&blur=10"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Deluxe",
+        "pricePerNight": 152.36,
+        "amenities": [
+          "Air Conditioning",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/1747/2847/hotel?lock=7457328321939520"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Standard",
+        "pricePerNight": 109.44,
+        "amenities": [
+          "Pool",
+          "Gym",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/3965/1016/hotel?lock=7163694927969813"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Suite",
+        "pricePerNight": 101.82,
+        "amenities": [
+          "Air Conditioning",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/1392/1700/hotel?lock=92061301248301"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Suite",
+        "pricePerNight": 155.09,
+        "amenities": [
+          "Room Service",
+          "Pool",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/350/129/hotel?lock=2643322577711729"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Deluxe",
+        "pricePerNight": 308.13,
+        "amenities": [
+          "Room Service",
+          "Air Conditioning",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/88/3560/hotel?lock=2082193842313227"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Wilkinson, Kuhn and Moore Hotel",
+    "logo": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/89.jpg",
+    "address": "36934 N Park Street",
+    "location": "Destineeland",
+    "starRating": 3,
+    "images": [
+      "https://picsum.photos/seed/nTiM5URq2/1606/1638?blur=2"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Deluxe",
+        "pricePerNight": 119.49,
+        "amenities": [
+          "TV",
+          "Room Service",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/2251/507/hotel?lock=5116917062339089"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Suite",
+        "pricePerNight": 325.87,
+        "amenities": [
+          "WiFi",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/2542/14/hotel?lock=7748923780119806"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Suite",
+        "pricePerNight": 149.6,
+        "amenities": [
+          "WiFi",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/1222/2193/hotel?lock=5478461706213958"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Standard",
+        "pricePerNight": 398.32,
+        "amenities": [
+          "Gym",
+          "Breakfast",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/3989/2563/hotel?lock=3493482310277590"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Suite",
+        "pricePerNight": 342.62,
+        "amenities": [
+          "Pool",
+          "Gym",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/622/2955/hotel?lock=6577285375671304"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Deluxe",
+        "pricePerNight": 208.17,
+        "amenities": [
+          "WiFi",
+          "Room Service",
+          "Air Conditioning",
+          "Breakfast",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/1662/2039/hotel?lock=3209448436086606"
+        ]
+      },
+      {
+        "roomNum": 7,
+        "name": "Deluxe",
+        "pricePerNight": 105.51,
+        "amenities": [
+          "Air Conditioning",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/2251/3194/hotel?lock=3902083283532928"
+        ]
+      },
+      {
+        "roomNum": 8,
+        "name": "Standard",
+        "pricePerNight": 255,
+        "amenities": [
+          "Pool",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/3098/3396/hotel?lock=7859139800760203"
+        ]
+      },
+      {
+        "roomNum": 9,
+        "name": "Deluxe",
+        "pricePerNight": 258.26,
+        "amenities": [
+          "Breakfast",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/620/1024/hotel?lock=1947083178372434"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Goldner Inc Hotel",
+    "logo": "https://avatars.githubusercontent.com/u/58059431",
+    "address": "53729 Leuschke Branch",
+    "location": "Fort Tom",
+    "starRating": 4,
+    "images": [
+      "https://picsum.photos/seed/xC6ZvFhBx/3174/545?grayscale&blur=7"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Deluxe",
+        "pricePerNight": 191.12,
+        "amenities": [
+          "Room Service",
+          "WiFi",
+          "Breakfast",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/3095/2257/hotel?lock=2094694512702322"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Deluxe",
+        "pricePerNight": 128.65,
+        "amenities": [
+          "WiFi",
+          "Pool",
+          "Gym",
+          "Air Conditioning",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/1930/74/hotel?lock=4408662677554821"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Suite",
+        "pricePerNight": 266.2,
+        "amenities": [
+          "Breakfast",
+          "Air Conditioning",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/277/2298/hotel?lock=7999452996899154"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Suite",
+        "pricePerNight": 226.62,
+        "amenities": [
+          "Gym",
+          "Breakfast",
+          "Air Conditioning",
+          "Room Service",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/790/2424/hotel?lock=2162284096115199"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Suite",
+        "pricePerNight": 162.68,
+        "amenities": [
+          "WiFi",
+          "Gym"
+        ],
+        "images": [
+          "https://loremflickr.com/3949/2269/hotel?lock=5741371866847066"
+        ]
+      },
+      {
+        "roomNum": 6,
+        "name": "Standard",
+        "pricePerNight": 297.88,
+        "amenities": [
+          "Air Conditioning",
+          "WiFi",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/2292/3838/hotel?lock=6197844836598972"
+        ]
+      },
+      {
+        "roomNum": 7,
+        "name": "Deluxe",
+        "pricePerNight": 320.59,
+        "amenities": [
+          "Pool",
+          "Breakfast",
+          "Gym",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/962/3818/hotel?lock=888372727989045"
+        ]
+      },
+      {
+        "roomNum": 8,
+        "name": "Deluxe",
+        "pricePerNight": 101.51,
+        "amenities": [
+          "TV",
+          "Pool",
+          "Gym",
+          "Air Conditioning",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/1696/967/hotel?lock=3538576625629153"
+        ]
+      },
+      {
+        "roomNum": 9,
+        "name": "Deluxe",
+        "pricePerNight": 169.92,
+        "amenities": [
+          "WiFi",
+          "TV",
+          "Room Service",
+          "Air Conditioning"
+        ],
+        "images": [
+          "https://loremflickr.com/2876/2210/hotel?lock=4803691403169061"
+        ]
+      },
+      {
+        "roomNum": 10,
+        "name": "Suite",
+        "pricePerNight": 194.4,
+        "amenities": [
+          "Gym",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/2607/3961/hotel?lock=6531541322641294"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Collier Group Hotel",
+    "logo": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/55.jpg",
+    "address": "2715 Spring Street",
+    "location": "Lake Amely",
+    "starRating": 3,
+    "images": [
+      "https://picsum.photos/seed/hKRMsUR/2116/3771?blur=4"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Suite",
+        "pricePerNight": 299.15,
+        "amenities": [
+          "TV",
+          "Gym",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/1317/2828/hotel?lock=8828408344348973"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Suite",
+        "pricePerNight": 215.09,
+        "amenities": [
+          "Room Service",
+          "Air Conditioning",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/2457/3646/hotel?lock=8921984789601065"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Suite",
+        "pricePerNight": 137.52,
+        "amenities": [
+          "TV",
+          "WiFi",
+          "Breakfast"
+        ],
+        "images": [
+          "https://loremflickr.com/305/2282/hotel?lock=5651543801443908"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Suite",
+        "pricePerNight": 232.62,
+        "amenities": [
+          "Breakfast",
+          "TV",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/2037/3811/hotel?lock=235963265102533"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Deluxe",
+        "pricePerNight": 314.43,
+        "amenities": [
+          "TV",
+          "Breakfast",
+          "Air Conditioning",
+          "Room Service",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/1957/2046/hotel?lock=5724264196026048"
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "seed-user-id",
+    "name": "Crona - Kuvalis Hotel",
+    "logo": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/99.jpg",
+    "address": "40202 Aric Mountain",
+    "location": "South Eloisa",
+    "starRating": 3,
+    "images": [
+      "https://picsum.photos/seed/ZyjQ9o/2865/1530?blur=9"
+    ],
+    "rooms": [
+      {
+        "roomNum": 1,
+        "name": "Standard",
+        "pricePerNight": 308.38,
+        "amenities": [
+          "Room Service",
+          "Pool"
+        ],
+        "images": [
+          "https://loremflickr.com/2251/632/hotel?lock=2965250765105760"
+        ]
+      },
+      {
+        "roomNum": 2,
+        "name": "Deluxe",
+        "pricePerNight": 147.13,
+        "amenities": [
+          "Pool",
+          "WiFi"
+        ],
+        "images": [
+          "https://loremflickr.com/1488/1300/hotel?lock=8782899524621094"
+        ]
+      },
+      {
+        "roomNum": 3,
+        "name": "Deluxe",
+        "pricePerNight": 394.19,
+        "amenities": [
+          "Room Service",
+          "Breakfast",
+          "Pool",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/2223/934/hotel?lock=5245775138215812"
+        ]
+      },
+      {
+        "roomNum": 4,
+        "name": "Deluxe",
+        "pricePerNight": 377.36,
+        "amenities": [
+          "Pool",
+          "TV",
+          "Room Service"
+        ],
+        "images": [
+          "https://loremflickr.com/1525/657/hotel?lock=971895855915910"
+        ]
+      },
+      {
+        "roomNum": 5,
+        "name": "Suite",
+        "pricePerNight": 362.55,
+        "amenities": [
+          "Gym",
+          "Pool",
+          "TV"
+        ],
+        "images": [
+          "https://loremflickr.com/3805/3830/hotel?lock=5836087996313314"
+        ]
+      }
+    ]
+  }
+]
