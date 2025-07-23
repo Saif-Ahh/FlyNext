@@ -1,0 +1,1355 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "FlyNext",
+    "version": "1.0.0",
+    "contact": {}
+  },
+  "servers": [
+    {
+      "url": "http://localhost"
+    }
+  ],
+  "paths": {
+    "/api/auth/signup": {
+      "post": {
+        "tags": [
+          "User Management"
+        ],
+        "summary": "Signup",
+        "description": "Signup",
+        "operationId": "signup",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "example": "miinhascjahangir@gmail.com"
+                  },
+                  "firstName": {
+                    "type": "string",
+                    "example": "Jahangir"
+                  },
+                  "lastName": {
+                    "type": "string",
+                    "example": "Minhas"
+                  },
+                  "passportNumber": {
+                    "type": "string",
+                    "example": "12W31A512"
+                  },
+                  "password": {
+                    "type": "string",
+                    "example": "jacksparrowz"
+                  },
+                  "phoneNumber": {
+                    "type": "string",
+                    "example": "1234567890"
+                  },
+                  "profilePicture": {
+                    "type": "string",
+                    "example": "profile.jpg"
+                  }
+                }
+              },
+              "examples": {
+                "Signup": {
+                  "value": {
+                    "email": "miinhascjahangir@gmail.com",
+                    "firstName": "Jahangir",
+                    "lastName": "Minhas",
+                    "passportNumber": "12W31A512",
+                    "password": "jacksparrowz",
+                    "phoneNumber": "1234567890",
+                    "profilePicture": "profile.jpg"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/api/auth/login": {
+      "post": {
+        "tags": [
+          "User Management"
+        ],
+        "summary": "Login",
+        "description": "Login",
+        "operationId": "login",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "example": "miinhascjahangir@gmail.com"
+                  },
+                  "password": {
+                    "type": "string",
+                    "example": "jacksparrowz"
+                  }
+                }
+              },
+              "examples": {
+                "Login": {
+                  "value": {
+                    "email": "miinhascjahangir@gmail.com",
+                    "password": "jacksparrowz"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/auth/logout": {
+      "post": {
+        "tags": [
+          "User Management"
+        ],
+        "summary": "Logout",
+        "description": "Logout",
+        "operationId": "logout",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/auth/profile": {
+      "get": {
+        "tags": [
+          "User Management"
+        ],
+        "summary": "View Profile",
+        "description": "View Profile",
+        "operationId": "viewProfile",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "User Management"
+        ],
+        "summary": "Update Profile",
+        "description": "Update Profile",
+        "operationId": "updateProfile",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "example": "minhascjahangir@gmail.com"
+                  },
+                  "firstName": {
+                    "type": "string",
+                    "example": "new_first_name"
+                  },
+                  "lastName": {
+                    "type": "string",
+                    "example": "new_last_name"
+                  },
+                  "passportNumber": {
+                    "type": "string",
+                    "example": "rrgeg34t4"
+                  },
+                  "password": {
+                    "type": "string",
+                    "example": "jacksparrowz"
+                  },
+                  "phoneNumber": {
+                    "type": "string",
+                    "example": "111"
+                  },
+                  "profilePicture": {
+                    "type": "string",
+                    "example": "profile.jpg"
+                  }
+                }
+              },
+              "examples": {
+                "Update Profile": {
+                  "value": {
+                    "email": "minhascjahangir@gmail.com",
+                    "firstName": "new_first_name",
+                    "lastName": "new_last_name",
+                    "passportNumber": "rrgeg34t4",
+                    "password": "jacksparrowz",
+                    "phoneNumber": "111",
+                    "profilePicture": "profile.jpg"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/api/auth/cardvalidation": {
+      "post": {
+        "tags": [
+          "User Management"
+        ],
+        "summary": "Cardvalidation",
+        "description": "Cardvalidation",
+        "operationId": "cardvalidation",
+        "parameters": [
+          {
+            "name": "",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "cardNumber": {
+                    "type": "string",
+                    "example": "4111111111111111"
+                  },
+                  "expirationDate": {
+                    "type": "string",
+                    "example": "2026-12-01"
+                  },
+                  "pin": {
+                    "type": "string",
+                    "example": "123"
+                  }
+                }
+              },
+              "examples": {
+                "Cardvalidation": {
+                  "value": {
+                    "cardNumber": "4111111111111111",
+                    "expirationDate": "2026-12-01",
+                    "pin": "123"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/api/hotels/addHotel": {
+      "post": {
+        "tags": [
+          "Hotel Management"
+        ],
+        "summary": "Add Hotel",
+        "description": "Add Hotel",
+        "operationId": "addHotel",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "address": {
+                    "type": "string",
+                    "example": "123 Main St, City"
+                  },
+                  "images": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "example": "https://example.com/image1.png"
+                    },
+                    "example": [
+                      "https://example.com/image1.png",
+                      "https://example.com/image2.png"
+                    ]
+                  },
+                  "location": {
+                    "type": "string",
+                    "example": "Idaho, USA"
+                  },
+                  "logo": {
+                    "type": "string",
+                    "example": "https://example.com/logo.png"
+                  },
+                  "name": {
+                    "type": "string",
+                    "example": "The Even Less Alright Hotel"
+                  },
+                  "starRating": {
+                    "type": "number",
+                    "example": 4
+                  }
+                }
+              },
+              "examples": {
+                "Add Hotel": {
+                  "value": {
+                    "address": "123 Main St, City",
+                    "images": [
+                      "https://example.com/image1.png",
+                      "https://example.com/image2.png"
+                    ],
+                    "location": "Idaho, USA",
+                    "logo": "https://example.com/logo.png",
+                    "name": "The Even Less Alright Hotel",
+                    "starRating": 4
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/api/hotels/addRoomType": {
+      "post": {
+        "tags": [
+          "Hotel Management"
+        ],
+        "summary": "Add Room",
+        "description": "Add Room",
+        "operationId": "addRoom",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "amenities": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "example": "Basketball"
+                    },
+                    "example": [
+                      "Basketball",
+                      "Tennis",
+                      "Snorkling",
+                      "Wi-fi",
+                      "Alcohol",
+                      "Lounge",
+                      "All-inclusive"
+                    ]
+                  },
+                  "hotelId": {
+                    "type": "string",
+                    "example": "9fd9d9c7-827c-4589-a6e0-d73042a69bd3"
+                  },
+                  "images": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "example": "https://example.com/image1.png"
+                    },
+                    "example": [
+                      "https://example.com/image1.png",
+                      "https://example.com/image2.png"
+                    ]
+                  },
+                  "name": {
+                    "type": "string",
+                    "example": "Single"
+                  },
+                  "pricePerNight": {
+                    "type": "number",
+                    "example": 999.99
+                  },
+                  "roomNum": {
+                    "type": "number",
+                    "example": 10
+                  }
+                }
+              },
+              "examples": {
+                "Add Room": {
+                  "value": {
+                    "amenities": [
+                      "Basketball",
+                      "Tennis",
+                      "Snorkling",
+                      "Wi-fi",
+                      "Alcohol",
+                      "Lounge",
+                      "All-inclusive"
+                    ],
+                    "hotelId": "9fd9d9c7-827c-4589-a6e0-d73042a69bd3",
+                    "images": [
+                      "https://example.com/image1.png",
+                      "https://example.com/image2.png"
+                    ],
+                    "name": "Single",
+                    "pricePerNight": 999.99,
+                    "roomNum": 10
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/api/hotels/addHotelBooking": {
+      "post": {
+        "tags": [
+          "Hotel Management"
+        ],
+        "summary": "Add Hotel Booking",
+        "description": "Add Hotel Booking",
+        "operationId": "addHotelBooking",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "checkIn": {
+                    "type": "string",
+                    "example": "March 6, 2025"
+                  },
+                  "checkOut": {
+                    "type": "string",
+                    "example": "March 10, 2025"
+                  },
+                  "hotelId": {
+                    "type": "string",
+                    "example": "9fd9d9c7-827c-4589-a6e0-d73042a69bd3"
+                  },
+                  "roomNum": {
+                    "type": "number",
+                    "example": 8
+                  },
+                  "roomType": {
+                    "type": "string",
+                    "example": "Single"
+                  }
+                }
+              },
+              "examples": {
+                "Add Hotel Booking": {
+                  "value": {
+                    "checkIn": "March 6, 2025",
+                    "checkOut": "March 10, 2025",
+                    "hotelId": "9fd9d9c7-827c-4589-a6e0-d73042a69bd3",
+                    "roomNum": 8,
+                    "roomType": "Single"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/api/hotels/viewBookings": {
+      "get": {
+        "tags": [
+          "Hotel Management"
+        ],
+        "summary": "View Bookings",
+        "description": "View Bookings",
+        "operationId": "viewBookings",
+        "parameters": [
+          {
+            "name": "hotelId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "2ce81554-c04d-4ccb-b6cc-b40c7fb23101"
+            }
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "March 10, 2025"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/api/hotels/cancelBooking": {
+      "delete": {
+        "tags": [
+          "Hotel Management"
+        ],
+        "summary": "Cancel Booking",
+        "description": "Cancel Booking",
+        "operationId": "cancelBooking",
+        "parameters": [
+          {
+            "name": "hotelId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "6ea1f333-7294-4d66-a582-42c1098f2ba0"
+            }
+          },
+          {
+            "name": "bookingId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "3"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/api/hotels/roomAvailability": {
+      "get": {
+        "tags": [
+          "Hotel Management"
+        ],
+        "summary": "View Available Rooms",
+        "description": "View Available Rooms",
+        "operationId": "viewAvailableRooms",
+        "parameters": [
+          {
+            "name": "hotelId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "2ce81554-c04d-4ccb-b6cc-b40c7fb23101"
+            }
+          },
+          {
+            "name": "roomType",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "Suite"
+            }
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "2025-03-10"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "2025-03-15\n"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/api/hotels/updateRooms": {
+      "post": {
+        "tags": [
+          "Hotel Management"
+        ],
+        "summary": "Update Rooms",
+        "description": "Update Rooms",
+        "operationId": "updateRooms",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "hotelId": {
+                    "type": "string",
+                    "example": "51cc796c-eeda-4cb5-b198-31053686baf5"
+                  },
+                  "newAmount": {
+                    "type": "number",
+                    "example": 2
+                  }
+                }
+              },
+              "examples": {
+                "Update Rooms": {
+                  "value": {
+                    "hotelId": "51cc796c-eeda-4cb5-b198-31053686baf5",
+                    "newAmount": 2
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/api/hotels/hotelbookingpdf": {
+      "get": {
+        "tags": [
+          "Hotel Management"
+        ],
+        "summary": "hotelbookingpdf",
+        "description": "hotelbookingpdf",
+        "operationId": "hotelbookingpdf",
+        "parameters": [
+          {
+            "name": "bookingId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "1"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/api/flights/autoComplete": {
+      "get": {
+        "tags": [
+          "Flight Management"
+        ],
+        "summary": "AutoComplete",
+        "description": "AutoComplete",
+        "operationId": "autocomplete",
+        "parameters": [
+          {
+            "name": "keyword",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "tor"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/flights/one-way": {
+      "get": {
+        "tags": [
+          "Flight Management"
+        ],
+        "summary": "One-Way",
+        "description": "One-Way",
+        "operationId": "oneWay",
+        "parameters": [
+          {
+            "name": "source",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "YYZ"
+            }
+          },
+          {
+            "name": "destination",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "YYJ"
+            }
+          },
+          {
+            "name": "departureDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "2025-04-01"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/flights/round-trip": {
+      "get": {
+        "tags": [
+          "Flight Management"
+        ],
+        "summary": "Round-Trip",
+        "description": "Round-Trip",
+        "operationId": "roundTrip",
+        "parameters": [
+          {
+            "name": "source",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "YYZ"
+            }
+          },
+          {
+            "name": "destination",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "ZRH"
+            }
+          },
+          {
+            "name": "departureDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "2025-04-01"
+            }
+          },
+          {
+            "name": "returnDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "2025-04-10"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/flights/viewFlightDetails": {
+      "get": {
+        "tags": [
+          "Flight Management"
+        ],
+        "summary": "View Flight Details",
+        "description": "View Flight Details",
+        "operationId": "viewFlightDetails",
+        "parameters": [
+          {
+            "name": "origin",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "YYZ"
+            },
+            "description": "place of origin"
+          },
+          {
+            "name": "destination",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "ZRH"
+            },
+            "description": "place of destination"
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "2025-04-01"
+            },
+            "description": "date of flights"
+          },
+          {
+            "name": "flightNumbers",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "AC5892,U25061"
+            },
+            "description": "flight number from trip"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/bookings/flightbooking": {
+      "get": {
+        "tags": [
+          "Flight Management"
+        ],
+        "summary": "bookflight",
+        "description": "bookflight",
+        "operationId": "bookflight",
+        "parameters": [
+          {
+            "name": "flightIds",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "e3e63970-1522-494d-b264-6b726ed57e05"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/api/bookings/retrieveflightbooking": {
+      "get": {
+        "tags": [
+          "Flight Management"
+        ],
+        "summary": "RetrieveBookedFlights",
+        "description": "RetrieveBookedFlights",
+        "operationId": "retrievebookedflights",
+        "parameters": [
+          {
+            "name": "",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/api/bookings/retrievesingleflightbooking": {
+      "get": {
+        "tags": [
+          "Flight Management"
+        ],
+        "summary": "RetrieveSingleFlightBooking",
+        "description": "RetrieveSingleFlightBooking",
+        "operationId": "retrievesingleflightbooking",
+        "parameters": [
+          {
+            "name": "bookingReference",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "E3B948"
+            },
+            "description": "replace with bookingreference from retrivebookedflights. "
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/api/bookings/flightbookingpdf": {
+      "get": {
+        "tags": [
+          "Flight Management"
+        ],
+        "summary": "flightbookingpdf",
+        "description": "flightbookingpdf",
+        "operationId": "flightbookingpdf",
+        "parameters": [
+          {
+            "name": "bookingReference",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "E3B948"
+            },
+            "description": "replace with bookingreference from retrivebookedflights. "
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/api/hotels/userViewHotel": {
+      "get": {
+        "tags": [
+          "Hotel Search"
+        ],
+        "summary": "View Detailed Hotel",
+        "description": "View Detailed Hotel",
+        "operationId": "viewDetailedHotel",
+        "parameters": [
+          {
+            "name": "hotelId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "2ce81554-c04d-4ccb-b6cc-b40c7fb23101"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/hotels/userViewAvailability": {
+      "get": {
+        "tags": [
+          "Hotel Search"
+        ],
+        "summary": "View Detailed Rooms",
+        "description": "View Detailed Rooms",
+        "operationId": "viewDetailedRooms",
+        "parameters": [
+          {
+            "name": "hotelId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "2ce81554-c04d-4ccb-b6cc-b40c7fb23101"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/hotels/getHotelSuggestions": {
+      "get": {
+        "tags": [
+          "Hotel Search"
+        ],
+        "summary": "Get Hotel Suggestions",
+        "description": "Get Hotel Suggestions",
+        "operationId": "getHotelSuggestions",
+        "parameters": [
+          {
+            "name": "location",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "New York, USA"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/api/notifications/getNotifications": {
+      "get": {
+        "tags": [
+          "Notifications"
+        ],
+        "summary": "Get Notifications",
+        "description": "Get Notifications",
+        "operationId": "getNotifications",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/api/notifications/getUnreadCount": {
+      "get": {
+        "tags": [
+          "Notifications"
+        ],
+        "summary": "Get Unread Notification Count",
+        "description": "Get Unread Notification Count",
+        "operationId": "getUnreadNotificationCount",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/api/notifications/markNotificationAsRead": {
+      "post": {
+        "tags": [
+          "Notifications"
+        ],
+        "summary": "Mark Notification As Read",
+        "description": "Mark Notification As Read",
+        "operationId": "markNotificationAsRead",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "notificationId": {
+                    "type": "string",
+                    "example": "49ec1510-37bd-49d9-810e-f4a60014aa4b"
+                  }
+                }
+              },
+              "examples": {
+                "Mark Notification As Read": {
+                  "value": {
+                    "notificationId": "49ec1510-37bd-49d9-810e-f4a60014aa4b"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/api/itineraries/create": {
+      "get": {
+        "tags": [
+          "itenraries"
+        ],
+        "summary": "create",
+        "description": "create",
+        "operationId": "create",
+        "parameters": [
+          {
+            "name": "flightBookingRef",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "6E0782"
+            },
+            "description": "gotten from bookflight"
+          },
+          {
+            "name": "hotelBookingRef",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "1"
+            },
+            "description": "gotten from add hotel booking. "
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/api/itineraries/update": {
+      "get": {
+        "tags": [
+          "itenraries"
+        ],
+        "summary": "update/retrieve",
+        "description": "update/retrieve",
+        "operationId": "updateRetrieve",
+        "parameters": [
+          {
+            "name": "itineraryId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "ead04bbc-5a47-43aa-88d2-43be9641a34d"
+            }
+          },
+          {
+            "name": "flightBookingRef",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "23A05A"
+            },
+            "description": "set to string delete to delete or leave empty to not update. "
+          },
+          {
+            "name": "hotelBookingRef",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "2"
+            },
+            "description": "set to string delete to delete or leave empty to not update. "
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/api/itineraries/retrieveall": {
+      "get": {
+        "tags": [
+          "itenraries"
+        ],
+        "summary": "retireveall",
+        "description": "retireveall",
+        "operationId": "retireveall",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/api/itineraries/itenrarypdf": {
+      "get": {
+        "tags": [
+          "itenraries"
+        ],
+        "summary": "itenrarypdf",
+        "description": "itenrarypdf",
+        "operationId": "itenrarypdf",
+        "parameters": [
+          {
+            "name": "itineraryId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "ead04bbc-5a47-43aa-88d2-43be9641a34d"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "User Management"
+    },
+    {
+      "name": "Hotel Management"
+    },
+    {
+      "name": "Flight Management"
+    },
+    {
+      "name": "Hotel Search"
+    },
+    {
+      "name": "Notifications"
+    },
+    {
+      "name": "itenraries"
+    }
+  ]
+}
