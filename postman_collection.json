@@ -1,0 +1,1473 @@
+{
+	"info": {
+		"_postman_id": "f105dc63-9553-45a2-aeaf-a726f8a28292",
+		"name": "FlyNext",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42959934",
+		"_collection_link": "https://flynext-9334.postman.co/workspace/FlyNext-Workspace~9ff7f50d-6ad5-41a7-81ad-d909b296ef2b/collection/42958802-f105dc63-9553-45a2-aeaf-a726f8a28292?action=share&source=collection_link&creator=42959934"
+	},
+	"item": [
+		{
+			"name": "User Management",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0MjhiOTczZC0xNjQ5LTQzYjctOGJlMy1mNmU2ODYzY2FkNDciLCJlbWFpbCI6ImZhdGVzLmZhdGVzMThAZ21haWwuY29tIiwiaWF0IjoxNzQxNTQ4MDE5LCJleHAiOjE3NDE1NTE2MTl9.sZPff_0Z5I-qC94d2sc2Z8LUdV9pUB6d8t_h1JHTrDo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Jahangir\",\r\n    \"lastName\": \"Minhas\",\r\n    \"email\": \"miinhascjahangir@gmail.com\",\r\n    \"password\": \"jacksparrowz\",\r\n    \"profilePicture\": \"profile.jpg\",\r\n    \"phoneNumber\": \"1234567890\",\r\n    \"passportNumber\": \"12W31A512\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Extract and save JWT token\", () => {\r",
+									"    const jsonResponse = pm.response.json();\r",
+									"    if (jsonResponse.token) {\r",
+									"        pm.environment.set(\"authToken\", jsonResponse.token);\r",
+									"        console.log(\"JWT Token saved to environment variable: authToken\");\r",
+									"    } else {\r",
+									"        console.log(\"No token found in the response\");\r",
+									"    }\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"miinhascjahangir@gmail.com\",\r\n    \"password\": \"jacksparrowz\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/auth/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"new_first_name\",\r\n    \"lastName\": \"new_last_name\",\r\n    \"email\": \"minhascjahangir@gmail.com\",\r\n    \"password\": \"jacksparrowz\",\r\n    \"profilePicture\": \"profile.jpg\",\r\n    \"phoneNumber\": \"111\",\r\n    \"passportNumber\": \"rrgeg34t4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cardvalidation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cardNumber\": \"4111111111111111\",\r\n  \"pin\": \"123\",\r\n  \"expirationDate\": \"2026-12-01\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/cardvalidation?",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"cardvalidation"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Hotel Management",
+			"item": [
+				{
+					"name": "Add Hotel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"The Even Less Alright Hotel\",\r\n    \"logo\": \"https://example.com/logo.png\",\r\n    \"address\": \"123 Main St, City\",\r\n    \"location\": \"Idaho, USA\",\r\n    \"starRating\": 4,\r\n    \"images\": [\"https://example.com/image1.png\", \"https://example.com/image2.png\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/hotels/addHotel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"hotels",
+								"addHotel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Room",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"hotelId\": \"9fd9d9c7-827c-4589-a6e0-d73042a69bd3\",\r\n    \"name\": \"Single\",\r\n    \"roomNum\": 10,\r\n    \"amenities\": [\"Basketball\", \"Tennis\", \"Snorkling\", \"Wi-fi\", \"Alcohol\", \"Lounge\", \"All-inclusive\"],\r\n    \"pricePerNight\": 999.99,\r\n    \"images\": [\"https://example.com/image1.png\", \"https://example.com/image2.png\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/hotels/addRoomType",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"hotels",
+								"addRoomType"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Hotel Booking",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"hotelId\": \"9fd9d9c7-827c-4589-a6e0-d73042a69bd3\",\r\n    \"roomType\": \"Single\",\r\n    \"roomNum\": 8,\r\n    \"checkIn\": \"March 6, 2025\",\r\n    \"checkOut\": \"March 10, 2025\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/hotels/addHotelBooking",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"hotels",
+								"addHotelBooking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View Bookings",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/hotels/viewBookings?hotelId=2ce81554-c04d-4ccb-b6cc-b40c7fb23101&date=March 10, 2025",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"hotels",
+								"viewBookings"
+							],
+							"query": [
+								{
+									"key": "hotelId",
+									"value": "2ce81554-c04d-4ccb-b6cc-b40c7fb23101"
+								},
+								{
+									"key": "date",
+									"value": "March 10, 2025"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Booking",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/hotels/cancelBooking?hotelId=6ea1f333-7294-4d66-a582-42c1098f2ba0&bookingId=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"hotels",
+								"cancelBooking"
+							],
+							"query": [
+								{
+									"key": "hotelId",
+									"value": "6ea1f333-7294-4d66-a582-42c1098f2ba0"
+								},
+								{
+									"key": "bookingId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View Available Rooms",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/hotels/roomAvailability?hotelId=2ce81554-c04d-4ccb-b6cc-b40c7fb23101&roomType=Suite&startDate=2025-03-10&endDate=2025-03-15\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"hotels",
+								"roomAvailability"
+							],
+							"query": [
+								{
+									"key": "hotelId",
+									"value": "2ce81554-c04d-4ccb-b6cc-b40c7fb23101"
+								},
+								{
+									"key": "roomType",
+									"value": "Suite"
+								},
+								{
+									"key": "startDate",
+									"value": "2025-03-10"
+								},
+								{
+									"key": "endDate",
+									"value": "2025-03-15\n"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Rooms",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"hotelId\": \"51cc796c-eeda-4cb5-b198-31053686baf5\",\r\n    \"newAmount\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/hotels/updateRooms",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"hotels",
+								"updateRooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "hotelbookingpdf",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/hotels/hotelbookingpdf?bookingId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"hotels",
+								"hotelbookingpdf"
+							],
+							"query": [
+								{
+									"key": "bookingId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Flight Management",
+			"item": [
+				{
+					"name": "AutoComplete",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/flights/autoComplete?keyword=tor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"flights",
+								"autoComplete"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "tor"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "AutoComplete",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/flights/autoComplete?keyword=YZ",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"flights",
+										"autoComplete"
+									],
+									"query": [
+										{
+											"key": "keyword",
+											"value": "YZ"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "AutoComplete",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/flights/autoComplete?keyword=For",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"flights",
+										"autoComplete"
+									],
+									"query": [
+										{
+											"key": "keyword",
+											"value": "For"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "One-Way",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/flights/one-way?source=YYZ&destination=YYJ&departureDate=2025-04-01",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"flights",
+								"one-way"
+							],
+							"query": [
+								{
+									"key": "source",
+									"value": "YYZ"
+								},
+								{
+									"key": "destination",
+									"value": "YYJ"
+								},
+								{
+									"key": "departureDate",
+									"value": "2025-04-01"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "One-Way",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/flights/one-way?source=YYZ&destination=London&departureDate=2025-04-01",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"flights",
+										"one-way"
+									],
+									"query": [
+										{
+											"key": "source",
+											"value": "YYZ"
+										},
+										{
+											"key": "destination",
+											"value": "London"
+										},
+										{
+											"key": "departureDate",
+											"value": "2025-04-01"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Round-Trip",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/flights/round-trip?source=YYZ&destination=ZRH&departureDate=2025-04-01&returnDate=2025-04-10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"flights",
+								"round-trip"
+							],
+							"query": [
+								{
+									"key": "source",
+									"value": "YYZ"
+								},
+								{
+									"key": "destination",
+									"value": "ZRH"
+								},
+								{
+									"key": "departureDate",
+									"value": "2025-04-01"
+								},
+								{
+									"key": "returnDate",
+									"value": "2025-04-10"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Round-Trip",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/flights/round-trip?source=Toronto&destination=Montreal&departureDate=2025-04-04&returnDate=2025-04-16",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"flights",
+										"round-trip"
+									],
+									"query": [
+										{
+											"key": "source",
+											"value": "Toronto"
+										},
+										{
+											"key": "destination",
+											"value": "Montreal"
+										},
+										{
+											"key": "departureDate",
+											"value": "2025-04-04"
+										},
+										{
+											"key": "returnDate",
+											"value": "2025-04-16"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "View Flight Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/flights/viewFlightDetails?origin=YYZ&destination=ZRH&date=2025-04-01&flightNumbers=AC5892,U25061",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"flights",
+								"viewFlightDetails"
+							],
+							"query": [
+								{
+									"key": "origin",
+									"value": "YYZ",
+									"description": "place of origin"
+								},
+								{
+									"key": "destination",
+									"value": "ZRH",
+									"description": "place of destination"
+								},
+								{
+									"key": "date",
+									"value": "2025-04-01",
+									"description": "date of flights"
+								},
+								{
+									"key": "flightNumbers",
+									"value": "AC5892,U25061",
+									"description": "flight number from trip"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bookflight",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/bookings/flightbooking?flightIds=e3e63970-1522-494d-b264-6b726ed57e05",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"bookings",
+								"flightbooking"
+							],
+							"query": [
+								{
+									"key": "flightIds",
+									"value": "e3e63970-1522-494d-b264-6b726ed57e05"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "bookflight",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/bookings/flightbooking?flightIds=8c46ecb2-dfbb-47cd-aa45-a090a055d741,eb3bf25f-b7d0-4a06-87ce-833e0a9e1469",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"bookings",
+										"flightbooking"
+									],
+									"query": [
+										{
+											"key": "flightIds",
+											"value": "8c46ecb2-dfbb-47cd-aa45-a090a055d741,eb3bf25f-b7d0-4a06-87ce-833e0a9e1469"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "RetrieveBookedFlights",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/bookings/retrieveflightbooking?",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"bookings",
+								"retrieveflightbooking"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RetrieveSingleFlightBooking",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/bookings/retrievesingleflightbooking?bookingReference=E3B948",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"bookings",
+								"retrievesingleflightbooking"
+							],
+							"query": [
+								{
+									"key": "bookingReference",
+									"value": "E3B948",
+									"description": "replace with bookingreference from retrivebookedflights. "
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "flightbookingpdf",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/bookings/flightbookingpdf?bookingReference=E3B948",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"bookings",
+								"flightbookingpdf"
+							],
+							"query": [
+								{
+									"key": "bookingReference",
+									"value": "E3B948",
+									"description": "replace with bookingreference from retrivebookedflights. "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "flightbookingpdf",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/bookings/flightbookingpdf?bookingReference=E3B948",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"bookings",
+										"flightbookingpdf"
+									],
+									"query": [
+										{
+											"key": "bookingReference",
+											"value": "E3B948"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Hotel Search",
+			"item": [
+				{
+					"name": "View Detailed Hotel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/hotels/userViewHotel?hotelId=2ce81554-c04d-4ccb-b6cc-b40c7fb23101",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"hotels",
+								"userViewHotel"
+							],
+							"query": [
+								{
+									"key": "hotelId",
+									"value": "2ce81554-c04d-4ccb-b6cc-b40c7fb23101"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View Detailed Rooms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/hotels/userViewAvailability?hotelId=2ce81554-c04d-4ccb-b6cc-b40c7fb23101",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"hotels",
+								"userViewAvailability"
+							],
+							"query": [
+								{
+									"key": "hotelId",
+									"value": "2ce81554-c04d-4ccb-b6cc-b40c7fb23101"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Hotel Suggestions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/hotels/getHotelSuggestions?location=New York, USA",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"hotels",
+								"getHotelSuggestions"
+							],
+							"query": [
+								{
+									"key": "location",
+									"value": "New York, USA"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Visitorsearch",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "retrieveuserbookings",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notifications",
+			"item": [
+				{
+					"name": "Get Notifications",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/notifications/getNotifications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"notifications",
+								"getNotifications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Unread Notification Count",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/notifications/getUnreadCount",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"notifications",
+								"getUnreadCount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mark Notification As Read",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"notificationId\": \"49ec1510-37bd-49d9-810e-f4a60014aa4b\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/notifications/markNotificationAsRead",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"notifications",
+								"markNotificationAsRead"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "itenraries",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/itineraries/create?flightBookingRef=6E0782&hotelBookingRef=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"itineraries",
+								"create"
+							],
+							"query": [
+								{
+									"key": "flightBookingRef",
+									"value": "6E0782",
+									"description": "gotten from bookflight"
+								},
+								{
+									"key": "hotelBookingRef",
+									"value": "1",
+									"description": "gotten from add hotel booking. "
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update/retrieve",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/itineraries/update?itineraryId=ead04bbc-5a47-43aa-88d2-43be9641a34d&flightBookingRef=23A05A&hotelBookingRef=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"itineraries",
+								"update"
+							],
+							"query": [
+								{
+									"key": "itineraryId",
+									"value": "ead04bbc-5a47-43aa-88d2-43be9641a34d"
+								},
+								{
+									"key": "flightBookingRef",
+									"value": "23A05A",
+									"description": "set to string delete to delete or leave empty to not update. "
+								},
+								{
+									"key": "hotelBookingRef",
+									"value": "2",
+									"description": "set to string delete to delete or leave empty to not update. "
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "retireveall",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/itineraries/retrieveall",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"itineraries",
+								"retrieveall"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "itenrarypdf",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/itineraries/itenrarypdf?itineraryId=ead04bbc-5a47-43aa-88d2-43be9641a34d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"itineraries",
+								"itenrarypdf"
+							],
+							"query": [
+								{
+									"key": "itineraryId",
+									"value": "ead04bbc-5a47-43aa-88d2-43be9641a34d"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
