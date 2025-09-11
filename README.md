@@ -1,12 +1,37 @@
-**Hotel Booking Management System**
+# FlyNext ✈️
 
-_Overview_
+FlyNext is a full-stack travel booking web application built as a group project. It allows users to search, book, and manage flights through an intuitive UI while integrating with the **AFS API** for real flight data.  
 
-The Hotel Booking Management System is designed to streamline hotel reservations, user bookings, and notifications. Built with Prisma and SQLite, the system enables customers to book and manage reservations while allowing hotel owners to oversee hotel listings and room availability.
+---
 
-_Features_
+## 🚀 Features
+- User authentication & session management  
+- Flight search, filtering, and booking  
+- Real-time integration with the **AFS API**  
+- RESTful backend API with Prisma ORM  
+- Responsive UI with **Next.js + TailwindCSS**  
+- Containerized deployment with **Docker** and **nginx reverse proxy**  
 
-User Management: Registration, authentication, and profile management.
-Hotel and Room Management: Hotel owners can add hotels, manage room availability, and track bookings.
-Booking System: Customers can book rooms, view their booking history, and cancel reservations.
-Notification System: Users receive updates regarding their reservations and hotel status changes.
+---
+
+## 🛠️ Tech Stack
+- **Frontend:** Next.js, React, TypeScript, TailwindCSS  
+- **Backend:** Next.js API routes, REST, Prisma ORM  
+- **Database:** PostgreSQL  
+- **Infrastructure:** Docker, nginx  
+- **Other Tools:** Git, VS Code  
+
+---
+
+## 📂 Project Structure
+FlyNext/
+├── frontend/ # React + Next.js client
+├── backend/ # REST API + Prisma
+├── prisma/ # Database schema and migrations
+├── docker-compose.yml # Container orchestration
+└── README.md # Project documentation
+
+### Prerequisites
+- Node.js 18+  
+- PostgreSQL  
+- Docker (optional, for deployment)  
